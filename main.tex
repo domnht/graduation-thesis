@@ -1,24 +1,19 @@
 \documentclass[a4paper,12pt]{report}
 \input{config}
-
 \begin{document}
 
 \input{pages/cover}
 \input{pages/preface}
-
-\tableofcontents
-\thispagestyle{empty}
-\newpage\setcounter{page}{1}
-
-\chapter*{Mở đầu}
-\addcontentsline{toc}{chapter}{Mở đầu}
-
-\chapter{Cơ sở lý luận}
-\chapter{Thiết kế sản phẩm}
-\chapter{Thực nghiệm}
-\chapter*{Kết luận}
-\addcontentsline{toc}{chapter}{Kết luận}
-\chapter*{Tài liệu tham khảo}
+% Table of contents
+\tableofcontents\newpage
+% Main contents
+\input{chapters/opening}
+\input{chapters/literature-review}
+\input{chapters/literature-review}
+\input{chapters/literature-review}
+\input{chapters/concluding}
+% References
+\printbibliography[title={Tài liệu tham khảo}]
 \addcontentsline{toc}{chapter}{Tài liệu tham khảo}
 
 \end{document}

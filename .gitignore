@@ -5,3 +5,9 @@
 *.aux
 *.swp
 *.gz
+*.toc
+*.bbl
+*.bcf
+*.blg
+*.out
+*.xml

@@ -4,20 +4,36 @@
 \usepackage{enumitem,multicol,multirow,longtable} % layout
 \usepackage{tikz,graphicx,wrapfig,xcolor} % graphing
 \usepackage{ragged2e,changepage,fancyhdr} % page setup
+\usepackage{titlesec} % descrease spacing of chapter
+\usepackage[backend=biber,style=numeric,sorting=ynt]{biblatex} % references back end
+\usepackage[hidelinks,unicode]{hyperref}
+
+% Paragraph format
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Chapter custom
+\titleformat{\chapter}[display] % display|hang
+{\centering\normalfont\huge\bfseries}{\centering\chaptertitlename\ \thechapter}{0pt}{\Huge} % pattern
+\titlespacing{\chapter}{0pt}{0pt}{12pt} % spacing with other
+
+% Add hyperlink to table of contents
+% \hypersetup{linktoc=all}
 
 % Set up graphicx
 \graphicspath{ {images/} }
 
-% Paragraph format
-\renewcommand{\baselinestretch}{1.15}
-\setlength\parindent{0pt}
-\setlength{\parskip}{6pt}
+% Equations prefer
 \everymath{\displaystyle}
 
 % Document information
-\title{
-Bước đầu vận dụng trí tuệ nhân tạo vào Giáo dục Toán học:\\
-Một thực nghiệm ở trường THPT Thực hành Sư phạm
-}
-\author{Author Name}
-\date{Day Month Year}
+% \title{
+% Bước đầu vận dụng trí tuệ nhân tạo vào Giáo dục Toán học:\\
+% Một thực nghiệm ở trường THPT Thực hành Sư phạm
+% }
+% \author{Nguyễn Hiếu Thanh}
+% \date{Day Month Year}
+
+% add references resource
+\addbibresource{references.bib}
