@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Cleaning..."
+rm '.DS_Store'
 find * -name '*.log' -delete
 find * -name '*.fdb_latexmk' -delete
 find * -name '*.fls' -delete
