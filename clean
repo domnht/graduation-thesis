@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "Starting..."
+
+echo "Cleaning aux..."
+find * -name '*.aux' -delete
+
+echo "Cleaning toc..."
+find * -name '*.toc' -delete
+
+echo "Cleaning fdb_latexmk..."
+find * -name '*.fdb_latexmk' -delete
+
+echo "Cleaning fls..."
+find * -name '*.fls' -delete
+
+echo "Cleaning log..."
+find * -name '*.log' -delete
+
+echo "Cleaning synctex.gz..."
+find * -name '*.synctex.gz' -delete
+
+echo "All done!"
