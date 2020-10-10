@@ -1,16 +1,25 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[a4paper,twoside,openright,12pt]{report}
 \input{config}
 \begin{document}
 
 \input{pages/cover}
+
+\clearpage % Reset page number to 1
+\pagenumbering{roman} % Set page number to i, ii, iii...
 \input{pages/preface}
-% Table of contents
+
+% Table of contents/figures/tables
 \tableofcontents\newpage
+\listoffigures
+\listoftables
+
 % Main contents
+\clearpage % Reset page number to 1
+\pagenumbering{arabic} % Reset page number to 1, 2, 3...
 \input{chapters/opening}
 \input{chapters/literature-review}
-\input{chapters/literature-review}
-\input{chapters/literature-review}
+\input{chapters/research-methods}
+\input{chapters/experiment}
 \input{chapters/concluding}
 % References
 \printbibliography[title={Tài liệu tham khảo}]
