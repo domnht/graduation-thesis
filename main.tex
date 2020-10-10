@@ -1,28 +1,30 @@
-\documentclass[a4paper,twoside,openright,12pt]{report}
+\documentclass[a4paper,oneside,12pt]{report}
 \input{config}
 \begin{document}
 
-\input{pages/cover}
+% Outline
+\input{outline}
 
-\clearpage % Reset page number to 1
-\pagenumbering{roman} % Set page number to i, ii, iii...
-\input{pages/preface}
+% Opening
+% \input{pages/cover}
+% \thispagestyle{empty}\cleardoublepage
+% \pagenumbering{roman}
+% \input{pages/preface}
 
-% Table of contents/figures/tables
-\tableofcontents\newpage
-\listoffigures
-\listoftables
+% Table of Contents
+% \input{pages/table-of-contents}
 
 % Main contents
-\clearpage % Reset page number to 1
-\pagenumbering{arabic} % Reset page number to 1, 2, 3...
-\input{chapters/opening}
-\input{chapters/literature-review}
-\input{chapters/research-methods}
-\input{chapters/experiment}
-\input{chapters/concluding}
+% \cleardoublepage\pagenumbering{arabic}
+% \input{chapters/opening}
+% \input{chapters/literature-review}
+% \input{chapters/research-methods}
+% \input{chapters/experiment}
+% \input{chapters/concluding}
+
 % References
-\printbibliography[title={Tài liệu tham khảo}]
-\addcontentsline{toc}{chapter}{Tài liệu tham khảo}
+% \cleardoublepage
+% \printbibliography[title={Tài liệu tham khảo}]
+% \addcontentsline{toc}{chapter}{Tài liệu tham khảo}
 
 \end{document}

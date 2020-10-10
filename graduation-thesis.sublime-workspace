@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"bi",
+				"blindtext"
+			],
+			[
+				"enum",
+				"enumerate"
+			],
+			[
 				"currect",
 				"current_record"
 			],
@@ -137,12 +145,16 @@
 		"selected_items":
 		[
 			[
-				"terminal",
-				"Terminal: Open in project folder"
-			],
-			[
 				"UI",
 				"UI: Select Color Scheme"
+			],
+			[
+				"delete",
+				"LaTeXTools: Delete temporary files"
+			],
+			[
+				"terminal",
+				"Terminal: Open in project folder"
 			],
 			[
 				"termin",
@@ -233,11 +245,15 @@
 	},
 	"file_history":
 	[
-		"/Users/thanh/Downloads/GitHub/graduation-thesis/pages/preface.tex",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/main.tex",
+		"/Users/thanh/Downloads/GitHub/graduation-thesis/clean",
+		"/Users/thanh/Downloads/GitHub/graduation-thesis/outline.tex",
+		"/Users/thanh/Downloads/GitHub/graduation-thesis/chapters/opening.tex",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/config.tex",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/pages/cover.tex",
-		"/Users/thanh/Downloads/GitHub/graduation-thesis/chapters/opening.tex",
+		"/Users/thanh/Downloads/GitHub/graduation-thesis/main.log",
+		"/Users/thanh/Downloads/GitHub/graduation-thesis/pages/preface.tex",
+		"/Users/thanh/Downloads/GitHub/graduation-thesis/pages/table-of-contents.tex",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/chapters/literature-review.tex",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/chapters/research-methods.tex",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/chapters/experiment.tex",
@@ -245,7 +261,6 @@
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/graduation-thesis.sublime-project",
 		"/Users/thanh/Library/Application Support/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
 		"/Users/thanh/Library/Application Support/Sublime Text 3/Packages/User/Terminal.sublime-settings",
-		"/Users/thanh/Downloads/GitHub/graduation-thesis/clean",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/.sublime-project",
 		"/Users/thanh/Downloads/GitHub/quockim-ctv/records.edit.php",
 		"/Users/thanh/Downloads/GitHub/quockim-ctv/php/common.php",
@@ -310,7 +325,7 @@
 	],
 	"find":
 	{
-		"height": 80.0
+		"height": 30.0
 	},
 	"find_in_files":
 	{
@@ -324,6 +339,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"blindtext",
+			"longtable",
+			"table",
+			"itemize",
+			"font"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -377,7 +397,7 @@
 	{
 		"height": 213.0
 	},
-	"pinned_build_system": "",
+	"pinned_build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
 	"replace":
 	{
 		"height": 56.0
@@ -414,7 +434,7 @@
 	{
 	},
 	"show_minimap": true,
-	"show_open_files": true,
+	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 150.0,
