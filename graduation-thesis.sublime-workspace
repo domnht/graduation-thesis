@@ -246,10 +246,12 @@
 	"file_history":
 	[
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/main.tex",
-		"/Users/thanh/Downloads/GitHub/graduation-thesis/clean",
-		"/Users/thanh/Downloads/GitHub/graduation-thesis/outline.tex",
-		"/Users/thanh/Downloads/GitHub/graduation-thesis/chapters/opening.tex",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/config.tex",
+		"/usr/local/texlive/2020basic/texmf-dist/tex/latex/biblatex/biblatex.sty",
+		"/Users/thanh/Downloads/GitHub/graduation-thesis/references.bib",
+		"/Users/thanh/Downloads/GitHub/graduation-thesis/outline.tex",
+		"/Users/thanh/Downloads/GitHub/graduation-thesis/clean",
+		"/Users/thanh/Downloads/GitHub/graduation-thesis/chapters/opening.tex",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/pages/cover.tex",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/main.log",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/pages/preface.tex",
@@ -300,7 +302,6 @@
 		"/Users/thanh/Downloads/GitHub/quockim-ctv/composer.json",
 		"/Users/thanh/Downloads/GitHub/quockim-ctv/js/admin.records.js",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/.gitignore",
-		"/Users/thanh/Downloads/GitHub/graduation-thesis/references.bib",
 		"/Users/thanh/Downloads/GitHub/graduation-thesis/main.pdf",
 		"/Users/thanh/Downloads/GitHub/luan-van-tot-nghiep/config.tex",
 		"/Users/thanh/Downloads/GitHub/luan-van-tot-nghiep/README.md",
@@ -325,7 +326,7 @@
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 80.0
 	},
 	"find_in_files":
 	{
@@ -395,7 +396,7 @@
 	},
 	"output.latextools":
 	{
-		"height": 213.0
+		"height": 192.0
 	},
 	"pinned_build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
 	"replace":
