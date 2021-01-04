@@ -1,33 +1,39 @@
 \usepackage[margin=2cm,left=3cm]{geometry}
-\usepackage[utf8]{vietnam}
-\usepackage{amsfonts,amsmath,amsthm,amssymb} % math
-\usepackage{enumitem,multicol,multirow,longtable} % layout
-\usepackage{tikz,graphicx,wrapfig,xcolor} % graphing
-\usepackage{ragged2e,changepage,fancyhdr} % page setup
-\usepackage{titlesec} % chapter title setting
-\usepackage{blindtext}
-% \usepackage{natbib} % APA refer
-\usepackage[backend=biber,style=apa,sorting=ynt]{biblatex} % references back end
+\usepackage[utf8]{vietnam} % Text Encoder
+\usepackage{amsfonts,amsmath,amsthm,amssymb} % Math
+\usepackage{enumitem,multicol,multirow,booktabs,longtable,cellspace} % Layout
+\usepackage{tikz,graphicx,wrapfig,xcolor} % Graphing
+\usepackage{ragged2e,changepage,fancyhdr} % Page setup
+\usepackage{titlesec} % Chapter title setting
+\usepackage{blindtext} % Lorem Ipsum... generator
+\usepackage{listings} % Code Output
 \usepackage[hidelinks,unicode]{hyperref}
 
-% Paragraph format
+% Install biblatex-apa package to use APA style
+\usepackage[backend=biber,style=apa,sorting=ynt]{biblatex} % References Engine
+
+% Text Spacing
 \renewcommand{\baselinestretch}{1.1}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{4pt}
+
+% Cell spacing
+\setlength\cellspacetoplimit{4pt}
+\setlength\cellspacebottomlimit{4pt}
 
 % Chapter custom
 \titleformat{\chapter}[display] % display|hang
 {\centering\normalfont\huge\bfseries}{\centering\chaptertitlename\ \thechapter}{0pt}{\Huge} % pattern
 \titlespacing{\chapter}{0pt}{0pt}{12pt} % spacing with other
-% middle number (-24pt) is space-before chapter-title
+% Middle number (-24pt) is space-before chapter-title
 
-% Add hyperlink to table of contents
+% Highlight hyperlink of table of contents
 % \hypersetup{linktoc=all}
 
-% Set up graphicx
+% Set image-path
 \graphicspath{ {images/} }
 
-% Equations prefer
+% Equations Prefer
 \everymath{\displaystyle}
 
 % Document information
@@ -35,5 +41,5 @@
 % \author{Nguyễn Hiếu Thanh}
 % \date{Day Month Year}
 
-% add references resource
+% Add References resource
 \addbibresource{references.bib}

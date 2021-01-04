@@ -1,36 +1,50 @@
 \thispagestyle{empty}
 \pagenumbering{Alph}
-\begin{center}\large
-	\textbf{TRƯỜNG ĐẠI HỌC CẦN THƠ}\\
-	\textbf{KHOA SƯ PHẠM}\\
-	\textbf{BỘ MÔN SƯ PHẠM TOÁN HỌC}
-\end{center}
-\vfill
-{\centering\includegraphics[width=4cm]{ctu-logo.png}\par}
-\vfill
-{\centering\LARGE\textbf{Luận văn tốt nghiệp}\par}
-\vfill
-\begin{adjustwidth}{-1cm}{-1cm}
-\begin{center}\huge
-	\textbf{Đề tài:}\par
-	\textbf{
+
+\usetikzlibrary{calc}
+
+\begin{center}
+	\begin{tikzpicture}[remember picture,overlay]
+		\draw [black, line width=2pt]
+		($(current page.north west) + (2.25cm, -1.25cm)$)
+		rectangle
+		($(current page.south east) + (-1.25cm, 1.25cm)$);
+
+		\draw [black, line width=1pt]
+		($(current page.north west) + (2.25cm + 2pt, -1.25cm - 2pt)$)
+		rectangle
+		($(current page.south east) + (-1.25cm - 2pt, 1.25cm + 2pt)$);
+	\end{tikzpicture} % Box
+
+	\begin{large}\bfseries
+		TRƯỜNG ĐẠI HỌC CẦN THƠ\\
+		KHOA SƯ PHẠM\\
+		BỘ MÔN SƯ PHẠM TOÁN HỌC\par
+		\vspace{1cm}
+		\includegraphics[width=3.5cm]{ctu-logo.png}
+	\end{large}
+	\vfill
+	{\LARGE\bfseries Luận văn tốt nghiệp}\par
+	\vfill
+	\begin{adjustwidth}{-1cm}{-1cm}
+		\centering\huge\bfseries
+		Đề tài:\par
 		BƯỚC ĐẦU ỨNG DỤNG TRÍ TUỆ NHÂN TẠO VÀO DẠY HỌC TOÁN:\\
-		Một thực nghiệm của Facebook Chatbot trong dạy học Toán 11\\ chương Tổ hợp, xác suất
-	}
+		AI Chatbot trong dạy học Toán 11 chương Tổ hợp, xác suất\par
+	\end{adjustwidth}
+	\vfill
+	\begin{adjustwidth}{1cm}{-1cm}
+		\begin{multicols}{2}\large
+			\textbf{Giảng viên hướng dẫn:}\par
+			ThS. Bùi Anh Tuấn\par
+			\columnbreak
+			\textbf{Sinh viên thực hiện:}\par
+			Nguyễn Hiếu Thanh\\
+			MSSV: B1700039\\
+			Lớp: Sư phạm Toán học K43
+		\end{multicols}
+	\end{adjustwidth}
+	\vfill
+	{\large Cần Thơ, \the\year{}}
 \end{center}
-\end{adjustwidth}
-\vfill
-\begin{adjustwidth}{1cm}{-1cm}
-\begin{multicols}{2}\large
-	\textbf{Giảng viên hướng dẫn:}\par
-	ThS. Bùi Anh Tuấn\par
-	\columnbreak
-	\textbf{Sinh viên thực hiện:}\par
-	Nguyễn Hiếu Thanh\\
-	MSSV: B1700039\\
-	Lớp: Sư phạm Toán học K43
-\end{multicols}
-\end{adjustwidth}
-\vfill
-{\centering\large\textit{Cần Thơ, 2021}\par}
 \newpage
