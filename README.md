@@ -6,10 +6,8 @@
 
 **SV:** Nguyễn Hiếu Thanh
 
-**Đề tài:** Bước đầu ứng dụng trí tuệ nhân tạo vào dạy học Toán: AI Chatbot trong dạy học Toán 11 chương Tổ hợp, xác suất.
+**Đề tài:** Bước đầu ứng dụng trí tuệ nhân tạo vào dạy học Toán: Một nghiên cứu thực nghiệm trong Chương Tổ hợp và Xác suất lớp 11.
 
 ## Cấu trúc thư mục
 
-
 ## Nội dung chính
-
