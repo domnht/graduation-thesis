@@ -10,4 +10,20 @@
 
 ## Cấu trúc thư mục
 
+- **`chapters`**: Nội dung các chương.
+  - `opening.tex`: Mở đầu.
+  - `literature-review.tex`: Cơ sở lý luận.
+  - `build-the-api.tex`: Xây dựng API.
+  - `design-ai-chatbot.tex`: Thiết kế AI Chatbot.
+  - `experiment.tex`: Thực nghiệm.
+  - `concluding.tex`: Kết luận.
+- **`images`**: Hình ảnh sử dụng
+- **`pages`**: Các phần ít trang.
+  - `cover.tex`: Trang bìa.
+  - `preface.tex`: Lời cảm ơn.
+  - `table-of-contents.tex`: Mục lục, danh mục bảng/hình.
+- `config.tex`: Các thiết đặt tài liệu.
+- `main.tex`: Tệp tài liệu chính.
+- `references.bib`: Danh mục tài liệu tham khảo.
+
 ## Nội dung chính
