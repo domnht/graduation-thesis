@@ -17,7 +17,8 @@
   - `design-ai-chatbot.tex`: Thiết kế AI Chatbot.
   - `experiment.tex`: Thực nghiệm.
   - `concluding.tex`: Kết luận.
-- **`images`**: Hình ảnh sử dụng
+- **`images`**: Hình ảnh sử dụng.
+  - `ctu-logo.png`: Logo Đại học Cần Thơ.
 - **`pages`**: Các phần ít trang.
   - `cover.tex`: Trang bìa.
   - `preface.tex`: Lời cảm ơn.
