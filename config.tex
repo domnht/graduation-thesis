@@ -2,7 +2,7 @@
 \usepackage[utf8]{vietnam} % Text Encoder
 \usepackage{amsfonts,amsmath,amsthm,amssymb} % Math
 \usepackage{enumitem,multicol,multirow,booktabs,longtable,cellspace} % Layout
-\usepackage{tikz,graphicx,wrapfig,xcolor} % Graphing
+\usepackage{tikz,graphicx,wrapfig,xcolor,pgfplots} % Graphing
 \usepackage{ragged2e,changepage,fancyhdr} % Page setup
 \usepackage{titlesec} % Chapter title setting
 \usepackage{blindtext} % Lorem Ipsum... generator
@@ -32,6 +32,27 @@
 
 % Set image-path
 \graphicspath{ {images/} }
+
+% Config tikz
+\usetikzlibrary{calc}
+
+% Define new material colours
+\definecolor{mRed}{HTML}{f44336}
+\definecolor{mPink}{HTML}{e91e63}
+\definecolor{mPurple}{HTML}{9c27b0}
+\definecolor{mDeepPurple}{HTML}{673ab7}
+\definecolor{mIndigo}{HTML}{3f51b5}
+\definecolor{mBlue}{HTML}{2196f3}
+\definecolor{mCyan}{HTML}{00bcd4}
+\definecolor{mTeal}{HTML}{009688}
+\definecolor{mGreen}{HTML}{4caf50}
+\definecolor{mLime}{HTML}{cddc39}
+\definecolor{mYellow}{HTML}{ffeb3b}
+\definecolor{mAmber}{HTML}{ffc107}
+\definecolor{mOrange}{HTML}{ff9800}
+\definecolor{mDeepOrange}{HTML}{ff5722}
+\definecolor{mBrown}{HTML}{795548}
+\definecolor{mBlueGrey}{HTML}{607d8b}
 
 % Equations Prefer
 \everymath{\displaystyle}
