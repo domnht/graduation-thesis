@@ -2,9 +2,9 @@
 \usepackage[utf8]{vietnam} % Text Encoder
 \usepackage{amsfonts,amsmath,amsthm,amssymb} % Math
 \usepackage{enumitem,multicol,multirow,booktabs,longtable,cellspace} % Layout
-\usepackage{tikz,graphicx,wrapfig,xcolor,pgfplots} % Graphing
+\usepackage{tikz,graphicx,wrapfig,xcolor} % Graphing pgfplots
 \usepackage{ragged2e,changepage,fancyhdr} % Page setup
-\usepackage{titlesec} % Chapter title setting
+\usepackage{titlesec,caption} % Chapter title setting
 \usepackage{blindtext} % Lorem Ipsum... generator
 \usepackage{listings} % Code Output
 \usepackage[hidelinks,unicode]{hyperref}
@@ -14,7 +14,7 @@
 
 % Text Spacing
 \renewcommand{\baselinestretch}{1.1}
-\setlength{\parindent}{0pt}
+\setlength{\parindent}{1cm}
 \setlength{\parskip}{4pt}
 
 % Cell spacing
@@ -26,6 +26,15 @@
 {\centering\normalfont\huge\bfseries}{\centering\chaptertitlename\ \thechapter}{0pt}{\Huge} % pattern
 \titlespacing{\chapter}{0pt}{0pt}{12pt} % spacing with other
 % Middle number (-24pt) is space-before chapter-title
+
+% Caption setup
+\captionsetup{
+	format=plain,
+	justification=centering,
+	labelsep=period,
+	labelfont=bf,
+	font=small,
+}
 
 % Highlight hyperlink of table of contents
 % \hypersetup{linktoc=all}
