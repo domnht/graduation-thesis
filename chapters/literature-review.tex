@@ -1,5 +1,4 @@
 \chapter{Cơ sở lý luận}
-% \addcontentsline{toc}{chapter}{Mở đầu}
 
 \section{Trí tuệ nhân tạo (Artificial Intelligence – AI)}
 (\cite{nguyen2018tri})
@@ -24,54 +23,52 @@ Tại sao Chatbot được xem là AI?\par
 
 \subsection{Nền tảng Chatfuel}
 
-\section{Lý thuyết ứng đáp câu hỏi}
+\section{Lý thuyết Ứng đáp Câu hỏi}
 Lý thuyết Ứng đáp Câu hỏi (Item Response Theory - IRT) là một lý thuyết của khoa học về đo lường trong giáo dục, ra đời từ nửa sau của thế kỷ XX và phát triển mạnh mẽ cho đến nay. Trước đó, Lý thuyết Trắc nghiệm cổ điển (Clasical Test Theory – CTT), ra đời từ khoảng cuối thế kỷ XIX và hoàn thiện vào khoảng thập niên 1970, đã có nhiều đóng góp quan trọng cho hoạt động đánh giá trong giáo dục, nhưng cũng thể hiện một số hạn chế. Các nhà tâm lý học (psychometricians) cố gắng xây dựng một lý thuyết hiện đại sao cho khắc phục được các hạn chế đó. Lý thuyết trắc nghiệm hiện đại được xây dựng dựa trên mô hình toán học, đòi hỏi nhiều tính toán, nhưng nhờ sự tiến bộ vượt bậc của công nghệ tính toán bằng máy tính điện tử vào cuối thế kỷ XX – đầu thế kỷ XXI, nên nó đã phát triển nhanh chóng và đạt được những thành tựu quan trọng.\par
-Trong phần này, ta quy ước gọi một con người có thuộc tính cần đo lường là thí sinh (person – TS) và một đơn vị của công cụ để đo lường (test) là câu hỏi (item – CH). Để đơn giản hóa cho mô hình nghiên cứu xuất phát có thể đưa ra các giả thiết sau đây:\par
+Trong phần này, ta quy ước gọi một con người có thuộc tính cần đo lường là \textit{thí sinh} (person – TS) và một đơn vị của công cụ để đo lường (test) là \textit{câu hỏi} (item – CH). Để đơn giản hóa cho mô hình nghiên cứu xuất phát có thể đưa ra các giả thiết sau đây:\par
 \begin{itemize}
 	\item Tính đơn chiều: \textit{Năng lực tiềm ẩn} (latent trait) cần đo chỉ có một chiều (unidimensionality), hoặc ta chỉ đo một chiều của năng lực đó.
 	\item Tính độc lập: Các CH là \textit{độc lập địa phương} (local independence), tức là việc trả lời một CH không ảnh hưởng đến các CH khác.
-\end{itemize}
+\end{itemize}\par
 Khi thỏa mãn hai giả thiết nêu trên thì không gian năng lực tiềm ẩn đầy đủ chỉ chứa một năng lực. Khi đó, người ta giả định là có một \textit{hàm đặc trưng câu hỏi} (Item Characteristic Function – ICF) phản ánh mối quan hệ giữa các biến không quan sát được (năng lực của TS) và các biến quan sát được (việc trả lời CH). Đồ thị biểu diễn hàm đó được gọi là \textit{đường cong đặc trưng câu hỏi} (Item Characteristic Curve – ICC).\par
 Trong phần này, ta chỉ khảo sát CH nhị phân, tức là CH mà câu trả lời chỉ có 2 mức: 0 (sai) và 1 (đúng).
 
 \subsection{Các mô hình đường cong đặc trưng của câu hỏi nhị phân}
 \subsubsection{Đường cong đặc trưng câu hỏi nhị phân, một tham số (mô hình Rasch)}
-Mô hình Rasch chỉ biểu diễn CH qua tham số \textit{độ khó} của CH. Phát biểu sau đây của Rasch có giá trị như một tiền đề làm cơ sở cho mô hình của ông:
-\begin{flushright}
-\textit{"Một người có năng lực cao hơn một người khác thì xác suất để người đó trả lời đúng một câu hỏi bất kì phải lớn hơn xác suất của người sau; cũng tương tự như vậy, một câu hỏi khó hơn một câu hỏi khác có nghĩa là xác suất để một người bất kì trả lời đúng câu hỏi đó phải bé hơn xác suất để trả lời đúng câu hỏi sau."}\\(\cite{rasch1993probabilistic})
-\end{flushright}
+Mô hình Rasch chỉ biểu diễn CH qua tham số \textit{độ khó} của CH. Phát biểu sau đây của Rasch có giá trị như một tiền đề làm cơ sở cho mô hình của ông:\par
+{\raggedleft\textit{"Một người có năng lực cao hơn một người khác thì xác suất để người đó trả lời đúng một câu hỏi bất kì phải lớn hơn xác suất của người sau; cũng tương tự như vậy, một câu hỏi khó hơn một câu hỏi khác có nghĩa là xác suất để một người bất kì trả lời đúng câu hỏi đó phải bé hơn xác suất để trả lời đúng câu hỏi sau."}\\(\cite{rasch1993probabilistic})\par}
 Với phát biểu trên, có thể thấy xác suất để một TS trả lời đúng một CH nào đó phụ thuộc vào tương quan giữa năng lực của TS và độ khó của CH. Chọn $\Theta$ để biểu diễn năng lực của TS, và $\beta$ để biểu diễn độ khó của CH. Gọi $P$ là xác suất trả lời đúng CH, xác suất đó sẽ phụ thuộc vào tương quan giữa $\Theta$ và $\beta$ theo một cách nào đó, do vậy ta có thể biểu diễn:
 \begin{equation}\label{eqn:eqn1-f(P)}
-	f(P)=\frac{\Theta}{\beta}
+	f(P)=\frac{\Theta}{\beta},
 \end{equation}
 trong đó $f$ là một hàm nào đó của xác suất trả lời đúng.\par
 Lấy logarit tự nhiên của (\ref{eqn:eqn1-f(P)}) ta được:
 \begin{equation}\label{eqn:eqn2-lnf(P)}
-	\ln f(P)=\ln\left(\frac{\Theta}{\beta}\right)=\ln\Theta-\ln\beta=\theta-b
-\end{equation}
+	\ln f(P)=\ln\left(\frac{\Theta}{\beta}\right)=\ln\Theta-\ln\beta=\theta-b.
+\end{equation}\par
 Tiếp đến, để đơn giản, khi xét mô hình trắc nghiệm nhị phân, Rasch chọn hàm $f$ chính là biểu thức \textit{mức được thua} (odds) hoặc \textit{khả năng thực hiện đúng} (likelyhood ratio), tức là $f(P)=\frac{P}{1-P}$, qua đó biểu diễn tỉ số của khả năng xảy ra sự kiện khẳng định so với khả năng xảy ra sự kiện phủ định. Như vậy:
 \begin{equation}\label{eqn:eqn3-lnP/(1-P)}
-	\ln\frac{P}{1-P}=\theta-b
-\end{equation}
+	\ln\frac{P}{1-P}=\theta-b.
+\end{equation}\par
 Biểu thức (\ref{eqn:eqn2-lnf(P)}) được gọi là \textit{logit} (log odds unit).\par
 Từ (\ref{eqn:eqn3-lnP/(1-P)}) ta có thể viết $$\frac{P}{1-P}=\mathbf{e}^{\theta-b}.$$
 Suy ra
 \begin{equation}\label{eqn:eqn4-P(theta)}
-	P(\theta)=\frac{\mathbf{e}^{\theta-b}}{1+\mathbf{e}^{\theta-b}}
-\end{equation}
+	P(\theta)=\frac{\mathbf{e}^{\theta-b}}{1+\mathbf{e}^{\theta-b}}.
+\end{equation}\par
 Hàm có dạng như biểu thức (\ref{eqn:eqn4-P(theta)}) thuộc loại hàm \textit{logistic}. Biểu thức (\ref{eqn:eqn4-P(theta)}) chính là hàm đặc trưng của mô hình ứng đáp CH một tham số, hay còn gọi là \textit{mô hình Rasch}, ta có thể biểu diễn như hình \ref{fig:fig1-P(theta)} (khi cho $b=0$):
-\begin{figure}[h]\centering\footnotesize
+\begin{figure}[ht]\centering\footnotesize
 	\begin{tikzpicture}[scale=0.8]
 		% Graph
 		\draw [ultra thick, domain=-4.5:4.5, mGreen] plot (\x, {5 * exp(\x) / (1+exp(\x))});
 		% Oxy system
 		\draw [thick, ->] (-4.5,0) -- (4.5,0) node [above] {$\theta$};
-		\draw [thick, ->] (0,0) -- (0,5) node [right] {$P$};
+		\draw [thick, ->] (0,0) -- (0,5.5) node [right] {$P$};
 		% Numbering on axist
 		\foreach \x in {-4,-3,-2,-1,1,2,3,4}
-			\draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
-		\foreach \x in {0.2,0.4,0.6,0.8}
-			\draw (-0.1,5*\x) -- (0.1,5*\x) node [right] {\x};
+			\draw (\x,0.1) -- (\x,-0.1) node [below] {$\x$};
+		\foreach \x in {0.2,0.4,0.6,0.8,1.0}
+			\draw (-0.1,5*\x) -- (0.1,5*\x) node [right] {$\x$};
 	\end{tikzpicture}
 	\caption{Đường cong ĐTCH một tham số (mô hình Rasch)}
 	\label{fig:fig1-P(theta)}
@@ -81,81 +78,188 @@ Hàm có dạng như biểu thức (\ref{eqn:eqn4-P(theta)}) thuộc loại hàm
 Đối với mô hình Rasch, chỉ một tham số của CH được sử dụng, đó là độ khó, nên được gọi là \textit{mô hình một tham số}. Tuy nhiên, trong trắc nghiệm cổ điển, người ta còn sử dụng một tham số quan trọng thứ hai đặc trưng cho CH là \textit{độ phân biệt}. Do đó nhiều nhà tâm lý học mong muốn đưa độ phân biệt vào mô hình ĐTCH.\par
 Từ công thức (\ref{eqn:eqn4-P(theta)}), ta thấy rõ khi trục hoành biểu diễn theo logit, độ dốc phần giữa đường cong được quyết định bởi hệ số ở số mũ của $\mathbf{e}$, mà ở công thức (\ref{eqn:eqn4-P(theta)}), hệ số đó bằng $1$. Từ đó, người ta đưa thêm tham số $a$ liên quan đến độ phân biệt của CH vào hệ số ở số mũ của $\mathbf{e}$, ta được:
 \begin{equation}\label{eqn:eqn5-P(theta)}
-	P(\theta)=\frac{\mathbf{e}^{a(\theta-b)}}{1+\mathbf{e}^{a(\theta-b)}}
-\end{equation}
-(\ref{eqn:eqn5-P(theta)}) chính là hàm ĐTCH hai tham số. Hệ số $a$ biểu diễn độ dốc của đường cong ĐTCH tại điểm có hoành độ $\theta=b$ và tung độ $P(\theta)=0.5$.\par
+	P(\theta)=\frac{\mathbf{e}^{a(\theta-b)}}{1+\mathbf{e}^{a(\theta-b)}}.
+\end{equation}\par
+(\ref{eqn:eqn5-P(theta)}) chính là hàm ĐTCH 2 tham số. Hệ số $a$ biểu diễn độ dốc của đường cong ĐTCH tại điểm có hoành độ $\theta=b$ và tung độ $P(\theta)=0.5$.\par
 Có thể thấy rõ độ dốc của đường cong ĐTCH phản ánh độ phân biệt của CH. Thật vậy, khi cho một biến đổi vi phân $\Delta\theta$ của năng lực thì sẽ thu được một biến đổi vi phân $\Delta P$ của xác suất trả lời đúng, giá trị $\Delta P$ này lớn hơn trên đường cong ĐTCH có độ dốc lớn so với trên đường cong có độ dốc nhỏ. Nói cách khác, đối với CH đã cho một sự khác biệt nhỏ về năng lực của TS cũng gây ra một độ chênh lớn về xác suất trả lời đúng. Đó chính là ý nghĩa của độ phân biệt.\par
-Hàm ĐTCH 2 tham số trình bày trên đây và hàm ĐTCH 1 tham số theo mô hình Rasch có cùng dạng thức, chỉ khác nhau ở giá trị tham số $a$ (đối với mô hình 1 tham số $a=1$). Hình \ref{fig:fig2-P(theta)} biểu diễn các đường cong ĐTCH theo mô hình 2 tham số với $b=0$, và $a$ lần lượt bằng {\color{mGreen}$0.5$}; {\color{mTeal}$1.0$}; {\color{mBlue}$1.5$}; {\color{mIndigo}$2.0$}; {\color{mPurple}$3.0$} nên độ dốc của các đường cong ở đoạn giữa tăng dần.\par
-\begin{figure}[h]\centering\footnotesize
+Hàm ĐTCH 2 tham số trình bày trên đây và hàm ĐTCH 1 tham số theo mô hình Rasch có cùng dạng thức, chỉ khác nhau ở giá trị tham số $a$ (đối với mô hình 1 tham số $a=1$). Hình \ref{fig:fig2-P(theta)} biểu diễn các đường cong ĐTCH theo mô hình 2 tham số với $b=0$, và $a$ lần lượt bằng {\color{mTeal}$0.5$}; {\color{mOrange}$1.0$}; {\color{mBlue}$1.5$}; {\color{mRed}$2.0$}; {\color{mPurple}$3.0$} nên độ dốc của các đường cong ở đoạn giữa tăng dần.\par
+\begin{figure}[ht]\centering\footnotesize
 	\begin{tikzpicture}[scale=0.8]
 		% Graph
 		\draw [ultra thick, mPurple] (2.5,5) -- (4.5,5);
 		\draw [ultra thick, domain=-4.5:2.5, mPurple] plot (\x, {5 * exp(3.0*\x) / (1+exp(3.0*\x))}) node [above] {$3.0$};
-		\draw [ultra thick, mIndigo] (3.5,5) -- (4.5,5);
-		\draw [ultra thick, domain=-4.5:3.5, mIndigo] plot (\x, {5 * exp(2.0*\x) / (1+exp(2.0*\x))}) node [above] {$2.0$};
+		\draw [ultra thick, mRed] (3.5,5) -- (4.5,5);
+		\draw [ultra thick, domain=-4.5:3.5, mRed] plot (\x, {5 * exp(2.0*\x) / (1+exp(2.0*\x))}) node [above] {$2.0$};
 		\draw [ultra thick, domain=-4.5:4.5, mBlue] plot (\x, {5 * exp(1.5*\x) / (1+exp(1.5*\x))}) node [above] {$1.5$};
-		\draw [ultra thick, domain=-4.5:4.5, mTeal] plot (\x, {5 * exp(\x) / (1+exp(\x))}) node [right] {$1.0$};
-		\draw [ultra thick, domain=-4.5:4.5, mGreen] plot (\x, {5 * exp(0.5*\x) / (1+exp(0.5*\x))}) node [right] {$0.5$};
+		\draw [ultra thick, domain=-4.5:4.5, mOrange] plot (\x, {5 * exp(\x) / (1+exp(\x))}) node [right] {$1.0$};
+		\draw [ultra thick, domain=-4.5:4.5, mTeal] plot (\x, {5 * exp(0.5*\x) / (1+exp(0.5*\x))}) node [right] {$0.5$};
 		% Oxy system
 		\draw [thick, ->] (-4.5,0) -- (4.5,0) node [above] {$\theta$};
-		\draw [thick, ->] (0,0) -- (0,5) node [right] {$P$};
+		\draw [thick, ->] (0,0) -- (0,5.5) node [right] {$P$};
 		% Numbering on axist
 		\foreach \x in {-4,-3,-2,-1,1,2,3,4}
-			\draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
-		\foreach \x in {0.2,0.4,0.6,0.8}
-			\draw (-0.1,5*\x) -- (0.1,5*\x) node [right] {\x};
+			\draw (\x,0.1) -- (\x,-0.1) node [below] {$\x$};
+		\foreach \x in {0.2,0.4,0.6,0.8,1.0}
+			\draw (-0.1,5*\x) -- (0.1,5*\x) node [right] {$\x$};
 	\end{tikzpicture}
-	\caption{Các đường cong ĐTCH hai tham số với các giá trị $a$ khác nhau ($b=0$)}
+	\caption{Các đường cong ĐTCH 2 tham số với các giá trị $a$ khác nhau ($b=0$)}
 	\label{fig:fig2-P(theta)}
 \end{figure}\par
 
 \subsubsection{Mô hình đường cong đặc trưng của câu hỏi ba tham số}
 Các hàm ĐTCH (\ref{eqn:eqn4-P(theta)}) và (\ref{eqn:eqn5-P(theta)}) chúng ta thấy tung độ tiệm cận trái của chúng đề có giá trị bằng $0$, điều đó có nghĩa là nếu TS có năng lực rất thấp, tức $\Theta\rightarrow 0$ và $\theta\rightarrow -\infty$, thì xác suất trả lời đúng CH $P(\theta)$ cũng bằng $0$.\par
 Tuy nhiên trong thực tế triển khai trắc nghiệm chúng ta đều biết có khi năng lực của TS rất thấp nhưng do đoán mò hoặc trả lời hú họa một CH nên TS vẫn có một khả năng nào đó trả lời đúng CH. Trong trường hợp đã nêu thì tung độ tiệm cận trái của đường cong không phải bằng $0$ mà bằng một giá trị xác định $c$ nào đó, với $0<c<1$.\par
-Từ thực tế nêu trên, người ta có thể đưa thêm tham số $c$ phản ánh hiện tượng đoán mò vào hàm ĐTCH để thu được tung độ tiệm cận trái của đường cong khác 0. Kết quả sẽ thu được biểu thức:
-\begin{equation}\label{eqn:eqn6-P(theta)}
-	P(\theta)=c+(1-c)\frac{\mathbf{e}^{a(\theta-b)}}{1+\mathbf{e}^{a(\theta-b)}}
-\end{equation}
+Từ thực tế nêu trên, người ta có thể đưa thêm tham số $c$ phản ánh hiện tượng đoán mò vào hàm ĐTCH để thu được tung độ tiệm cận trái của đường cong khác 0. Kết quả sẽ thu được biểu thức: $$P(\theta)=c+(1-c)\frac{\mathbf{e}^{a(\theta-b)}}{1+\mathbf{e}^{a(\theta-b)}}.$$\par
 Rõ ràng khi $\theta\rightarrow -\infty$, hàm $P(\theta)\rightarrow c$. Trong trường hợp mô hình đường cong ĐTCH 3 tham số khi $\theta=b$ ta có $P(\theta)=\frac{c+1}{2}$.\par
 Hình \ref{fig:fig3-P(theta)} biểu diễn các đường cong ĐTCH theo mô hình 3 tham số với $a=2$ và các tham số $c$ có giá trị bằng $0.1$ và $0.2$.
-\begin{figure}[h]\centering\footnotesize
+\begin{figure}[ht]\centering\footnotesize
 	\begin{tikzpicture}[scale=0.8]
 		% Graph
-		\draw [ultra thick, domain=4.5:-4.5, mGreen] plot (\x, {5 * (0.1 + (1-0.1)*exp(2.0*\x) / (1+exp(2.0*\x)))}) node [left] {$0.1$};
-		\draw [ultra thick, domain=4.5:-4.5, mBlue ] plot (\x, {5 * (0.2 + (1-0.2)*exp(2.0*\x) / (1+exp(2.0*\x)))}) node [left] {$0.2$};
+		\draw [ultra thick, domain=4.5:-4.5, mTeal] plot (\x, {5 * (0.1 + (1-0.1)*exp(2.0*\x) / (1+exp(2.0*\x)))}) node [left] {$0.1$};
+		\draw [ultra thick, domain=4.5:-4.5, mOrange] plot (\x, {5 * (0.2 + (1-0.2)*exp(2.0*\x) / (1+exp(2.0*\x)))}) node [left] {$0.2$};
 		% Oxy system
 		\draw [thick, ->] (-4.5,0) -- (4.5,0) node [above] {$\theta$};
-		\draw [thick, ->] (0,0) -- (0,5) node [right] {$P$};
+		\draw [thick, ->] (0,0) -- (0,5.5) node [right] {$P$};
 		% Numbering on axist
 		\foreach \x in {-4,-3,-2,-1,1,2,3,4}
-			\draw (\x,0.1) -- (\x,-0.1) node [below] {\x};
-		\foreach \x in {0.2,0.4,0.6,0.8}
-			\draw (-0.1,5*\x) -- (0.1,5*\x) node [right] {\x};
+			\draw (\x,0.1) -- (\x,-0.1) node [below] {$\x$};
+		\foreach \x in {0.2,0.4,0.6,0.8,1.0}
+			\draw (-0.1,5*\x) -- (0.1,5*\x) node [right] {$\x$};
 	\end{tikzpicture}
-	\caption{Các đường cong ĐTCH 3 tham số với $a=2$, $c=0.1$ và $0.2$ }
+	\caption{Các đường cong ĐTCH 3 tham số với $a=2$, $c=0.1$ và $0.2$}
 	\label{fig:fig3-P(theta)}
 \end{figure}\par
 Mô hình đường cong ĐTCH 2 và 3 tham số do Birnbaum đề xuất đầu tiên, nên đôi khi được gọi là các mô hình Birnbaum (\cite{birnbaum1968some}).
 
-\subsubsection{Mô hình đặc trưng của câu hỏi dạng đường cong tích lũy vòng chuẩn}
+\subsubsection{Mô hình đặc trưng của câu hỏi dạng đường cong tích lũy vòm chuẩn}
 Vì phân bố chuẩn xác suất là nền tảng của lý thuyết thống kê, nên từ lâu các nhà tâm lý học đã dùng \textit{đường cong tích lũy vòm chuẩn} (normal ogive) làm mô hình để nghiên cứu việc trả lời CH. Tính hợp lý của việc sử dụng đường cong tích lũy vòm chuẩn làm đường cong ĐTCH được biện minh cả trên quan điểm thực dụng lẫn lý thuyết.\par
 Biểu thức đường cong tích lũy vòm chuẩn đối với mô hình 2 tham số có dạng:
-\begin{equation}\label{eqn:eqn7-P(theta)}
-	P(\theta)=\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{a(\theta-b)}\mathbf{e}^{-\frac{x^2}{2}}\mathrm{d}x
+\begin{equation}\label{eqn:eqn6-P(theta)}
+	P(\theta)=\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{a(\theta-b)}\mathbf{e}^{-\frac{x^2}{2}}\mathrm{d}x,
 \end{equation}
 và đối với mô hình 3 tham số:
-\begin{equation}\label{eqn:eqn8-P(theta)}
-	P(\theta)=c+(1-c)\cdot\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{a(\theta-b)}\mathbf{e}^{-\frac{x^2}{2}}\mathrm{d}x
-\end{equation}
-Biểu thức (\ref{eqn:eqn7-P(theta)}) và (\ref{eqn:eqn8-P(theta)}) cho thấy các hàm này là hàm xác suất tích lũy tính theo mật độ xác suất của phân bố chuẩn. Đó là các hàm của biến năng lực $\theta$ với các tham số $a$, $b$, $c$.\par
-Khi khảo sát quan hệ định lượng giữa các mô hình ĐTCH có dạng đường cong tích lũy vòm chuẩn và mô hình ĐTCH có dạng logistic, nếu nhân tham số biểu thị độ dốc $a$ của hàm logistic cho hệ số $D=1,702$ và sử dụng như ở biểu thức (\ref{eqn:eqn5-P(theta)}) thì sự sai khác tuyệt đối giữa các xác suất biểu diễn bởi biểu thức hàm dạng logistic (\ref{eqn:eqn5-P(theta)}) và biểu thức hàm dạng tích lũy vòm chuẩn (\ref{eqn:eqn7-P(theta)}) sẽ bé hơn $0.01$ trên cả thang $\theta$, nói cách khác, hai đường cong gần như trùng nhau.\par
+\begin{equation}\label{eqn:eqn7-P(theta)}
+	P(\theta)=c+(1-c)\cdot\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{a(\theta-b)}\mathbf{e}^{-\frac{x^2}{2}}\mathrm{d}x.
+\end{equation}\par
+Biểu thức (\ref{eqn:eqn6-P(theta)}) và (\ref{eqn:eqn7-P(theta)}) cho thấy các hàm này là hàm xác suất tích lũy tính theo mật độ xác suất của phân bố chuẩn. Đó là các hàm của biến năng lực $\theta$ với các tham số $a$, $b$, $c$.\par
+Khi khảo sát quan hệ định lượng giữa các mô hình ĐTCH có dạng đường cong tích lũy vòm chuẩn và mô hình ĐTCH có dạng logistic, nếu nhân tham số biểu thị độ dốc $a$ của hàm logistic cho hệ số $D=1,702$ và sử dụng như ở biểu thức (\ref{eqn:eqn5-P(theta)}) thì sự sai khác tuyệt đối giữa các xác suất biểu diễn bởi biểu thức hàm dạng logistic (\ref{eqn:eqn5-P(theta)}) và biểu thức hàm dạng tích lũy vòm chuẩn (\ref{eqn:eqn6-P(theta)}) sẽ bé hơn $0.01$ trên cả thang $\theta$, nói cách khác, hai đường cong gần như trùng nhau.\par
 Như vậy, đối với mọi ứng dụng thực tiễn hai mô hình hàm ĐTCH dạng logistic và dạng tích lũy vòm chuẩn là như nhau. Trong khi đó biểu thức toán học của hàm logistic đơn giản hơn nhiều và tốc độ tính toán thực tế đối với chúng giảm nhiều vì không phải tính tích phân, do đó thậm chí có thể tính chúng trên các máy tính giản đơn. Vì lý do đó, người ta thiên về sử dụng mô hình các đường cong logistic hơn là mô hình các đường cong tích lũy vòm chuẩn (\cite{thiep2011do}).
-\subsection{Ước lượng các tham số của câu hỏi trắc nghiệm}
-\subsection{Điểm thực – đường cong đặc trưng của đề trắc nghiệm}
-\subsection{Ước lượng năng lực của thí sinh}
 
-% Using \texttt{biblatex} you can display bibliography divided into sections, 
-% depending of citation type. 
-% Let's cite! Einstein's journal paper \cite{bai-bao-1} and the Dirac's 
-% book \cite{sach-1} are physics related items. 
-% Next, \textit{The \LaTeX\ Companion} book \cite{website-1}, the Donald Knuth's website \cite{sach-2}; but the others Donald Knuth's items \cite{bai-bao-1} are dedicated to programming.
+\subsection{Quy trình ước lượng các tham số của câu hỏi trắc nghiệm}
+Trong các mô hình IRT, xác suất để trả lời đúng CH phụ thuộc vào năng lực $\theta$ của TS và các tham số đặc trưng cho CH. Tuy nhiên, cả hai loại tham số: năng lực của TS ($\theta$) và đặc trưng của CH ($a$, $b$, $c$), đều không biết trước. Cái có thể biết được là việc trả lời các CH của các TS. Vấn đề của việc ước lượng là xác định các giá trị tham số năng lực $\theta$ của từng TS và các tham số $a$, $b$, $c$ của từng CH từ các kết quả ứng đáp CH. Để áp dụng IRT cho số liệu trắc nghiệm, công việc đầu tiên và quan trọng nhất chính là ước lượng các tham số đặc trưng cho mô hình ứng đáp CH đã chọn. Thành công của áp dụng IRT là đứa ra được các quy trình thích hợp để ước lượng các tham số này.\par
+Trước hết ta xem xét việc ước lượng tham số đặc trưng cho CH trắc nghiệm. Khi ước lượng các tham số này, ta giả thiết là đã biết các điểm năng lực của TS.\par
+Xét tập hợp $n$ TS làm một ĐTN có $m$ CH. Các điểm năng lực của TS phân bố dọc theo một thang đo năng lực. Xét một CH\textsubscript{i} xác định thứ $i$. Ta chia tập hợp TS trên thành $I$ nhóm trên thang đo năng lực, sao cho các TS trong cùng một nhóm $j$ nào đó có cùng một năng lực $\theta_j$, cụ thể là có $n_j$ TS trong nhóm $j$, với $j=\overline{1,I}$. Trong nhóm $j$ giả sử có $r_j$ TS trả lời đúng câu hỏi CH$_i$ đã cho. Vậy ở mức năng lực $\theta_j$, tỉ lệ trả lời đúng CH$_i$ quan sát được là $p_j(\theta_j)=\frac{r_j}{n_j}$, đó là ước lượng xác suất trả lời đúng CH$_i$ ở mức năng lực đã cho. Từ đó có thể thu được $r_j$ và tính được $p_j(\theta_j)$ cho mỗi mức năng lực $j$ dọc theo thang năng lực đã cho. Có thể biểu diễn các tỉ lệ trả lời đúng đối với mỗi nhóm năng lực như ở hình \ref{fig:fig4-r_j-p_j(theta_j)}.
+\begin{figure}[h]\centering\footnotesize
+	\begin{tikzpicture}[scale=1.0]
+		% Points
+		\foreach \point in {
+			(-3.1,.19), (-3,.15), (-2.9,.25), (-2.75,.32), (-2.7,.24), (-2.5,.5), (-2.4,.4), (-2.35,.45), (-2.1,.7), (-1.97,.75), (-1.87,.74), (-1.8,.97), (-1.7,1), (-1.5, 1.3), (-1.69, 1.1), (-1.61, 1.37), (-1.49, 1.47), (-1.45, 1.34), (-1.29, 1.68), (-1.16, 1.87), (-1.05, 1.98), (-0.94, 2.25), (-0.9, 2.37), (-0.72, 2.4), (-0.73, 2.78), (-0.63, 2.75), (-0.53, 3.02), (-0.46, 3.14), (-0.36, 3.46), (-0.23, 3.57), (-0.03, 3.4), (-0.09, 3.56), (0.16, 3.68), (0.23, 3.94), (0.37, 4.22), (0.43, 4.28), (0.55, 4.26), (0.71, 4.62), (0.85, 4.34), (0.92, 4.47), (1.16, 4.67), (1.24, 4.65), (1.35, 4.57), (1.44, 4.89), (1.56, 4.75), (1.66, 4.8), (1.77, 4.92), (1.91, 4.9), (2.07, 4.9), (2.12, 4.93), (2.21, 4.91), (2.45, 4.88), (2.56, 4.9), (2.68, 4.89), (2.82, 4.89), (2.95, 5.01)
+			}
+			\fill [mTeal] \point circle [radius=1.5pt];
+		% Oxy system
+		\draw [thick, ->] (-3.25,0) -- (3.25,0) node [above] {$\theta$};
+		\draw [thick, ->] (0,0) -- (0,5.5) node [right] {$P$};
+		% Numbering on axist
+		\foreach \x in {-3,-2,-1,1,2,3}
+			\draw (\x,0.1) -- (\x,-0.1) node [below] {$\x$};
+		\foreach \x in {0.2,0.4,0.6,0.8,1}
+			\draw (-0.1,5*\x) -- (0.1,5*\x) node [right] {$\x$};
+	\end{tikzpicture}
+	\caption{Minh họa các tỉ lệ trả lời đúng ứng với mỗi nhóm năng lực}
+	\label{fig:fig4-r_j-p_j(theta_j)}
+\end{figure}\par
+Nhiệm vụ được đặt ra là tìm một đường cong ĐTCH trùng khớp tốt nhất với các tỷ số trả lời đúng CH quan sát được. Muốn vậy, trước hết ta phải chọn một mô hình đường cong sao cho phù hợp. Quy trình sử dụng để tìm đường cong trùng khớp được dựa trên thuật toán\textit{ước lượng theo biến cố hợp lý cực đại} (maximum likelyhood estimation).\par 
+Trước hết, người ta cho các giá trị tiên nghiệm (a priory) của các tham số đường cong, chẳng hạn $b=0.0$ và $a=1.0$ đối với mô hình hàm ĐTCH 2 tham số. Sử dụng các ước lượng đó để tính các giá trị $P(\theta_j)$ đối với mọi nhóm năng lực nhờ công thức ứng với mô hình đường cong đã chọn. Sau đó theo một thuật toán xác định như đã nêu trên, người ta điều chỉnh các tham số ước lượng của đường cong ĐTCH sao cho đạt được một sự trùng khớp tốt hơn giữa đường cong ĐTCH tính theo các tham số ước lượng và các tỷ lệ trả lời đúng quan sát được. Quá trình tính lặp để điều chỉnh như vậy sẽ tiếp tục cho đến khi sự điều chỉnh không làm tăng mức trùng khớp một cách đáng kể. Lúc đó thì dừng chương trình tính lặp và các giá trị $a$ và $b$ đạt được cuối cùng chính là giá trị tham số của đường cong ĐTCH ước lượng được. Với các giá trị $a$ và $b$ thu được ta có thể tìm xấp xỉ đường cong $P(\theta)$ theo mô hình đã chọn, đó là đường cong trùng khớp tốt nhất với số liệu quan sát. Ví dụ trên hình \ref{fig:fig5-r_j-p_j(theta_j)-P(theta)} biểu diễn đường cong ĐTCH 2 tham số trùng hớp tốt nhất với số liệu quan sát được ở hình \ref{fig:fig4-r_j-p_j(theta_j)}.
+\begin{figure}[h]\centering\footnotesize
+	\begin{tikzpicture}[scale=1.0]
+		% Graph
+		\draw [ultra thick, domain=-3.25:3.25, mOrange] plot (\x, {5 * exp(1.41*(\x+0.76)) / (1+exp(1.41*(\x+0.76)))});
+		\draw [black] (3,4.25) node [above] {$a=1.41$;};
+		\draw [black] (3,4.25) node [below] {$b=-0.76$};
+		\foreach \point in {
+			(-3.1,.19), (-3,.15), (-2.9,.25), (-2.75,.32), (-2.7,.24), (-2.5,.5), (-2.4,.4), (-2.35,.45), (-2.1,.7), (-1.97,.75), (-1.87,.74), (-1.8,.97), (-1.7,1), (-1.5, 1.3), (-1.69, 1.1), (-1.61, 1.37), (-1.49, 1.47), (-1.45, 1.34), (-1.29, 1.68), (-1.16, 1.87), (-1.05, 1.98), (-0.94, 2.25), (-0.9, 2.37), (-0.72, 2.4), (-0.73, 2.78), (-0.63, 2.75), (-0.53, 3.02), (-0.46, 3.14), (-0.36, 3.46), (-0.23, 3.57), (-0.03, 3.4), (-0.09, 3.56), (0.16, 3.68), (0.23, 3.94), (0.37, 4.22), (0.43, 4.28), (0.55, 4.26), (0.71, 4.62), (0.85, 4.34), (0.92, 4.47), (1.16, 4.67), (1.24, 4.65), (1.35, 4.57), (1.44, 4.89), (1.56, 4.75), (1.66, 4.8), (1.77, 4.92), (1.91, 4.9), (2.07, 4.9), (2.12, 4.93), (2.21, 4.91), (2.45, 4.88), (2.56, 4.9), (2.68, 4.89), (2.82, 4.89), (2.95, 5.01)
+		}
+			\fill [mTeal] \point circle [radius=1.5pt];
+		% Oxy system
+		\draw [thick, ->] (-3.25,0) -- (3.25,0) node [above] {$\theta$};
+		\draw [thick, ->] (0,0) -- (0,5.5) node [right] {$P$};
+		% Numbering on axist
+		\foreach \x in {-3,-2,-1,1,2,3}
+			\draw (\x,0.1) -- (\x,-0.1) node [below] {$\x$};
+		\foreach \x in {0.2,0.4,0.6,0.8,1.0}
+			\draw (-0.1,5*\x) -- (0.1,5*\x) node [right] {$\x$};
+	\end{tikzpicture}
+	\caption{Đường cong ĐTCH 2 tham số trùng khớp tốt nhất với số liệu}
+	\label{fig:fig5-r_j-p_j(theta_j)-P(theta)}
+\end{figure}\par
+Một câu hỏi quan trọng liên quan đến việc ước lượng tham số, đó là khi nào thì có thể xem một đường cong ĐTCH cụ thể là trùng khớp với số liệu trả lời một CH. Sự phù hợp giữa các tỷ số trả lời quan sát với các số liệu tính toán từ đường cong ĐTCH có thể xem là trùng khớp được đánh giá bằng chỉ số trùng khớp tốt \textit{Chi-bình phương} (Chi-square goodness-of-fit index). Chỉ số đó được xác định ở công thức: $$\chi^2=\sum_{j=1}^I n_j\frac{\big[p(\theta_j)-P(\theta_j)\big]^2}{P(\theta_j)Q(\theta_j)}.$$
+Trong đó:
+\begin{itemize}
+	\item $I$: Số nhóm năng lực.
+	\item $\theta_j$: mức năng lực của nhóm thứ $j$.
+	\item $n_j$: số TS của nhóm thứ $j$ (có năng lực $\theta_j$).
+	\item $p(\theta_j)$: xác suất trả lời đúng của nhóm thứ $j$ theo tính toán từ mô hình ĐTCH dùng để ước lượng tham số.
+	\item $Q(\theta_j)=1-P(\theta_j)$.
+\end{itemize}\par
+Nếu giá trị của chỉ số thu được lớn hơn một giá trị tiêu chí quy định nào đó thì đường cong ĐTCH được xác định bởi các giá trị đã ước lượng của tham số CH$_i$ là không trùng khớp với số liệu quan sát. Sự không trùng khớp này có thể do hai nguyên nhân. Thứ nhất, mô hình đường cong ĐTCH được chọn không phù hợp. Thứ hai, các giá trị của tỷ số trả lời đúng CH$_i$ rất phân tán nên không thể thu được sự trùng khớp tốt đối với bất cứ mô hình đường cong ĐTCH nào. Thông thường khi phân tích một ĐTN có một ít CH không trùng khớp do nguyên nhân thứ hai thì người ta phải sửa chữa CH trắc nghiệm tương ứng hoặc loại bỏ nó khỏi ĐTN. Còn nếu có rất nhiều CH cho số liệu tính toán không trùng khớp với số liệu quan sát thì thường là do chọn mô hình đường cong ĐTCH không phù hợp, trong trường hợp đó người ta có thể thử nghiệm chọn một mô hình khác.
+
+\subsection{Điểm thực – đường cong đặc trưng của đề trắc nghiệm}
+Ở phần trước ta đã xét đặc trưng của từng CH trắc nghiệm và tương tác của từng CH với từng TS, nhưng trong thực tế các CH trắc nghiệm thường được tập hợp thành một ĐTN. Dưới đây ta sẽ xét đến một ĐTN bao gồm nhiều CH trắc nghiệm.\par
+Giả sử CH trắc nghiệm chúng ta xét là CH nhị phân: trả lời đúng được $1$ điểm, trả lời sai được $0$ điểm. Điểm thô của một TS sẽ thu được bằng cách cộng các điểm của mọi CH trong ĐTN. Như vậy, điểm thô của ĐTN đối với một TS thường là một số nguyên nằm giữa $0$ và $n$, trong đó $n$ là số CH trong ĐTN. Giả sử một TS làm lại ĐTN (và khi làm lại người đó không nhớ những gì đã làm những lần trước), người đó sẽ được một điểm thô khác. Giả thiết là TS làm ĐTN nhiều lần và nhận được nhiều điểm thô khác nhau, các điểm này phân bố quanh một giá trị trung bình nào đó. Theo lý thuyết về đo lường, giá trị trung bình đó gần với một giá trị được gọi là điểm thực, và định nghĩa của nó phụ thuộc vào một lý thuyết đo lường xác định.\par
+Với $U=\left(U_1,U_2,...,_n\right)$ là vectơ ứng đáp, trong đó $U_i$ ($i=\overline{1,n}$) có giá trị $0$ (trả lời sai) hoặc $1$ (trả lời đúng). Ta có thể biểu diễn điểm thô $X$ tính theo số câu trả lời đúng bằng biểu thức: $$X=\sum_{i=1}^{n}U_i.$$
+Tiếp đến, ta biểu diễn điểm thực $\tau$ theo biểu thức kỳ vọng toán học của $X$ như sau: $$\tau=E(X)=E\left(\sum_{i=1}^{n}U_i\right)=\sum_{i=1}^{n}E\left(U_i\right),$$ trong đó $E$ là toán tử kỳ vọng toán học và có tính chất tuyến tính.\par
+Nếu một biến ngẫu nhiên $Y$ lấy các giá trị $y_1$, $y_2$ với các xác suất tương ứng là $P_1$ và $P_2$ thì $$E(Y)=y_1P_1+y_2P_2.$$\par
+Vì $U_i$ có giá trị bằng $1$ với xác suất $P_i(\theta)$ và giá trị bằng $0$ với xác suất $Q_i(\theta)=1-P_i(\theta)$ nên:
+$$E\left(U_i\right)=1.P_i(\theta)+0.Q_i(\theta).$$\par
+Cuối cùng ta có: $$\tau=\sum_{i=1}^{n}P_i(\theta).$$\par
+Tức là: điểm thực của một TS có năng lực $\theta$ là tổng của các xác suất trả lời đúng của mọi CH của ĐTN tại giá trị $\theta$. Như vậy, đối với mọi giá trị $\theta$ nếu chúng ta tiến hành cộng tất cả mọi đường cong ĐTCH trong ĐTN chúng ta sẽ thu được đường cong đặc trưng của ĐTN, hoặc cũng gọi là đường cong điểm thực. Đường cong đặc trưng của ĐTN là quan hệ hàm số giữa điểm thực và thang năng lực: cho trước một mức năng lực bất kỳ có thể tìm điểm thực tương ứng qua đường cong đặc trưng ĐTN.\par
+Giả sử một ĐTN bao gồm 5 câu hỏi với các đường cong ĐTCH tương ứng được biểu diễn ở hình \ref{fig:fig6-5:P(theta,a,b,c)}.\par
+\begin{figure}[h]\centering\footnotesize
+	\begin{tikzpicture}[scale=0.8]
+		% Graph
+		\foreach \a/\b/\c/\colour in {1.57/-.94/.25/mTeal, .79/-.51/0/mOrange, .96/0/0/mBlue, 1.4/.5/.1/mRed, 2/1/.2/mPurple}
+			\draw [ultra thick, domain=4.5:-4.5, \colour] plot (\x, {5 * (\c + (1 - \c)*exp(\a*(\x - \b)) / (1+exp(\a*(\x - \b))))});
+		% Oxy system
+		\draw [thick, ->] (-4.5,0) -- (4.5,0) node [above] {$\theta$};
+		\draw [thick, ->] (0,0) -- (0,5.5) node [right] {$P$};
+		% Numbering on axist
+		\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+			\draw (\x,0.1) -- (\x,-0.1) node [below] {$\x$};
+		\foreach \x in {0.2,0.4,0.6,0.8,1.0}
+			\draw (-0.1,5*\x) -- (0.1,5*\x) node [right] {$\x$};
+	\end{tikzpicture}
+	\caption{5 đường cong ĐTCH theo mô hình 3 tham số}
+	\label{fig:fig6-5:P(theta,a,b,c)}
+\end{figure}\par
+Đường cong đặc trưng của ĐTN bao gồm 5 CH nói trên thu được bằng cách cộng 5 đường cong ĐTCH biểu diễn trên hình \ref{fig:fig7-sum5:P(theta,a,b,c)}.
+\begin{figure}[h]\centering\footnotesize
+	\begin{tikzpicture}[scale=0.8]
+		% Graph
+		\foreach \a/\b/\c/\colour in {1.57/-.94/.25/mTeal, .79/-.51/0/mOrange, .96/0/0/mBlue, 1.4/.5/.1/mRed, 2/1/.2/mPurple}
+			\draw [very thick, domain=4.5:-4.5, \colour] plot (\x, {1.5*(\c + (1 - \c)*exp(\a*(\x - \b)) / (1+exp(\a*(\x - \b))))});
+		\draw [ultra thick, domain=-4.5:4.5, mGreen] plot (\x, {
+			1.5*(0.25 + (1 - 0.25)*exp(1.57*(\x - -0.94)) / (1+exp(1.57*(\x - -0.94)))) + 
+			1.5*(0 + (1 - 0)*exp(0.79*(\x - -0.51)) / (1+exp(0.79*(\x - -0.51)))) + 
+			1.5*(0 + (1 - 0)*exp(0.96*(\x - 0)) / (1+exp(0.96*(\x - 0)))) + 
+			1.5*(0.1 + (1 - 0.1)*exp(1.4*(\x - 0.5)) / (1+exp(1.4*(\x - 0.5)))) + 
+			1.5*(0.2 + (1 - 0.2)*exp(2*(\x - 1)) / (1+exp(2*(\x - 1))))
+		});
+		\draw [black] (4,7.5) node [above] {ĐTN};
+		\draw [black] (4,1.5) node [above] {Các CH};
+		% Oxy system
+		\draw [thick, ->] (-4.5,0) -- (4.5,0) node [above] {$\theta$};
+		\draw [thick, ->] (0,0) -- (0,8) node [right] {$P$};
+		% Numbering on axist
+		\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+			\draw (\x,0.1) -- (\x,-0.1) node [below] {$\x$};
+		\foreach \x in {1,2,3,4,5}
+			\draw (-0.1,1.5*\x) -- (0.1,1.5*\x) node [right] {$\x$};
+	\end{tikzpicture}
+	\caption{Đường cong đặc trưng của ĐTN gồm 5 CH và 5 đường cong ĐTCH tương ứng}
+	\label{fig:fig7-sum5:P(theta,a,b,c)}
+\end{figure}\par
+Có thể mô tả các đặc điểm của đường cong đặc trưng ĐTN tương tự như mô tả các đường cong ĐTCH. Đường cong đặc trưng ĐTN không có biểu thức giải tích đơn giản nên không có các tham số đặc trưng. Độ nghiêng của đường cong đặc trưng ĐTN cho biết điểm thực phụ thuộc như thế nào vào năng lực, tức là liên quan đến \textit{độ phân biệt của ĐTN}. Trong một số trường hợp đường cong đặc trưng ĐTN có dạng gần đường thẳng trong một khoảng năng lực nào đó, nhưng nói chung nó có dạng một đường cong đồng biến. Mức năng lực ứng với trung điểm của thang điểm thực (ứng với $\frac n2$) xác định vị trí của ĐTN trên thang năng lực. Hoành độ của điểm đó xác định \textit{độ khó của ĐTN}. Hai yếu tố độ dốc và mức năng lực ở trung điểm thang điểm thực mô tả khá rõ đặc tính của một ĐTN.\par
+Để biểu diễn điểm thực dưới dạng thập phân, người ta chia $\tau$ cho tổng số CH của ĐTN: $$\pi=\frac{\tau}{n}=\frac 1n=\frac 1n\sum_{i=1}^{n}P_i(\theta).$$\par
+Khi $\theta$ ở trong khoảng $-\infty<\theta<+\infty$ thì $\pi$ nằm giữa $0$ và $1$ (hoặc $0\%$ và $100\%$). Đối với mô hình ứng đáp CH 3 tham số, giới hạn dưới của $\pi$ là $\frac 1n\sum_{i=1}^{n}c_i$.
+
+\subsection{Ước lượng năng lực của thí sinh}
