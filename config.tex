@@ -1,14 +1,13 @@
+% Required packages: amsfonts amsmath vntex enumitem multirow cellspace wrapfig xcolor ragged2e changepage fancyhdr titlesec caption listings hyperref biblatex biblatex-apa
 \usepackage[margin=2cm,left=3cm]{geometry}
 \usepackage[utf8]{vietnam} % Text Encoder
 \usepackage{amsfonts,amsmath,amsthm,amssymb} % Math
-\usepackage{enumitem,multicol,multirow,booktabs,longtable,cellspace} % Layout
-\usepackage{tikz,graphicx,wrapfig,xcolor} % Graphing pgfplots
+\usepackage{enumitem,multicol,multirow,longtable,cellspace} % Layout \booktabs,
+\usepackage{tikz,graphicx,wrapfig,xcolor} % Graphing
 \usepackage{ragged2e,changepage,fancyhdr} % Page setup
-\usepackage{titlesec,caption} % Chapter title setting
+\usepackage{titlesec,caption} % Title setting
 \usepackage{listings} % Code Output
 \usepackage[hidelinks,unicode]{hyperref}
-
-% Install biblatex-apa package to use APA style
 \usepackage[backend=biber,style=apa,sorting=ynt]{biblatex} % References Engine
 
 % Text Spacing
@@ -16,17 +15,17 @@
 \setlength{\parindent}{1cm}
 \setlength{\parskip}{4pt}
 
-% Cell spacing
+% Cell spacing (cellspace)
 \setlength\cellspacetoplimit{4pt}
 \setlength\cellspacebottomlimit{4pt}
 
-% Chapter custom
+% Chapter custom (titlesec)
 \titleformat{\chapter}[display] % display|hang
 {\centering\normalfont\huge\bfseries}{\centering\chaptertitlename\ \thechapter}{0pt}{\Huge} % pattern
 \titlespacing{\chapter}{0pt}{0pt}{12pt} % spacing with other
 % Middle number (-24pt) is space-before chapter-title
 
-% Caption setup
+% Caption setup (caption)
 \captionsetup{
 	format=plain,
 	justification=centering,
@@ -38,13 +37,13 @@
 % Highlight hyperlink of table of contents
 % \hypersetup{linktoc=all}
 
-% Set image-path
+% Set image-path (graphicx)
 \graphicspath{ {images/} }
 
-% Config tikz
+% Config tikz (tikz)
 \usetikzlibrary{calc}
 
-% Define new material colours
+% Define new material colours (xcolor)
 \definecolor{mRed}{HTML}{f44336}
 \definecolor{mPink}{HTML}{e91e63}
 \definecolor{mPurple}{HTML}{9c27b0}
@@ -62,7 +61,7 @@
 \definecolor{mBrown}{HTML}{795548}
 \definecolor{mBlueGrey}{HTML}{607d8b}
 
-% Equations Prefer
+% Equations Prefers
 \everymath{\displaystyle}
 
 % Document information
@@ -70,5 +69,5 @@
 % \author{}
 % \date{}
 
-% Add References resource
+% Add References resource (biblatex)
 \addbibresource{references.bib}
