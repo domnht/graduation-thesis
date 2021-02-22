@@ -26,5 +26,3 @@
 - `config.tex`: Các thiết đặt tài liệu.
 - `main.tex`: Tệp tài liệu chính.
 - `references.bib`: Danh mục tài liệu tham khảo.
-
-## Nội dung chính
