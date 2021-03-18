@@ -1,9 +1,20 @@
 \chapter{Xây dựng API xử lý}
 
-\section{Tổng hợp và chuẩn hóa ngân hàng câu hỏi chương Xác suất – Thống kê lớp 11}
-Phần này tiến hành tổng hợp và chuẩn hóa ngân hàng câu hỏi trắc nghiệm chương Xác suất – Thống kê lớp 11 dựa trên 03 nội dung cơ bản trong SGK Đại số và giải tích 11 (ban cơ bản): Quy tắc đếm, hoán vị, tổ hợp, chỉnh hợp (bài 1, 2), nhị thức Newton (bài 3) và xác suất của biến cố (bài 4, 5).\par
-Để sử dụng được ngân hàng câu hỏi cho việc đánh giá riêng lẻ từng học sinh theo \textit{lý thuyết ứng đáp} câu hỏi (IRT), cần có một ngân hàng câu hỏi đã chuẩn hóa sẵn theo các tham số \textit{độ khó} ($b$) và \textit{độ phân biệt} ($a$) – là những tham số độc lập so với mẫu. Phần lớn các câu hỏi trong luận văn này được tổng hợp từ \cite{luyen2018xay} và \cite{truc2018xay}. Trong đó có 44 câu hỏi có thể sử dụng ngay (đã được thực nghiệm và phân tích bằng IATA):\par
-\noindent\textbf{Câu hỏi trắc nghiệm phần Quy tắc đếm, hoán vị, tổ hợp, chỉnh hợp \cite{truc2018xay}:}\par
+\section{Tổng hợp và chuẩn hóa ngân hàng câu hỏi chương Tổ hợp – Xác suất lớp 11}
+Phần này tiến hành tổng hợp và chuẩn hóa ngân hàng câu hỏi trắc nghiệm chương Tổ hợp – Xác suất lớp 11 dựa trên các nội dung cơ bản trong SGK Đại số và giải tích 11 (ban cơ bản): \textit{Quy tắc đếm} (bài 1), \textit{Hoán vị, tổ hợp, chỉnh hợp} (HV, TH, CH) (bài 2), \textit{Nhị thức Newton} (bài 3) và \textit{Xác suất của biến cố} (bài 4, 5).\par
+Để sử dụng được ngân hàng câu hỏi cho việc đánh giá riêng lẻ từng học sinh theo \textit{lý thuyết ứng đáp} câu hỏi (IRT), cần có một ngân hàng câu hỏi đã chuẩn hóa sẵn theo các tham số \textit{độ khó} ($b$) và \textit{độ phân biệt} ($a$) – là những tham số độc lập so với mẫu. Phần lớn các câu hỏi trong luận văn này được tổng hợp từ \cite{luyen2018xay} và \cite{truc2018xay}. Trong đó có 44 câu hỏi có thể sử dụng ngay (đã được thực nghiệm và phân tích bằng IATA) có số lượng cụ thể như sau:\par
+
+\begin{longtable}{|Sl|Sc|Sc|Sc|Sc|Sc|}\hline
+	\multicolumn{1}{|Sc|}{\textbf{Chủ đề}} & \textbf{Mức độ 1} & \textbf{Mức độ 2} & \textbf{Mức độ 3} & \textbf{Mức độ 4} & \textbf{Tổng cộng} \\ \hline
+	\endhead
+	Quy tắc đếm     & $2$ & $-$  & $3$  & $-$ & $5$  \\ \hline
+	HV, TH, CH      & $-$ & $4$  & $1$  & $-$ & $5$  \\ \hline
+	Nhị thức Newton & $5$ & $7$  & $9$  & $2$ & $23$ \\ \hline
+	Xác suất        & $1$ & $7$  & $2$  & $1$ & $11$ \\ \hline
+	\textbf{Tổng cộng} & $8$ & $18$ & $15$ & $3$ & $44$ \\ \hline
+\end{longtable}\par
+
+\noindent\textbf{Câu hỏi trắc nghiệm phần \textit{Quy tắc đếm}:}
 \begin{enumerate}[label=\textbf{Câu \arabic*.},align=left,left=0cm..0cm,itemindent=*]
 	% Quy tắc đếm
 	\item Mỗi ngày T đều đi từ nhà (vị trí $A$) tới trường (vị trí $D$) được nối với nhau như hình vẽ bên dưới. T có bao nhiêu con đường có thể đi và không đi qua một vị trí 2 lần?\par {\centering\includegraphics[width=9cm]{G1-Q9.png}\par}
@@ -34,227 +45,234 @@ Phần này tiến hành tổng hợp và chuẩn hóa ngân hàng câu hỏi tr
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
 		\item 3 kiểu. \item 4 kiểu. \item 5 kiểu. \item 6 kiểu.
 	\end{enumerate}
+\end{enumerate}\par
+
+\noindent\textbf{Đáp án và các tham số:}
+\begin{longtable}{|Sl|Sc|Sc|Sr|Sr|}\hline
+	\multicolumn{1}{|Sc|}{\textbf{Câu hỏi}} & \textbf{Mức độ} & \textbf{Đáp án} & \multicolumn{1}{Sc|}{$a$} & \multicolumn{1}{Sc|}{$b$} \\ \hline \endhead
+	Câu 1 & 3 & D & $2.93$ & $-0.09$ \\ \hline
+	Câu 2 & 3 & C & $1.34$ & $-0.18$ \\ \hline
+	Câu 3 & 1 & C & $1.69$ & $-0.31$ \\ \hline
+	Câu 4 & 1 & B & $1.85$ & $-0.33$ \\ \hline
+	Câu 5 & 3 & B & $1.40$ & $-0.60$ \\ \hline
+\end{longtable}
+
+\noindent\textbf{Câu hỏi trắc nghiệm phần \textit{Hoán vị, tổ hợp, chỉnh hợp}:}\par
+\begin{enumerate}[label=\textbf{Câu \arabic*.},align=left,left=0cm..0cm,itemindent=*]
 	% Hoán vị, tổ hợp, chỉnh hợp
 	\item Cho 2 đường thẳng $a$ và $b$ song song nhau. Trên $a$ lấy 5 điểm phân biệt, trên $b$ lấy 10 điểm phân biệt. Có thể tạo nên bao nhiêu tam giác có các đỉnh là các điểm nằm trên $a$ và $b$?
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item 325 tam giác. \item 425 tam giác. \item 225 tam giác. \item 100 tam giác.
+		\item 325 tam giác. \item 425 tam giác. \item 225 tam giác. \item 100 tam giác.
 	\end{enumerate}
 	\item Một đội xây dựng gồm 3 kỹ sư, 7 công nhân lập thành một tổ công tác thành 5 người. Hỏi có bao nhiêu cách lập được một tổ công tác gồm 1 kỹ sư làm tổ trưởng, 1 công nhân làm tổ phó và 3 công nhân tổ viên.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $735$. \item $105$. \item $240$. \item $420$.
+		\item $735$. \item $105$. \item $240$. \item $420$.
 	\end{enumerate}
 	\item Cho mạch điện sau:\par
 	{\centering\includegraphics[width=10cm]{G1-Q43.png}\par}
 	Với 5 cầu chỉ mắc nối tiếp trước một bóng đèn. Có nhiêu trường hợp dòng điện không thể truyền đến bóng đèn?
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item 5 trường hợp. \item 120 trường hợp. \item 325 trường hợp. \item 31 trường hợp.
+		\item 5 trường hợp. \item 120 trường hợp. \item 325 trường hợp. \item 31 trường hợp.
 	\end{enumerate}
 	\item Tìm số nguyên dương $n$ thỏa điều kiện $A_{n}^{2}-3C_{n}^{2}=15-5n$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $\left[ \begin{array}{l} n=5\\ n=6\\ n=12 \end{array} \right.$.
-	    \item $\left[ \begin{array}{l} n=5\\ n=6 \end{array} \right.$.
-	    \item $n=5$. \item $n=6$.
+		\item $\left[ \begin{array}{l} n=5\\ n=6\\ n=12 \end{array} \right.$.
+		\item $\left[ \begin{array}{l} n=5\\ n=6 \end{array} \right.$.
+		\item $n=5$. \item $n=6$.
 	\end{enumerate}
 	\item Cần chọn ra một nhóm 3 người trong 7 người để tham gia lao động. Có bao nhiêu cách chọn?
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $210$. \item $21$. \item $10$. \item $35$.
+		\item $210$. \item $21$. \item $10$. \item $35$.
 	\end{enumerate}
 \end{enumerate}\par
 
 \noindent\textbf{Đáp án và các tham số:}
-\begin{longtable}{|c|c|c|c|}\hline
-	\textbf{Câu} & \textbf{Đáp án} & \textbf{Độ phân biệt ($a$)} & \textbf{Độ khó ($b$)} \\\hline
-	\endhead
-	1  & 4 & $2.93$ & $-0.09$ \\ \hline
-	2  & 3 & $1.34$ & $-0.18$ \\ \hline
-	3  & 3 & $1.69$ & $-0.31$ \\ \hline
-	4  & 2 & $1.85$ & $-0.33$ \\ \hline
-	5  & 2 & $1.4$  & $-0.6$  \\ \hline
-	6  & 1 & $1.17$ & $-0.39$ \\ \hline
-	7  & 4 & $0.96$ & $-0.81$ \\ \hline
-	8  & 4 & $2.53$ & $0.31$  \\ \hline
-	9  & 2 & $1.09$ & $-0.62$ \\ \hline
-	10 & 4 & $0.89$ & $-1.33$ \\ \hline
-\end{longtable}
+\begin{longtable}{|Sl|Sc|Sc|Sr|Sr|}\hline
+	\multicolumn{1}{|Sc|}{\textbf{Câu hỏi}} & \textbf{Mức độ} & \textbf{Đáp án} & \multicolumn{1}{Sc|}{$a$} & \multicolumn{1}{Sc|}{$b$} \\ \hline \endhead
+	Câu 1 & 2 & A & $1.17$ & $-0.39$ \\ \hline
+	Câu 2 & 2 & D & $0.96$ & $-0.81$ \\ \hline
+	Câu 3 & 3 & D & $2.53$ & $0.31$  \\ \hline
+	Câu 4 & 2 & B & $1.09$ & $-0.62$ \\ \hline
+	Câu 5 & 2 & D & $0.89$ & $-1.33$ \\ \hline
+\end{longtable}\par
 
-\noindent\textbf{Câu hỏi trắc nghiệm phần Nhị thức Newton \cite{luyen2018xay}:}\par
+\noindent\textbf{Câu hỏi trắc nghiệm phần \textit{Nhị thức Newton}:}\par
 \begin{enumerate}[label=\textbf{Câu \arabic*.},align=left,left=0cm..0cm,itemindent=*]
 	% Nhị thức Newton
-	\item (3.022) Cho khai triển $\left(x^3+2x^2+1\right)^{10}=a_1+a_2x+a_3x^2+...+a_{20}x^{20}$. Tính tổng $S=a_1+2a_2+4a_3+...+2^{20}a_{20}$.
+	\item Cho khai triển $\left(x^3+2x^2+1\right)^{10}=a_1+a_2x+a_3x^2+...+a_{20}x^{20}$. Tính tổng $S=a_1+2a_2+4a_3+...+2^{20}a_{20}$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $S=15^{10}$. \item $S=17^{10}$. \item $S=17^{20}$. \item $S=7^{10}$.
+		\item $S=15^{10}$. \item $S=17^{10}$. \item $S=17^{20}$. \item $S=7^{10}$.
 	\end{enumerate}
-	\item (3.068) Trong khai triển $(1-x)^{12}$, hệ số đứng trước $x^7$ là
+	\item Trong khai triển $(1-x)^{12}$, hệ số đứng trước $x^7$ là
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $330$. \item $-33$. \item $-72$. \item $-792$.
+		\item $330$. \item $-33$. \item $-72$. \item $-792$.
 	\end{enumerate}
-	\item (3.111) Công thức khai triển của $(a+b)^n$ là
+	\item Công thức khai triển của $(a+b)^n$ là
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $\sum_{k=1}^nC_n^ka^{n+k}b^k$. \item $\sum_{k=0}^nC_n^ka^{n-k}b^k$. \item $\sum_{k=1}^nC_n^ka^{n-k}b^k$. \item $\sum_{k=0}^nC_n^ka^{n+k}b^k$.
+		\item $\sum_{k=1}^nC_n^ka^{n+k}b^k$. \item $\sum_{k=0}^nC_n^ka^{n-k}b^k$. \item $\sum_{k=1}^nC_n^ka^{n-k}b^k$. \item $\sum_{k=0}^nC_n^ka^{n+k}b^k$.
 	\end{enumerate}
-	\item (3.112) Mệnh đề nào sau đây là đúng?
+	\item Mệnh đề nào sau đây là đúng?
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $(a-b)^n=\sum_{k=0}^nC_n^ka^{n-k}b^k$, ($a,b\in\mathbb{R}$, $n\in\mathbb{N}^{*}$).
-	    \item $(a-b)^n=\sum_{k=0}^n(-1)C_n^ka^{n-k}b^k$, ($a,b\in\mathbb{R}$, $n\in\mathbb{N}^{*}$).
-	    \item $0^n=C_n^0+C_n^1+C_n^2+C_n^3+\ldots+C_n^n$, ($n\in\mathbb{N}^{*}$).
-	    \item $2^n=C_n^0-C_n^1+C_n^2-C_n^3+\ldots+C_n^n$, ($n\in\mathbb{N}^{*}$).
+		\item $(a-b)^n=\sum_{k=0}^nC_n^ka^{n-k}b^k$, ($a,b\in\mathbb{R}$, $n\in\mathbb{N}^{*}$).
+		\item $(a-b)^n=\sum_{k=0}^n(-1)C_n^ka^{n-k}b^k$, ($a,b\in\mathbb{R}$, $n\in\mathbb{N}^{*}$).
+		\item $0^n=C_n^0+C_n^1+C_n^2+C_n^3+\ldots+C_n^n$, ($n\in\mathbb{N}^{*}$).
+		\item $2^n=C_n^0-C_n^1+C_n^2-C_n^3+\ldots+C_n^n$, ($n\in\mathbb{N}^{*}$).
 	\end{enumerate}
-	\item (3.113) Trong khai triển $(a+b)^n$, ($a,b\in\mathbb{R}$, $n\in\mathbb{N}^{*}$). Tổng các số mũ của $a$ và $b$ trong mỗi số hạng bằng
+	\item Trong khai triển $(a+b)^n$, ($a,b\in\mathbb{R}$, $n\in\mathbb{N}^{*}$). Tổng các số mũ của $a$ và $b$ trong mỗi số hạng bằng
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $n+1$. \item $2n$. \item $n$. \item $2n+1$.
+		\item $n+1$. \item $2n$. \item $n$. \item $2n+1$.
 	\end{enumerate}
-	\item (3.114) Trong khai triển $(a+b)^n$, ($a,b\in\mathbb{R}$, $n\in\mathbb{N}^{*}$), ta được bao nhiêu số hạng?
+	\item Trong khai triển $(a+b)^n$, ($a,b\in\mathbb{R}$, $n\in\mathbb{N}^{*}$), ta được bao nhiêu số hạng?
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $n+1$ số hạng. \item $2n$ số hạng. \item $n$ số hạng. \item $2n+1$ số hạng.
+		\item $n+1$ số hạng. \item $2n$ số hạng. \item $n$ số hạng. \item $2n+1$ số hạng.
 	\end{enumerate}
-	\item (3.115) Số hạng tổng quát của khai triển $(a+b)^n$, ($a,b\in\mathbb{R}$, $n\in\mathbb{N}^{*}$) là
+	\item Số hạng tổng quát của khai triển $(a+b)^n$, ($a,b\in\mathbb{R}$, $n\in\mathbb{N}^{*}$) là
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $T_{k-1}=C_n^ka^{n-k}b^k$. \item $T_{k-1}=C_n^ka^{n+k}b^k$. \item $T_{k+1}=C_n^ka^{n-k}b^k$. \item $T_{k+1}=C_n^ka^{n+k}b^k$.
+		\item $T_{k-1}=C_n^ka^{n-k}b^k$. \item $T_{k-1}=C_n^ka^{n+k}b^k$. \item $T_{k+1}=C_n^ka^{n-k}b^k$. \item $T_{k+1}=C_n^ka^{n+k}b^k$.
 	\end{enumerate}
-	\item (3.116) Tính tổng $S=2^{13}C_{13}^0-2^{12}.3^1C_{13}^1+2^{11}.3^2C_{13}^2-2^{10}.3^3C_{13}^3+...+3^{13}C_{13}^{13}$.
+	\item Tính tổng $S=2^{13}C_{13}^0-2^{12}.3^1C_{13}^1+2^{11}.3^2C_{13}^2-2^{10}.3^3C_{13}^3+...+3^{13}C_{13}^{13}$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $(-1)^{13}$. \item $5^{13}$. \item $(-5)^{13}$. \item $1^{13}$.
+		\item $(-1)^{13}$. \item $5^{13}$. \item $(-5)^{13}$. \item $1^{13}$.
 	\end{enumerate}
-	\item (3.117) Nhị thức $(5+x^2)^{12}$ có khai triển là
+	\item Nhị thức $(5+x^2)^{12}$ có khai triển là
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $5^{12}C_{12}^0-5^{11}xC_{12}^1+...+(-1)x^{24}C_{12}^{12}$.
-	    \item $5^{12}C_{12}^0-5^{11}x^2C_{12}^1+...+ \left(-1\right) x^{24}C_{12}^{12}$.
-	    \item $5^{12}C_{12}^0+5^{11}x^2C_{12}^1+...+x^{24}C_{12}^{12}$.
-	    \item $5^{12}C_{12}^0+5^{11}xC_{12}^1+...+x^{24}C_{12}^{12}$.
+		\item $5^{12}C_{12}^0-5^{11}xC_{12}^1+...+(-1)x^{24}C_{12}^{12}$.
+		\item $5^{12}C_{12}^0-5^{11}x^2C_{12}^1+...+ \left(-1\right) x^{24}C_{12}^{12}$.
+		\item $5^{12}C_{12}^0+5^{11}x^2C_{12}^1+...+x^{24}C_{12}^{12}$.
+		\item $5^{12}C_{12}^0+5^{11}xC_{12}^1+...+x^{24}C_{12}^{12}$.
 	\end{enumerate}
-	\item (3.118) Trong khai triển nhị thức $\left(x+y^2\right)^{10}$ thành đa thức và xếp theo thứ tự lũy thừa tăng dần của $x$ thì số hạng thứ 6 kể từ trái sang phải là bao nhiêu?
+	\item Trong khai triển nhị thức $\left(x+y^2\right)^{10}$ thành đa thức và xếp theo thứ tự lũy thừa tăng dần của $x$ thì số hạng thứ 6 kể từ trái sang phải là bao nhiêu?
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $C_{10}^6x^4y^6$. \item $C_{10}^5x^5y^5$. \item $C_{10}^6x^4y^8$. \item $C_{10}^5x^5y^{10}$.
+		\item $C_{10}^6x^4y^6$. \item $C_{10}^5x^5y^5$. \item $C_{10}^6x^4y^8$. \item $C_{10}^5x^5y^{10}$.
 	\end{enumerate}
-	\item (3.119) Trong khai triển $(2a-b)^5$, ($a,b\in\mathbb{R}$) hệ số của số hạng thứ 3 bằng
+	\item Trong khai triển $(2a-b)^5$, ($a,b\in\mathbb{R}$) hệ số của số hạng thứ 3 bằng
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $80$. \item $40$. \item $-80$. \item $-40$.
+		\item $80$. \item $40$. \item $-80$. \item $-40$.
 	\end{enumerate}
-	\item (3.120) Khai triển nhị thức $(x+2)^{n+6}$, ($x\in\mathbb{R}$, $n\in\mathbb{N}$) có tất cả $17$ số hạng. Vậy $n$ bằng
+	\item Khai triển nhị thức $(x+2)^{n+6}$, ($x\in\mathbb{R}$, $n\in\mathbb{N}$) có tất cả $17$ số hạng. Vậy $n$ bằng
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $10$. \item $11$. \item $12$. \item $17$.
+		\item $10$. \item $11$. \item $12$. \item $17$.
 	\end{enumerate}
-	\item (3.121) Trong khai triển $\left(3x^2-y\right)^{10}$, hệ số của số hạng chính giữa là
+	\item Trong khai triển $\left(3x^2-y\right)^{10}$, hệ số của số hạng chính giữa là
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $-3^4C_{10}^4$. \item $3^4C_{10}^4$. \item $-3^5C_{10}^5$. \item $3^5C_{10}^5$.
+		\item $-3^4C_{10}^4$. \item $3^4C_{10}^4$. \item $-3^5C_{10}^5$. \item $3^5C_{10}^5$.
 	\end{enumerate}
-	\item (3.122) Cho hàm số $f(x)=x(x+1)^{2018}$. Tính $f'(1)$.
+	\item Cho hàm số $f(x)=x(x+1)^{2018}$. Tính $f'(1)$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $f'(1)=2^{2018}+2^{2017}$.
-	    \item $f'(1)=2^{2018}+2018.2^{2017}$.
-	    \item $f'(1)=2^{2018}+2018.2^{2018}$.
-	    \item $f'(1)=2^{2017}+2018.2^{2017}$.
+		\item $f'(1)=2^{2018}+2^{2017}$.
+		\item $f'(1)=2^{2018}+2018.2^{2017}$.
+		\item $f'(1)=2^{2018}+2018.2^{2018}$.
+		\item $f'(1)=2^{2017}+2018.2^{2017}$.
 	\end{enumerate}
-	\item (3.123) Tìm số nguyên dương $n$ sao cho $C_n^0+2C_n^1+4C_n^2+...+2^nC_n^n=243$.
+	\item Tìm số nguyên dương $n$ sao cho $C_n^0+2C_n^1+4C_n^2+...+2^nC_n^n=243$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $n=4$. \item $n=5$. \item $n=11$. \item $n=12$.
+		\item $n=4$. \item $n=5$. \item $n=11$. \item $n=12$.
 	\end{enumerate}
-	\item (3.124) Cho khai triển $(2x-1)^4=a_0x^{14}+a_1x^{13}+...+a_{14}$. Tính tổng $T=a_0-a_1+a_2-a_3+...+a_{14}$.
+	\item Cho khai triển $(2x-1)^4=a_0x^{14}+a_1x^{13}+...+a_{14}$. Tính tổng $T=a_0-a_1+a_2-a_3+...+a_{14}$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $T=1$. \item $T=3^4$. \item $T=-1$. \item $T=-3^4$.
+		\item $T=1$. \item $T=3^4$. \item $T=-1$. \item $T=-3^4$.
 	\end{enumerate}
-	\item (3.125) Số nào sau đây không phải hệ số của $x^8$ trong khai triển $(1+x)^{10}$?
+	\item Số nào sau đây không phải hệ số của $x^8$ trong khai triển $(1+x)^{10}$?
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $C_{10}^8-C_9^8$. \item $C_{10}^2$. \item $C_9^7+C_9^8$. \item $C_{10}^8$.
+		\item $C_{10}^8-C_9^8$. \item $C_{10}^2$. \item $C_9^7+C_9^8$. \item $C_{10}^8$.
 	\end{enumerate}
-	\item (3.126) Cho khai triển $(x-2)^{100}=a_0+a_1x+a_2x^2+...+a_{100}x^{100}$. Hệ số $a_{97}$ là
+	\item Cho khai triển $(x-2)^{100}=a_0+a_1x+a_2x^2+...+a_{100}x^{100}$. Hệ số $a_{97}$ là
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $-2^3C_{100}^3$. \item $-2^{97}C_{100}^{97}$. \item $2^3C_{100}^3$. \item $2^{97}C_{100}^{97}$.
+		\item $-2^3C_{100}^3$. \item $-2^{97}C_{100}^{97}$. \item $2^3C_{100}^3$. \item $2^{97}C_{100}^{97}$.
 	\end{enumerate}
-	\item (3.127) Tìm giá trị nguyên dương $n$, biết $T=C_{2n}^0+C_{2n}^1+C_{2n}^2+...+C_{2n}^{2n}=1024$.
+	\item Tìm giá trị nguyên dương $n$, biết $T=C_{2n}^0+C_{2n}^1+C_{2n}^2+...+C_{2n}^{2n}=1024$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $n=1$. \item $n=2$. \item $n=5$. \item $n=10$.
+		\item $n=1$. \item $n=2$. \item $n=5$. \item $n=10$.
 	\end{enumerate}
-	\item (3.128) Tính tổng $S=n.3^0C_n^n+(n-1).3^1C_n^{n-1}+(n-2).3^2C_n^{n-2}+...+1.3^{n-1}C_n^1$.
+	\item Tính tổng $S=n.3^0C_n^n+(n-1).3^1C_n^{n-1}+(n-2).3^2C_n^{n-2}+...+1.3^{n-1}C_n^1$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $S=n.4^{n-1}$. \item $S=n.4^n$. \item $S=n.3^n$. \item $S=n.3^{n-1}$.
+		\item $S=n.4^{n-1}$. \item $S=n.4^n$. \item $S=n.3^n$. \item $S=n.3^{n-1}$.
 	\end{enumerate}
-	\item (3.129) Tìm số nguyên dương $n$ thỏa $$C_{2n-1}^1-2.2C_{2n-1}^2-3.2C_{2n-1}^3+...-(2n-1)x^{2n-2}C_{2n-1}^{2n-1}=2017.$$
+	\item Tìm số nguyên dương $n$ thỏa $$C_{2n-1}^1-2.2C_{2n-1}^2-3.2C_{2n-1}^3+...-(2n-1)x^{2n-2}C_{2n-1}^{2n-1}=2017.$$
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $n=1008$. \item $n=10009$. \item $n=-1008$. \item $n=-1009$.
+		\item $n=1008$. \item $n=10009$. \item $n=-1008$. \item $n=-1009$.
 	\end{enumerate}
-	\item (3.130) Tìm hệ số lớn nhất của khai triển $(1+x)^n$. Biết rằng tổng tất cả các hệ số là $4096$.
+	\item Tìm hệ số lớn nhất của khai triển $(1+x)^n$. Biết rằng tổng tất cả các hệ số là $4096$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
-	    \item $0$. \item $1$. \item $C_{12}^5$. \item $C_{12}^6$.
+		\item $0$. \item $1$. \item $C_{12}^5$. \item $C_{12}^6$.
 	\end{enumerate}
-	\item (3.131) Tính tổng $S=1.2^0C_{n+2}^1+2.2^1C_{n+2}^2+3.2^2C_{n+2}^3+...+(n+2).2^{n+1}C_{n+2}^{n+2}$.
+	\item Tính tổng $S=1.2^0C_{n+2}^1+2.2^1C_{n+2}^2+3.2^2C_{n+2}^3+...+(n+2).2^{n+1}C_{n+2}^{n+2}$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
 		\item $(n+2).3^{n+2}$. \item $(n+2).3^{n+1}$. \item $(n+2).2^{n+2}$. \item $(n+2).2^{n+1}$.
 	\end{enumerate}
 \end{enumerate}\par
 
 \noindent\textbf{Đáp án và các tham số:}
-\begin{longtable}{|c|c|c|c|}\hline
-	\textbf{Câu} & \textbf{Đáp án} & \textbf{Độ phân biệt ($a$)} & \textbf{Độ khó ($b$)} \\\hline
-	\endhead
-	1 & B & $0.21$ & $0.00$ \\\hline
-	2 & D & $1.74$ & $-1.28$ \\\hline
-	3 & B & $1.31$ & $-1.18$ \\\hline
-	4 & B & $0.36$ & $-1.73$ \\\hline
-	5 & C & $0.78$ & $-0.67$ \\\hline
-	6 & A & $0.53$ & $-2.09$ \\\hline
-	7 & C & $0.81$ & $-1.34$ \\\hline
-	8 & A & $1.26$ & $-0.40$ \\\hline
-	9 & C & $0.17$ & $0.17$ \\\hline
-	10 & D & $0.74$ & $-0.99$ \\\hline
-	11 & A & $0.30$ & $0.41$ \\\hline
-	12 & A & $1.57$ & $-0.94$ \\\hline
-	13 & C & $1.06$ & $-0.98$ \\\hline
-	14 & B & $1.28$ & $-1.49$ \\\hline
-	15 & B & $0.33$ & $-2.25$ \\\hline
-	16 & B & $0.29$ & $0.54$ \\\hline
-	17 & A & $1.32$ & $-0.52$ \\\hline
-	18 & A & $1.66$ & $-0.60$ \\\hline
-	19 & C & $0.33$ & $0.48$ \\\hline
-	20 & A & $0.50$ & $0.41$ \\\hline
-	21 & C & $0.46$ & $0.90$ \\\hline
-	22 & D & $0.37$ & $-0.61$ \\\hline
-	23 & B & $0.17$ & $1.06$ \\\hline
-\end{longtable}
+\begin{longtable}{|Sl|Sc|Sc|Sr|Sr|}\hline
+	\multicolumn{1}{|Sc|}{\textbf{Câu hỏi}} & \textbf{Mức độ} & \textbf{Đáp án} & \multicolumn{1}{Sc|}{$a$} & \multicolumn{1}{Sc|}{$b$} \\ \hline \endhead
+	Câu 1  & 3 & B & $0.21$ & \multicolumn{1}{Sc|}{$-$} \\ \hline
+	Câu 2  & 3 & D & $1.74$ & $-1.28$ \\ \hline
+	Câu 3  & 1 & B & $1.31$ & $-1.18$ \\ \hline
+	Câu 4  & 1 & B & $0.36$ & $-1.73$ \\ \hline
+	Câu 5  & 1 & C & $0.78$ & $-0.67$ \\ \hline
+	Câu 6  & 1 & A & $0.53$ & $-2.09$ \\ \hline
+	Câu 7  & 1 & C & $0.81$ & $-1.34$ \\ \hline
+	Câu 8  & 2 & A & $1.26$ & $-0.40$ \\ \hline
+	Câu 9  & 2 & C & $0.17$ & $0.17$  \\ \hline
+	Câu 10 & 2 & D & $0.74$ & $-0.99$ \\ \hline
+	Câu 11 & 2 & A & $0.30$ & $0.41$  \\ \hline
+	Câu 12 & 2 & A & $1.57$ & $-0.94$ \\ \hline
+	Câu 13 & 2 & C & $1.06$ & $-0.98$ \\ \hline
+	Câu 14 & 2 & B & $1.28$ & $-1.49$ \\ \hline
+	Câu 15 & 3 & B & $0.33$ & $-2.25$ \\ \hline
+	Câu 16 & 3 & B & $0.29$ & $0.54$  \\ \hline
+	Câu 17 & 3 & A & $1.32$ & $-0.52$ \\ \hline
+	Câu 18 & 3 & A & $1.66$ & $-0.60$ \\ \hline
+	Câu 19 & 3 & C & $0.33$ & $0.48$  \\ \hline
+	Câu 20 & 3 & A & $0.50$ & $0.41$  \\ \hline
+	Câu 21 & 3 & C & $0.46$ & $0.90$  \\ \hline
+	Câu 22 & 4 & D & $0.37$ & $-0.61$ \\ \hline
+	Câu 23 & 4 & B & $0.17$ & $1.06$  \\ \hline
+\end{longtable}\par
 
-\noindent\textbf{Câu hỏi trắc nghiệm phần Xác suất \cite{truc2018xay}:}
+\noindent\textbf{Câu hỏi trắc nghiệm phần \textit{Xác suất}:}
 \begin{enumerate}[label=\textbf{Câu \arabic*.},align=left,left=0cm..0cm,itemindent=*]
-	\item (4.028) Một nông dân có 8 con trâu. Hôm nay ông dắt theo 2 con để ra ruộng nhưng ông không biết rằng trong số trâu đó có 3 bị bệnh. Tính xác suất để cả 2 con trâu người nông dân chọn đều không bị bệnh.
+	\item Một nông dân có 8 con trâu. Hôm nay ông dắt theo 2 con để ra ruộng nhưng ông không biết rằng trong số trâu đó có 3 bị bệnh. Tính xác suất để cả 2 con trâu người nông dân chọn đều không bị bệnh.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
 		\item $P=\frac 5{14}$. \item $P=\frac 5{28}$. \item $P=\frac{25}{28}$. \item $P=\frac 3{28}$.
 	\end{enumerate}
-	\item (4.030) Một khối lập phương có tất cả được sơn màu và được chia thành 125 khối nhỏ bằng nhau bởi các mặt phẳng song song với các mặt của khối lập phương (hình vẽ).\par
+	\item Một khối lập phương có tất cả được sơn màu và được chia thành 125 khối nhỏ bằng nhau bởi các mặt phẳng song song với các mặt của khối lập phương (hình vẽ).\par
 	{\centering\includegraphics[width=4cm]{G2-Q30.png}\par}
 	Lấy ngẫu nhiên 15 khối nhỏ. Xác suất để lấy được 6 khối nhỏ sơn đúng 1 mặt gần bằng
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
 		\item $0,00004$. \item $0,237$. \item $0,212$. \item $0,191$.
 	\end{enumerate}
-	\item (4.031) Lớp có 30 học sinh trong đó có 10 học sinh cận thị. Người ta lần lượt kiểm tra ngẫu nhiên từng học sinh cho đến khi phát hiện một học sinh cận thị thì dừng lại. Xác suất để kiểm tra tới học sinh thứ 5 thì ngừng lại (kiểm tra có hoàn lại) là
+	\item Lớp có 30 học sinh trong đó có 10 học sinh cận thị. Người ta lần lượt kiểm tra ngẫu nhiên từng học sinh cho đến khi phát hiện một học sinh cận thị thì dừng lại. Xác suất để kiểm tra tới học sinh thứ 5 thì ngừng lại (kiểm tra có hoàn lại) là
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
 		\item $0,068$. \item $0,067$. \item $0,066$. \item $0,065$.
 	\end{enumerate}
-	\item (4.040) Một lớp 30 học sinh. Chọn ngẫu nhiên 3 học sinh để tham gia hoạt động của Đoàn trường. Xác suất để chọn được 2 nam và 1 nữ là $\frac{54}{1015}$. Tính số học sinh nữ của lớp.
+	\item Một lớp 30 học sinh. Chọn ngẫu nhiên 3 học sinh để tham gia hoạt động của Đoàn trường. Xác suất để chọn được 2 nam và 1 nữ là $\frac{54}{1015}$. Tính số học sinh nữ của lớp.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
 		\item $18$. \item $15$. \item $12$. \item $9$.
 	\end{enumerate}
-	\item (4.055) Thả rơi một chất điểm vào một tấm bìa hình chữ nhật có chiều dài và chiều rộng lần lượt là 25 và 10 (cm). Một điểm $A$ cố định được vẽ trên tấm bìa như hình vẽ. Tính xác suất để chất điểm cách điểm $A$ từ 3 đến 4 (cm).\par
-	{\centering\includegraphics[width=8cm]{G2-Q58.png}\par}
+	\item Thả rơi một chất điểm vào một tấm bìa hình chữ nhật có chiều dài và chiều rộng lần lượt là 25 và 10 (cm). Một điểm $A$ cố định được vẽ trên tấm bìa như hình vẽ. Tính xác suất để chất điểm cách điểm $A$ từ 3 đến 4 (cm).\par
+	{\centering\includegraphics[width=10cm]{G2-Q58.png}\par}
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
 		\item $P=0,049$. \item $P=0,044$. \item $P=0,061$. \item $P=0,088$.
 	\end{enumerate}
-	\item (4.068) Ở người có một gen b gây bệnh bạch tạng lặn hoàn toàn so với gen B qui định màu da bình thường. Một đôi vợ chồng đều có gen đều dạng dị hợp (tức là có chứa một gen lặn). Tính xác suất để họ sinh được 5 đứa con thì 2 con trai bình thường, 2 con gái bình thường và 1 con trai bị bệnh.
+	\item Ở người có một gen b gây bệnh bạch tạng lặn hoàn toàn so với gen B qui định màu da bình thường. Một đôi vợ chồng đều có gen đều dạng dị hợp (tức là có chứa một gen lặn). Tính xác suất để họ sinh được 5 đứa con thì 2 con trai bình thường, 2 con gái bình thường và 1 con trai bị bệnh.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
 		\item $P=0,002$. \item $P=0,074$. \item $P=0,003$. \item $P=0,084$.
 	\end{enumerate}
-	\item (4.083) Lỗi chính tả của một học sinh lớp 2 trên mỗi trang vở là đại lượng ngẫu nhiên $X$ có bảng phân phối xác suất như sau:
+	\item Lỗi chính tả của một học sinh lớp 2 trên mỗi trang vở là đại lượng ngẫu nhiên $X$ có bảng phân phối xác suất như sau:
 	\begin{longtable}{|c|c|c|c|c|c|c|}\hline
-	$X$ & 0   & 1   & 2   & 3    & 4    & 5   \\ \hline
+	$X$ & 0   & 1   & 2   & 3 	& 4 	& 5   \\ \hline
 	$P$ & 0,3 & 0,3 & 0,2 & 0,01 & 0,09 & 0,1 \\ \hline
 	\end{longtable}
 	Tính xác suất để mỗi trang sai ít nhất 3 lỗi.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
 		\item $P=0,2$. \item $P=0,3$. \item $P=0,29$. \item $P=0,009$.
 	\end{enumerate}
-	\item (4.087) Lợi nhuận (tỷ đồng) hai dự án $A$ và $B$, ký hiệu $X_A$ và $X_B$ có bảng phân phối xác suất như sau:
+	\item Lợi nhuận (tỷ đồng) hai dự án $A$ và $B$, ký hiệu $X_A$ và $X_B$ có bảng phân phối xác suất như sau:
 	\begin{longtable}{|c|c|c|c|}\hline
 	$X_A$ & $-2$ & 3   & 10  \\ \hline
 	$P$   & 0.2  & 0.6 & 0.2 \\ \hline\hline
-	$X_B$ & 1    & 4   & 9   \\ \hline
+	$X_B$ & 1 	& 4   & 9   \\ \hline
 	$P$   & 0.4  & 0.4 & 0.2 \\ \hline
 	\end{longtable}
 	Tìm lợi nhuận trung bình của mỗi dự án và dự án nào có độ ổn định cao hơn?
@@ -264,7 +282,7 @@ Phần này tiến hành tổng hợp và chuẩn hóa ngân hàng câu hỏi tr
 		\item $E\left( {{X}_{A}} \right)=3,3; E\left( {{X}_{B}} \right)=3,4$ và dự án $A$ ổn định hơn.
 		\item $E\left( {{X}_{A}} \right)=3,3; E\left( {{X}_{B}} \right)=3,4$ và dự án $B$ ổn định hơn.
 	\end{enumerate}
-	\item (4.123) Khảo sát trên 100 sinh viên về thời gian sử dụng máy tính trong một ngày thu được biểu đồ sau:\par
+	\item Khảo sát trên 100 sinh viên về thời gian sử dụng máy tính trong một ngày thu được biểu đồ sau:\par
 	{\centering\includegraphics[width=7cm]{G2-Q127.png}\par}
 	Gọi $X$ là đại lượng thời gian sử dụng máy tính (giờ). Tính $P\left( 5,28\leqslant X<9 \right)$.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
@@ -273,13 +291,13 @@ Phần này tiến hành tổng hợp và chuẩn hóa ngân hàng câu hỏi tr
 		\item $P\left( 5,28\leqslant X<9,2 \right)=0,72$.
 		\item $P\left( 5,28\leqslant X<9,2 \right)=0,53$.
 	\end{enumerate}
-	\item (4.127) Một người đi bộ từ công ty về đến nhà thì phát hiện rớt mất ví tiền. Anh ta chắc chắn rằng ví bị rơi trên đoạn đường khoảng 100m trước cửa công ty nên quay lại tìm. Tính xác suất anh ta tìm được ví biết quãng đường từ nhà đến công ty là 1,5km.
+	\item Một người đi bộ từ công ty về đến nhà thì phát hiện rớt mất ví tiền. Anh ta chắc chắn rằng ví bị rơi trên đoạn đường khoảng 100m trước cửa công ty nên quay lại tìm. Tính xác suất anh ta tìm được ví biết quãng đường từ nhà đến công ty là 1,5km.
 	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
 		\item $P=\frac 1{15}$. \item $P=\frac 3{200}$. \item $P=\frac {14}{15}$. \item $P=\frac 16$.
 	\end{enumerate}
-	\item (4.128) Số lượng cá (kg) một ngư dân bắt được mỗi ngày được thống kê trong bảng sau:
+	\item Số lượng cá (kg) một ngư dân bắt được mỗi ngày được thống kê trong bảng sau:
 	\begin{longtable}{|l|c|c|c|c|c|c|}\hline
-	$X$ (kg) & 0     & 1      & 2    & 3      & 4      & 5     \\ \hline
+	$X$ (kg) & 0 	 & 1 	  & 2 	& 3 	  & 4 	  & 5 	 \\ \hline
 	Xác suất & 1,6\% & 12,6\% & 21\% & 34,7\% & 21,9\% & 8,2\% \\ \hline
 	\end{longtable}
 	Tính xác suất để người này câu được nhiều nhất 2kg cá.
@@ -288,7 +306,478 @@ Phần này tiến hành tổng hợp và chuẩn hóa ngân hàng câu hỏi tr
 	\end{enumerate}
 \end{enumerate}\par
 
-% \section{Xây dựng API tạo đề kiểm tra}
-% Với các ứng dụng không cùng nền tảng, ta cần một \textit{giao thức} (Application programming interface – API) để trao đổi thông tin giữa các bên\cite{tuan2020mobile}.
+\noindent\textbf{Đáp án và các tham số:}
+\begin{longtable}{|Sl|Sc|Sc|Sr|Sr|}
+	\multicolumn{1}{|Sc|}{\textbf{Câu hỏi}} & \textbf{Mức độ} & \textbf{Đáp án} & \multicolumn{1}{Sc|}{$a$} & \multicolumn{1}{Sc|}{$b$} \\ \hline \endhead
+	Câu 1  & 2 & A & $0.87$ & $-1.02$ \\ \hline
+	Câu 2  & 2 & C & $1.33$ & $-0.75$ \\ \hline
+	Câu 3  & 2 & A & $1.14$ & $-0.32$ \\ \hline
+	Câu 4  & 2 & A & $1.59$ & $-0.35$ \\ \hline
+	Câu 5  & 1 & B & $0.88$ & $0.04$  \\ \hline
+	Câu 6  & 3 & D & $0.60$ & $-1.29$ \\ \hline
+	Câu 7  & 4 & A & $0.78$ & $0.29$  \\ \hline
+	Câu 8  & 2 & C & $0.84$ & $-0.32$ \\ \hline
+	Câu 9  & 3 & B & $0.23$ & $1.02$  \\ \hline
+	Câu 10 & 2 & A & $1.29$ & $-0.54$ \\ \hline
+	Câu 11 & 2 & A & $1.33$ & $-0.84$ \\ \hline
+\end{longtable}\par
+
+Mục tiêu của cho ngân hàng câu hỏi chương Tổ hợp – Xác suất lớp 11 là khoảng 100 câu hỏi chia cho các chủ đề. Do đó, đề tài thực hiện thực nghiệm thêm 60 câu hỏi (được lựa chọn từ \cite{luyen2018xay} và \cite{truc2018xay}), có số lượng cụ thể như sau:\par
+\begin{longtable}{|Sl|Sc|Sc|Sc|Sc|Sc|}\hline
+	\multicolumn{1}{|Sc|}{\textbf{Chủ đề}} & \textbf{Mức độ 1} & \textbf{Mức độ 2} & \textbf{Mức độ 3} & \textbf{Mức độ 4} & \textbf{Tổng cộng} \\ \hline
+	Quy tắc đếm        & $4$  & $10$ & $5$  & $2$ & $21$ \\ \hline
+	HV, TH, CH         & $7$  & $2$  & $7$  & $4$ & $20$ \\ \hline
+	Nhị thức Newton    & $2$  & $-$  & $-$  & $-$ & $2$  \\ \hline
+	Xác suất 	 	   & $6$  & $3$  & $5$  & $3$ & $17$ \\ \hline
+	\textbf{Tổng cộng} & $19$ & $15$ & $17$ & $9$ & $60$ \\ \hline
+\end{longtable}\par
+
+Trong đó, các câu hỏi được chia thành 02 đề độc lập nhau, mỗi đề gồm 30 câu hỏi:\par
+
+\noindent\textbf{Đề thực nghiệm 1:}\par
+\begin{enumerate}[label=\textbf{Câu \arabic*.},align=left,left=0cm..0cm,itemindent=*]
+	\item Có bao nhiêu số tự nhiên có 3 chữ số
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $900$. \item $901$. \item $899$. \item $999$.
+	\end{enumerate}
+	\item Bạn muốn mua một cây bút chì và một cây bút mực. Bút mực có 8 màu, bút chì cũng có 8 màu khác nhau. Vậy bạn có bao nhiêu cách lựa chọn?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $64$ \item $32$ \item $20$ \item $16$
+	\end{enumerate}
+	\item Cho tập hợp A có $n (n\geqslant 1)$ phần tử. Trong các phát biểu sau, phát biểu nào đúng?\par
+	a) Số các hoán vị của A là $P_n=n!$.\par
+	b) Khi sắp xếp n phần tử của A không theo một thứ tự, ta được một hoán vị.\par
+	c) Số các hoán vị của A là $P_n=n(n-1)(n-2)...1$.\par
+	d) Số nguyên $k$ ($1\leqslant k\leqslant n$). Mỗi tập con của $A$ có $k$ phần tử được gọi là một chỉnh hợp.\par
+	e) Chỉnh hợp chập k của n phần tử của $A$ là khi ta lấy ra $k$ phần tử từ tập hợp và sắp xếp chúng theo một thứ tự.\par
+	f) Quy tắc cộng mở rộng là $|A\cap B|=|A|+|B|+|A\cup B|.$
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item a, c, e. \item a, b, d. \item b, e, f. \item b, c, d.
+	\end{enumerate}
+	\item Cho tập hợp $A$ gồm có $n$ phần tử và một số nguyên $k$ thỏa mãn $1\leqslant k\leqslant n$. Mỗi tập hợp con gồm $k$ phần tử của $A$ được gọi là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item Một chỉnh hợp chập $k$ của $n$ phần tử.
+		\item Một tổ hợp chập $k$ của $n$ phần tử.
+		\item Số chỉnh hợp chập $k$ của $n$ phần tử.
+		\item Số tổ hợp chập $k$ của $n$ phần tử.
+	\end{enumerate}
+	\item Đẳng thức nào đúng?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $A_n^k=n.\left( n-1 \right)...\left( n-k-1 \right)$.
+		\item $A_n^k=A_{n}^{n-k}$.
+		\item $A_n^k=C_{n}^{k}.k!$.
+		\item $A_n^k=C_{n}^{k}$.
+	\end{enumerate}
+	\item Phát biểu nào sau đây là \textbf{sai}?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item Hai tổ hợp khác nhau thì có các phân tử khác nhau.
+		\item Hai chỉnh hợp giống nhau khi có các phần tử giống nhau.
+		\item Chỉnh hợp chập $n$ của $n$ phần tử chính là hoán vị của $n$ phần tử.
+		\item Hai điểm $A$ và $B$ phân biệt thì $\overrightarrow{AB},\overrightarrow{BA}$ là các chỉnh hợp.
+	\end{enumerate}
+	\item Câu nào dưới đây \textbf{không đúng}?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $(a+b)^n=\sum_{k=0}^nC_n^ka^{n-k}b^k$.
+		\item $(a+b)^n$ khi khai triển có $n$ số hạng.
+		\item Tổng hệ số của $(a+b)^n$ khi khai triển là $2^n$.
+		\item $C_n^p=C_n^q$ nếu $p+q=n$ hay $p=q$.
+	\end{enumerate}
+	\item Công thức $P(A.B)=P(A).P(B)$ đúng khi
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item Hai biến cố xung khắc.
+		\item Hai biến cố đối.
+		\item Hai biến cố độc lập.
+		\item Hai biến cố xung khắc độc lập.
+	\end{enumerate}
+	\item Phát biểu nào sau đây \textbf{sai} khi nói về "phép thử ngẫu nhiên"?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item Có thể xác định được tập hợp các phép thử xảy ra trong phép thử đó.
+		\item Kết quả của nó không đoán trước được.
+		\item Bao gồm tập hợp các không gian mẫu của phép thử.
+		\item Là một thí nghiệm hoặc một hành động.
+	\end{enumerate}
+	\item Trong các khẳng định sau, khẳng định nào \textbf{sai}?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item Không gian mẫu là biến cố chắc chắn.
+		\item Hai biến cố độc lập thì không đồng thời xảy ra.
+		\item Hai biến cố đối nhau thì không đồng thời xảy ra.
+		\item Hai biến cố xung khắc là chỉ có một trong hai xảy ra.
+	\end{enumerate}
+	\item Có $10$ cặp vợ chồng đi dự tiệc. Có bao nhiêu cách chọn một người đàn ông và một người phụ nữ trong bữa tiệc phát biểu ý kiến sao cho hai người đó không là vợ chồng?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $100$. \item $91$. \item $10$. \item $90$.
+	\end{enumerate}
+	\item Cho các chữ số $2$, $3$, $4$, $5$, $6$, $7$. Số các số tự nhiên chẵn có 3 chữ số lập thành từ 6 chữ số đó là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $36$. \item $18$. \item $256$. \item $108$.
+	\end{enumerate}
+	\item Có bao nhiêu số tự nhiên có 2 chữ số mà tất cả chữ số đều lẻ?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $25$. \item $20$. \item $30$. \item $10$.
+	\end{enumerate}
+	\item Để đi từ $A$ đến $H$ thì có thể đi qua các vị trí $B$, $C$, $D$, $E$, $F$, $G$ được nối nhau như hình vẽ. Có bao nhiêu cách để đi từ $A$ đến $H$?\par
+	{\centering\includegraphics[width=8cm]{G1-Q10.png}\par}
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $576$. \item $19$. \item $104$. \item $108$.
+	\end{enumerate}
+	\item Để tạo một chiếc bánh phải trải qua 3 giai đoạn. Giai đoạn 1 có thể thực hiện bằng 3 cách, giai đoạn 2 có thể thực hiện bằng 4 cách, giai đoạn 3 có thể thực hiện bằng 1 cách. Vậy để hoàn thành chiếc bánh có tất cả bao nhiêu cách?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item 8 cách. \item 12 cách. \item 3 cách. \item 6 cách.
+	\end{enumerate}
+	\item Cho đa giác $n$ đỉnh ($n\in \mathbb{N}^{*},n>3$). Tìm n biết rằng đa giác có 135 đường chéo.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $15$. \item $27$. \item $8$. \item $18$.
+	\end{enumerate}
+	\item Cho $P(A)=\frac 13$, $P(B)=x$, $P(A\cup B)=\frac 12$. Tìm $x$ để $A$ và $B$ xung khắc.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $x=\frac 17$. \item $x=\frac 16$. \item $x=\frac 18$. \item $x=\frac 15$.
+	\end{enumerate}
+	\item Một liên đoàn bóng đá có 10 đội, mỗi đội phải đá 4 trận với đội khác, 2 trận ở sân nhà và 2 trận ở sân khách. Số trận đấu được sắp xếp là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $180$. \item $160$. \item $90$. \item $45$.
+	\end{enumerate}
+	\item Với các chữ số $2$, $3$, $4$, $5$, $6$, có thể lập được bao nhiêu số tự nhiên gồm 5 chữ số khác nhau trong đó hai chữ số $2$ và $3$ không đứng cạnh nhau?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $120$. \item $96$. \item $72$. \item $48$.
+	\end{enumerate}
+	\item Cho hai đường thẳng $d_1$ và $d_2$ song song nhau. Trên $d_1$ lấy 10 điểm phân biệt, trên $d_2$ lấy $n$ điểm phân biệt ($n>3,n\in\mathbb{N}^{*}$). Biết rằng có 2800 tam giác có đỉnh là các điểm đã cho. Tìm $n$.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $15$. \item $20$. \item $25$. \item $30$.
+	\end{enumerate}
+	\item Cho lai hai cá thể có kiểu gen giống nhau là AaBb. Có tất cả bao nhiêu kiểu hình đời $\text{F}_1$?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item 16 kiểu. \item 4 kiểu. \item 2 kiểu. \item 8 kiểu.
+	\end{enumerate}
+	\item Cho bất phương trình $C_{n}^{5}<C_{n}^{3}$. Tập nghiệm của bất phương trình đó là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $4<n<6$. \item $4<n<7$. \item $5<n<8$. \item $-1<n<8$.
+	\end{enumerate}
+	\item Một mạch điện có $n$ linh kiện được mắc nối tiếp như hình vẽ sau:\par
+	{\centering\includegraphics[width=10cm]{G2-Q17.png}\par}
+	Giả sử các linh kiện có độ tin cậy (xác suất hoạt động tốt) như nhau và bằng $p$. Tính độ tin cậy của mạch điện.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $p^n$. \item $np$. \item $1-p^n$. \item $1-np$.
+	\end{enumerate}
+	\item Có chín tấm thẻ được đánh số từ 1 đến 9. Lần lượt rút thẻ mỗi lần một tấm đến khi được thẻ số 3 thì dừng lại. Phải bóc bao nhiêu lần để xác suất $P\approx 0,088$?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item 3 lần. \item 2 lần. \item 1 lần. \item 4 lần.
+	\end{enumerate}
+	\item Xếp ngẫu nhiên 4 người đàn ông, hai người đàn bà và một đứa trẻ vào bảy chiếc ghế đặt quanh một bàn tròn. Tính xác suất để đứa trẻ ngồi giữa hai người đàn bà.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $\frac{3!3!}{6!}$. \item $\frac{1!2!3!}{6!}$. \item $\frac{2!4!}{6!}$. \item $\frac{1!5!}{6!}$.
+	\end{enumerate}
+	\item Gieo đồng thời 3 con xúc xắc. Tính số khả năng tổng số chấm trên mặt xuất hiện của 3 con súc sắc bằng 10.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $7$. \item $27$. \item $42$. \item $50$.
+	\end{enumerate}
+	\item Số các ước nguyên dương của $540$ là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $12$. \item $23$. \item $24$. \item $36$.
+	\end{enumerate}
+	\item Một họ gồm $m$ đường thẳng song song cắt một họ gồm $n$ đường thẳng song song khác ($m,n\geqslant 2$). Có bao nhiêu hình bình hành được tạo thành?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $\frac{m(m-1).n(n-1)}{4}$. \item $\frac{m(m-1)+n(n-1)}{2}$. \item $m(m-1).n(n-1)$. \item $m(m-1)+n(n-1)$.
+	\end{enumerate}
+	\item Ở chó gen lông ngắn kí hiệu là Aa và gen lông dài kí hiệu là aa. Thực hiện phép lai giống chó lông dài và giống chó lông ngắn thu được $\text{F}_1$. Tiếp tục thực hiện lai $\text{F}_1\times \text{F}_1$ thì được đời $\text{F}_2$. Tỉ lệ chó lông ngắn và lông dài ở đời $\text{F}_2$ là bao nhiêu?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item 1:1. \item 1:5. \item 5:1. \item 5:2.
+	\end{enumerate}
+	\item Ba người chơi trò tung xu vào một chiếc bát được đặt trong một chậu nước lớn. Chiếc bát có bán kính 9cm, chiếc chậu có bán kính 50cm. Mỗi người chơi được dùng 3 đồng xu tung đến khi nào có một đồng xu rơi vào bát thì thôi. Số xu trung bình cả ba người sử dụng và độ lệch chuẩn của nó lần lượt.\par
+	{\centering\includegraphics[width=4cm]{G2-Q96.png}\par}
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item 2 xu và 0,26. \item 1 xu và 0,26. \item 2 xu và 0,6. \item 1 xu và 0,6.
+	\end{enumerate}
+\end{enumerate}
+
+\noindent\textbf{Đề thực nghiệm 2:}
+\begin{enumerate}[label=\textbf{Câu \arabic*.},align=left,left=0cm..0cm,itemindent=*]
+	\item Từ các số $2$, $3$, $4$, $5$ có thể lập được bao nhiêu số gồm 4 chữ số?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $256$. \item $120$. \item $24$. \item $16$.
+	\end{enumerate}
+	\item Có bao nhiêu số tự nhiên gồm 4 chữ số khác nhau?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $4536$. \item $4^9$. \item $2156$. \item $4530$.
+	\end{enumerate}
+	\item Giả sử một công việc có thể được tiến hành theo 2 phương án $A$ và $B$. Phương án $A$ có thể thực hiện bằng $n$ cách, phương án $B$ có thể thực hiện bằng $m$ cách. Khi đó, số cách thực hiện công việc là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $mn$.
+		\item $m+n$.
+		\item $\frac 12mn$.
+		\item $\frac 12(m+n)$.
+	\end{enumerate}
+	\item Xét hai mệnh đề sau đây:\par
+	(I) Mỗi hoán vị $n$ phần tử của một tập hợp là một cách sắp xếp các phần tử của tập hợp đó theo một thứ tự nào đó.\par
+	(II) Mỗi hoán vị $n$ phần tử của một tập hợp là một chỉnh hợp chập $n$ của $n$ phần tử đó.\par
+	Hãy chọn phương án đúng.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item Chỉ có (I) đúng. \item Chỉ có (II) đúng. \item (I) và (II) đều đúng. \item (I) và (II) đều sai.
+	\end{enumerate}
+	\item Tỉ số $\frac{(n+3)!}{(n+1)!}$ bằng bao nhiêu?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $(n+3)(n+2)$. \item $(n+3)(n+2)(n+1)$. \item $n^2+4n+4$. \item $n+3$.
+	\end{enumerate}
+	\item Tổng $T=C_n^0+C_n^1+C_n^2+...+C_n^n$ bằng
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $2^n$. \item $2^n-1$. \item $2^n+1$. \item $4^n$.
+	\end{enumerate}
+	\item Công thức cộng xác suất $P(A+B)=P(A)+P(B)$ chỉ đúng khi
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item 2 biến cố xung khác và độc lập.
+		\item 2 biến cố độc lập.
+		\item Hai biến cố xung khắc.
+		\item 2 biến cố đối.
+	\end{enumerate}
+	\item Chọn phát biểu đúng
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item Hai biến cố xung khắc là hai biến cố đối nhau.
+		\item Hai biến cố độc lập là có ít nhất một trong hai biến cố xảy ra.
+		\item Hai biến cố xung khắc là hai biến cố cùng xảy ra.
+		\item Hai biến cố đối nhau là hai biến cố xung khắc.
+	\end{enumerate}
+	\item Cho các phát biểu sau:\par
+	a) Không gian mẫu là tập hợp tất cả các kết quả của phép thử.\par
+	b) Biến cố $A$ liên quan đến phép thử $T$ là biến cố mà việc xảy ra hay không xảy ra của $A$ phụ thuộc vào kết quả của $T$.\par
+	c) Tập hợp các biến cố thuận lợi cho cho $A$ được gọi là xác suất thuận lợi của $A$.\par
+	d) Xác suất của biến cố $A$ được xác định bởi công thức $P(A)=\frac{P(\Omega_A)}{P(\Omega)}$.\par
+	e) Xác suất luôn nhỏ hơn 1 và lớn hơn 0.\par
+	f) Xác suất của không gian mẫu luôn bằng 1.\par
+	Số phát biểu đúng là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $3$. \item $4$. \item $5$. \item $6$.
+	\end{enumerate}
+	\item Có bao nhiêu số tự nhiên có 2 chữ số mà các chữ số hàng chục lớn hơn chữ số hàng đơn vị?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $40$. \item $45$. \item $50$. \item $55$.
+	\end{enumerate}
+	\item Một người vào cửa hàng ăn, người đó chọn thực đơn gồm 1 món ăn trong 5 món, 1 loại quả tráng miệng trong 5 loại quả tráng miệng và một nước uống trong 3 loại nước uống. Có bao nhiêu cách chọn thực đơn?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $25$. \item $75$. \item $100$. \item $15$.
+	\end{enumerate}
+	\item Số các số tự nhiên gồm 5 chữ số chia hết cho 10 là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $3260$. \item $3168$. \item $9000$. \item $12070$.
+	\end{enumerate}
+	\item Số điện thoại ở huyện Củ Chi có 7 chữ số và có 3 chữ số đầu tiên là 790. Hỏi ở huyện Củ Chi có tối đa bao nhiêu máy điện thoại?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $1000$. \item $100000$. \item $10000$. \item $1000000$.
+	\end{enumerate}
+	\item Cho $B=\{1,2,3,4,5,6\}$. Từ tập $B$ có thể lập được bao nhiêu số chẵn có 6 chữ số đôi một khác nhau?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $720$. \item $46656$. \item $2160$. \item $360$.
+	\end{enumerate}
+	\item Thập giác lồi (10 cạnh) là một đa giác có bao nhiêu đường chéo?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $36$. \item $45$. \item $25$. \item $35$.
+	\end{enumerate}
+	\item Trong các khẳng định sau:\par
+	a) $P(A)=1$ thì $A$ là biến cố chắc chắn.\par
+	b) $A\cap B=\varnothing$ thì $A$ và $B$ là các biến cố đối nhau.\par
+	c) $P(B)=0$ thì $B$ là biến cố 0.\par
+	d) $A,\overline{A}$ là hai biến cố đối thì $P(A)+P\left(\overline{A}\right)=1$.\par
+	e) $A$ và $B$ là hai biến cố bất kỳ thì $P (A\cup B)=P(A)+P(B)-P (A\cap B)$.\par
+	Số khẳng định đúng là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $2$. \item $3$. \item $4$. \item $5$.
+	\end{enumerate}
+	\item Gọi $T$ là xác suất sinh con trai, $G$ là xác suất sinh con gái. Khi đó, xác suất sinh toàn con gái là\par
+	a) $P=(G)^n,~(n\in\mathbb{N}^*)$.\par
+	b) $P=(T)^n,~(n\in\mathbb{N}^*)$.\par
+	c) $P=(1-T)^n,~(n\in\mathbb{N}^*)$.\par
+	d) $P=1-(T)^n,~(n\in\mathbb{N}^*)$.\par
+	Số đáp án đúng là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $1$. \item $2$. \item $3$. \item $4$.
+	\end{enumerate}
+	\item Có bao nhiêu số tự nhiên có 4 chữ số đôi một khác nhau không vượt quá 2020?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $1008$. \item $1020$. \item $504$. \item $511$.
+	\end{enumerate}
+	\item Trong không gian $Oxyz$ cho $n$ điểm trong đó có $m$ điểm đồng phẳng ($1<m\leqslant n$). Có bao nhiêu tứ diện có các đỉnh là các điểm đã cho?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $C_{n}^{4}$.
+		\item $C_{n}^{4}-C_{n-m}^{4}$.
+		\item $C_{n-m}^{4}$.
+		\item $C_{n}^{4}-C_{m}^{4}$.
+	\end{enumerate}
+	\item Tìm số cạnh của một đa giác lồi, biết đa giác có số đường chéo gấp đôi số cạnh.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $7$. \item $4$. \item $5$. \item $6$.
+	\end{enumerate}
+	\item Cho lai cây hoa đỏ cánh dài thuần chủng với cây hoa trắng cánh ngắn thuần chủng được $\text{F}_1$. Có tất cả bao nhiêu kiểu hình của đời $\text{F}_1$?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item 16 kiểu hình. \item 4 kiểu hình. \item 8 kiểu hình. \item 12 kiểu hình.
+	\end{enumerate}
+	\item Giải bất phương trình $8C_{105}^{n}<3C_{105}^{n+1}$.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $0\leqslant n\leqslant 20$.
+		\item $0\leqslant n\leqslant 21$.
+		\item $0\leqslant n\leqslant 27$.
+		\item $0\leqslant n\leqslant 25$.
+	\end{enumerate}
+	\item Ba xạ thủ I, II và III cùng bắn (độc lập) mỗi người một viên đạn vào một tấm bia. Xác suất bắn trúng của các xạ thủ lần lượt là 0,7; 0,8; 0,9. Xác suất bia không trúng đạn là
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $0,504$. \item $0,092$. \item $0,587$. \item $0,006$.
+	\end{enumerate}
+	\item Trong giải bóng đá của một trường có 12 lớp tham gia, trong đó một đội là của lớp 12A1 và một đội của lớp 12A2. Ban tổ chức tiến hành bốc thăm ngẫu nhiên để phân chia các đội ra thành hai bảng A và B. Tính xác suất để hai đội lớp 12A1 và 12A2 ở cùng một bảng.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $\frac{5}{11}$. \item $\frac{3}{11}$. \item $\frac{4}{11}$. \item $\frac{2}{11}$.
+	\end{enumerate}
+	\item Từ các số $1$, $2$, $3$, $4$ có thể lập được bao nhiêu số tự nhiên có 9 chữ số sao cho các chữ số theo thứ tự từ trái sang phải không giảm và có mặt đủ các chữ số đã cho?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item 56 số. \item 60 số. \item 58 số. \item 62 số.
+	\end{enumerate}
+	\item Từ các số $1$, $2$, $3$, $4$, $5$, $6$, $7$ có thể lập được bao nhiêu số có 5 chữ số nhỏ hơn $30000$?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $360$. \item $720$. \item $1080$. \item $920$.
+	\end{enumerate}
+	\item Cho 10 điểm $A_1, A_2, A_3,..., A_{10}$, trong đó có 4 điểm thẳng hàng ngoài ra không có 3 điểm nào khác thẳng hàng. Hỏi có bao nhiêu tam giác có 3 đỉnh là 3 điểm trong 10 điểm đã cho?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item 80 tam giác. \item 96 tam giác. \item 60 tam giác. \item 116 tam giác.
+	\end{enumerate}
+	\item Có một mạch điện như sau:\par
+	{\centering\includegraphics[width=9cm]{G1-Q39.png}\par}
+	Có bao nhiêu cách bật công tắc để làm sáng bóng đèn?
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item 3 cách. \item 6 cách. \item $3!$ cách. \item $6!$ cách.
+	\end{enumerate}
+	\item Ở đậu Hà lan, tính trạng hạt màu vàng trội hoàn toàn so với tính trạng hạt màu xanh. Tính trạng do một gen qui định nằm ở NST thường. Cho 5 cây tự thụ và sau khi thu hoạch lấy ngẫu nhiên mỗi cây một hạt đem gieo được các cây $\text{F}_1$. Xác suất để trong 5 cây có 3 cây cho hạt vàng và 2 cây cho hạt xanh.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $P=0,026$. \item $P=0,088$. \item $P=0,264$. \item $P=0,274$.
+	\end{enumerate}
+	\item Xác suất trúng một viên đạn vào mục tiêu là 0,8. Thực hiện bắn vào mục tiêu trong điều kiện như nhau cho đến khi có 5 viên trúng mục tiêu thì dừng. gọi $X$ là số đạn cần bắn. Tìm phân phối xác suất của $X$.
+	\begin{enumerate}[label=\textbf{\Alph*.},align=left,left=1cm..0cm,itemindent=*]
+		\item $P\left[ X=k+i \right]=C_{k+i-1}^{k-1}.{{p}^{k}}.{{\left( 1-p \right)}^{i}}$.
+		\item $P\left[ X=k+i \right]=C_{k+i}^{k}.{{p}^{k}}.{{\left( 1-p \right)}^{i}}$.
+		\item $P\left[ X=k+i \right]=C_{k+i-1}^{k-1}.{{p}^{i}}.{{\left( 1-p \right)}^{k}}$.
+		\item $P\left[ X=k+i \right]=C_{k+i}^{k}.{{p}^{i}}.{{\left( 1-p \right)}^{k}}$.
+	\end{enumerate}
+\end{enumerate}
+
+\noindent\textbf{Đáp án đề thực nghiệm}
+\begin{longtable}{|Sc|Sc|Sc|Sc|Sc|}\hline
+	\multirow{2}{*}{\textbf{Câu hỏi}} & \multicolumn{2}{Sc|}{\textbf{Đề 1}} & \multicolumn{2}{Sc|}{\textbf{Đề 2}} \\ \cline{2-5}
+	& \textbf{Mức độ} & \textbf{Đáp án} & \textbf{Mức độ} & \textbf{Đáp án} \\ \hline
+	\endhead
+	Câu 1  & 1 & A & 1 & A \\ \hline
+	Câu 2  & 1 & A & 1 & A \\ \hline
+	Câu 3  & 1 & C & 1 & B \\ \hline
+	Câu 4  & 1 & B & 1 & C \\ \hline
+	Câu 5  & 1 & C & 1 & A \\ \hline
+	Câu 6  & 1 & B & 1 & A \\ \hline
+	Câu 7  & 1 & B & 1 & C \\ \hline
+	Câu 8  & 1 & B & 1 & B \\ \hline
+	Câu 9  & 1 & A & 1 & A \\ \hline
+	Câu 10 & 1 & B & 2 & B \\ \hline
+	Câu 11 & 2 & D & 2 & B \\ \hline
+	Câu 12 & 2 & D & 2 & C \\ \hline
+	Câu 13 & 2 & A & 2 & C \\ \hline
+	Câu 14 & 2 & D & 2 & D \\ \hline
+	Câu 15 & 2 & B & 2 & D \\ \hline
+	Câu 16 & 2 & D & 2 & C \\ \hline
+	Câu 17 & 2 & B & 2 & B \\ \hline
+	Câu 18 & 3 & A & 3 & D \\ \hline
+	Câu 19 & 3 & C & 3 & D \\ \hline
+	Câu 20 & 3 & B & 3 & A \\ \hline
+	Câu 21 & 3 & B & 3 & B \\ \hline
+	Câu 22 & 3 & D & 3 & B \\ \hline
+	Câu 23 & 3 & A & 3 & D \\ \hline
+	Câu 24 & 3 & A & 3 & C \\ \hline
+	Câu 25 & 3 & D & 4 & D \\ \hline
+	Câu 26 & 3 & B & 4 & B \\ \hline
+	Câu 27 & 3 & C & 4 & D \\ \hline
+	Câu 28 & 4 & A & 4 & A \\ \hline
+	Câu 29 & 4 & D & 4 & A \\ \hline
+	Câu 30 & 4 & A & 4 & B \\ \hline
+\end{longtable}
+
+02 đề thực nghiệm trên được thực nghiệm với 120 học sinh thuộc các trường THPT trên địa bàn Cần Thơ: THPT An Khánh, THPT Bùi Hữu Nghĩa, THPT Châu Văn Liêm, THPT chuyên Lý Tự Trọng, THPT Nguyễn Việt Hồng, THPT Thực hành Sư phạm (Đại học Cần Thơ). Sau khi phân tích bằng phần mềm IATA, thu được số liệu ở bảng \ref{tab:tab-s2-1-iata}.
+
+\begin{longtable}{|Sl|Sr|Sr|Sr|Sr|Sr|Sr|Sc|}
+	\caption{Kết quả phân tích đề thực nghiệm qua phần mềm IATA} \label{tab:tab-s2-1-iata} \\ \hline
+	\multicolumn{1}{|Sc|}{\textbf{Câu hỏi}} & \multicolumn{1}{Sc|}{\textbf{Discr}} & \multicolumn{1}{Sc|}{\textbf{PVal}} & \multicolumn{1}{Sc|}{\textbf{PBis}} & \multicolumn{1}{Sc|}{\textbf{$a$}} & \multicolumn{1}{Sc|}{\textbf{$b$}} & \multicolumn{1}{Sc|}{\textbf{$c$}} & \textbf{Ghi chú} \\ \hline
+	\endfirsthead
+
+	\hline
+	\multicolumn{1}{|Sc|}{\textbf{Câu hỏi}} & \multicolumn{1}{Sc|}{\textbf{Discr}} & \multicolumn{1}{Sc|}{\textbf{PVal}} & \multicolumn{1}{Sc|}{\textbf{PBis}} & \multicolumn{1}{Sc|}{\textbf{$a$}} & \multicolumn{1}{Sc|}{\textbf{$b$}} & \multicolumn{1}{Sc|}{\textbf{$c$}} & \textbf{Ghi chú} \\ \hline
+	\endhead
+	\multicolumn{8}{|Sc|}{\textbf{Đề 1}} \\ \hline
+	Câu 1  & $0.10$  & $0.96$ & $0.38$  & $1.24$  & $-2.43$  & $0$ &      \\ \hline
+	Câu 2  & $0.15$  & $0.91$ & $0.33$  & $0.74$  & $-2.31$  & $0$ &      \\ \hline
+	Câu 3  & $-0.13$ & $0.08$ & $-0.12$ & $-0.43$ & $-3.67$  & $0$ & Loại \\ \hline
+	Câu 4  & $0.44$  & $0.56$ & $0.26$  & $0.25$  & $-0.56$  & $0$ &      \\ \hline
+	Câu 5  & $0.35$  & $0.82$ & $0.36$  & $0.63$  & $-1.73$  & $0$ &      \\ \hline
+	Câu 6  & $0.25$  & $0.35$ & $0.23$  & $0.15$  & $2.59$   & $0$ &      \\ \hline
+	Câu 7  & $0.53$  & $0.75$ & $0.55$  & $1.62$  & $-0.79$  & $0$ &      \\ \hline
+	Câu 8  & $-0.03$ & $0.01$ & $-0.37$ & $-2.26$ & $-2.92$  & $0$ & Loại \\ \hline
+	Câu 9  & $0.36$  & $0.30$ & $0.30$  & $0.27$  & $1.92$   & $0$ &      \\ \hline
+	Câu 10 & $0.58$  & $0.78$ & $0.53$  & $1.27$  & $-0.98$  & $0$ &      \\ \hline
+	Câu 11 & $0.19$  & $0.92$ & $0.39$  & $0.78$  & $-2.35$  & $0$ &      \\ \hline
+	Câu 12 & $0.29$  & $0.89$ & $0.42$  & $1.42$  & $-1.56$  & $0$ &      \\ \hline
+	Câu 13 & $0.39$  & $0.84$ & $0.47$  & $1.06$  & $-1.38$  & $0$ &      \\ \hline
+	Câu 14 & $0.35$  & $0.72$ & $0.27$  & $0.35$  & $-1.68$  & $0$ &      \\ \hline
+	Câu 15 & $0.45$  & $0.84$ & $0.54$  & $1.62$  & $-1.18$  & $0$ &      \\ \hline
+	Câu 16 & $0.41$  & $0.84$ & $0.55$  & $1.58$  & $-1.19$  & $0$ &      \\ \hline
+	Câu 17 & $0.45$  & $0.87$ & $0.49$  & $1.15$  & $-1.50$  & $0$ &      \\ \hline
+	Câu 18 & $0.35$  & $0.82$ & $0.38$  & $0.33$  & $-2.92$  & $0$ &      \\ \hline
+	Câu 19 & $0.32$  & $0.86$ & $0.29$  & $0.28$  & $-3.93$  & $0$ &      \\ \hline
+	Câu 20 & $0.26$  & $0.85$ & $0.45$  & $0.58$  & $-2.08$  & $0$ &      \\ \hline
+	Câu 21 & $0.52$  & $0.45$ & $0.36$  & $0.48$  & $0.27$   & $0$ &      \\ \hline
+	Câu 22 & $0.46$  & $0.31$ & $0.30$  & $0.56$  & $1.00$   & $0$ &      \\ \hline
+	Câu 23 & $0.58$  & $0.51$ & $0.44$  & $0.95$  & $-0.05$  & $0$ &      \\ \hline
+	Câu 24 & $0.03$  & $0.37$ & $0.06$  & $-0.21$ & $-1.52$  & $0$ & Loại \\ \hline
+	Câu 25 & $-0.06$ & $0.06$ & $-0.14$ & $-0.29$ & $-5.81$  & $0$ & Loại \\ \hline
+	Câu 26 & $0.04$  & $0.65$ & $0.06$  & $-0.15$ & $2.40$   & $0$ & Loại \\ \hline
+	Câu 27 & $0.31$  & $0.85$ & $0.43$  & $0.71$  & $-1.80$  & $0$ &      \\ \hline
+	Câu 28 & $0.41$  & $0.77$ & $0.38$  & $0.79$  & $-1.19$  & $0$ &      \\ \hline
+	Câu 29 & $-0.08$ & $0.22$ & $0.06$  & $-0.19$ & $-3.94$  & $0$ & Loại \\ \hline
+	Câu 30 & $0.04$  & $0.31$ & $0.06$  & $-0.04$ & $-12.62$ & $0$ & Loại \\ \hline
+	\multicolumn{8}{|Sc|}{\textbf{Đề 2}} \\ \hline
+	Câu 1  & $0.12$  & $0.89$ & $0.09$  & $-0.08$ & $15.91$  & $0$ & Loại \\ \hline
+	Câu 2  & $0.04$  & $0.99$ & $0.21$  & $1.05$  & $-3.50$  & $0$ &      \\ \hline
+	Câu 3  & $0.16$  & $0.86$ & $0.36$  & $0.79$  & $-1.75$  & $0$ &      \\ \hline
+	Câu 4  & $0.34$  & $0.44$ & $0.32$  & $0.37$  & $0.43$   & $0$ &      \\ \hline
+	Câu 5  & $0.12$  & $0.93$ & $0.34$  & $0.79$  & $-2.45$  & $0$ &      \\ \hline
+	Câu 6  & $0.44$  & $0.85$ & $0.42$  & $1.01$  & $-1.48$  & $0$ &      \\ \hline
+	Câu 7  & $0.33$  & $0.69$ & $0.35$  & $0.51$  & $-1.09$  & $0$ &      \\ \hline
+	Câu 8  & $0.11$  & $0.17$ & \multicolumn{1}{Sc|}{$-$} & $-0.03$ & $-29.74$ & $0$ & Loại \\ \hline
+	Câu 9  & $0.23$  & $0.18$ & $0.17$  & $0.20$   & $4.69$   & $0$ &      \\ \hline
+	Câu 10 & $0.04$  & $0.96$ & $0.02$  & $-0.43$ & $4.55$   & $0$ & Loại \\ \hline
+	Câu 11 & $0.20$  & $0.96$ & $0.43$  & $1.29$  & $-2.26$  & $0$ &      \\ \hline
+	Câu 12 & $0.08$  & $0.98$ & $0.51$  & $2.50$  & $-2.59$  & $0$ &      \\ \hline
+	Câu 13 & $0.16$  & $0.91$ & $0.38$  & $1.09$  & $-1.89$  & $0$ &      \\ \hline
+	Câu 14 & $0.32$  & $0.70$ & $0.35$  & $0.22$  & $-2.33$  & $0$ &      \\ \hline
+	Câu 15 & $0.28$  & $0.88$ & $0.43$  & $0.72$  & $-2.01$  & $0$ &      \\ \hline
+	Câu 16 & $0.34$  & $0.37$ & $0.26$  & $0.06$  & $5.00$   & $0$ &      \\ \hline
+	Câu 17 & $0.17$  & $0.72$ & $0.17$  & $0.01$  & $-59.17$ & $0$ &      \\ \hline
+	Câu 18 & $0.44$  & $0.82$ & $0.48$  & $1.06$  & $-1.24$  & $0$ &      \\ \hline
+	Câu 19 & $0.46$  & $0.35$ & $0.38$  & $1.44$  & $0.46$   & $0$ &      \\ \hline
+	Câu 20 & $0.48$  & $0.86$ & $0.57$  & $1.37$  & $-1.36$  & $0$ &      \\ \hline
+	Câu 21 & $0.12$  & $0.74$ & $0.02$  & $-0.05$ & $11.37$  & $0$ & Loại \\ \hline
+	Câu 22 & $-0.16$ & $0.11$ & $-0.11$ & $-0.3$  & $-4.20$  & $0$ & Loại \\ \hline
+	Câu 23 & $0.28$  & $0.84$ & $0.42$  & $0.74$  & $-1.70$  & $0$ &      \\ \hline
+	Câu 24 & $-0.04$ & $0.04$ & $-0.15$ & $-0.38$ & $-5.05$  & $0$ & Loại \\ \hline
+	Câu 25 & $0.08$  & $0.06$ & $0.16$  & $-0.05$ & $-30.08$ & $0$ & Loại \\ \hline
+	Câu 26 & $0.48$  & $0.68$ & $0.32$  & $0.57$  & $-0.90$  & $0$ &      \\ \hline
+	Câu 27 & $0.36$  & $0.80$ & $0.42$  & $0.56$  & $-1.69$  & $0$ &      \\ \hline
+	Câu 28 & $0.14$  & $0.40$ & $0.05$  & $-0.01$ & $-27.39$ & $0$ & Loại \\ \hline
+	Câu 29 & $0.26$  & $0.32$ & $0.04$  & $-0.17$ & $-2.55$  & $0$ & Loại \\ \hline
+	Câu 30 & $0.14$  & $0.32$ & $0.05$  & $-0.10$ & $-4.47$  & $0$ & Loại \\ \hline
+\end{longtable}
+
+Đến đây, ngân hàng câu hỏi chương Tổ hợp – Xác suất được tổng hợp và chuẩn hóa gồm 87 câu hỏi thuộc 04 chủ đề. Tuy nhiên, các câu hỏi thuộc chủ đề \textit{Quy tắc đếm} có \textit{độ khó} ($b$) và \textit{độ phân biệt} rất thấp, cụ thể phần lớn câu hỏi có $b<0$ nên không thể dùng để đánh giá như một chủ đề riêng lẽ. Do đó, chủ đề \textit{Quy tắc đếm} được gộp chung với \textit{HV, TH, CH}. Số lượng các câu hỏi của ngân hàng câu hỏi được cho trong bảng \ref{tab:tab-s2-2-stats}.\par
+
+\begin{longtable}{|Sl|Sc|Sc|Sc|Sc|Sc|}
+	\caption{Số lượng câu hỏi của ngân hàng câu hỏi chương Tổ hợp – Xác suất} \label{tab:tab-s2-2-stats} \\ \hline
+	\multicolumn{1}{|Sc|}{\textbf{Chủ đề}} & \textbf{Mức độ 1} & \textbf{Mức độ 2} & \textbf{Mức độ 3} & \textbf{Mức độ 4} & \textbf{Tổng cộng} \\ \hline \endfirsthead
+
+	\multicolumn{1}{|Sc|}{\textbf{Chủ đề}} & \textbf{Mức độ 1} & \textbf{Mức độ 2} & \textbf{Mức độ 3} & \textbf{Mức độ 4} & \textbf{Tổng cộng} \\ \hline \endhead
+
+	Quy tắc đếm     & $5$ & $9$  & $7$ & $1$ & $22$ \\ \hline
+	HV, TH, CH      & $6$ & $6$  & $6$ & $2$ & $20$ \\ \hline
+	Nhị thức Newton & $7$ & $7$  & $9$ & $2$ & $25$ \\ \hline
+	Xác suất        & $5$ & $10$ & $4$ & $1$ & $20$ \\ \hline
+	\textbf{Tổng cộng} & $23$ & $32$ & $26$ & $6$ & $87$ \\ \hline
+\end{longtable}\par
 
 \section{Xây dựng API xử lý dữ liệu}
