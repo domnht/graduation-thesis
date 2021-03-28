@@ -14,3 +14,5 @@
 *.lot
 *.lof
 *.sublime-workspace
+*.lol
+*.synctex(busy)
