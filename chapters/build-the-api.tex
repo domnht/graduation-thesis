@@ -780,4 +780,190 @@ Trong đó, các câu hỏi được chia thành 02 đề độc lập nhau, m�
 	\textbf{Tổng cộng} & $23$ & $32$ & $26$ & $6$ & $87$ \\ \hline
 \end{longtable}\par
 
-\section{Xây dựng API xử lý dữ liệu}
+\section{Xây dựng API trắc nghiệm thích ứng}
+\textit{Trắc nghiệm thích ứng} (Adaptive Test) là thuật ngữ để chỉ một phương pháp đánh giá TS (học sinh, sinh viên, bệnh nhân...) bằng hình thức kiểm tra trắc nghiệm nhưng đánh giá theo hướng năng lực của TS bằng bộ CH tương ứng với mức năng lực đó. API trắc nghiệm thích ứng là một hệ thống phần mềm được phát triển trên cơ sở mô hình trắc nghiệm thích ứng để đánh giá TS. Về hoạt động, hệ thống cố gắng mô phỏng phương pháp đánh giá của một người giáo viên đối với học sinh\cite{le2019phat}. Có nghĩa là: lần đầu tiên hệ thống cung cấp cho TS một CH vừa đủ khó đối với TS, nếu TS trả lời chính xác thì sau đó một CH khó hơn sẽ được đề nghị và ngược lại, một CH có độ khó thấp hơn được đề nghị nếu TS trả lời sai. Bên cạnh đó, CH kế tiếp được đề nghị dựa trên dữ liệu trả lời những CH trước đó. Quá trình này được lặp đi lặp lại cho đến khi có đủ bằng chứng để xác định năng lực của TS.\par
+
+\subsection{Thuật toán trắc nghiệm thích ứng}
+\subsubsection{Mô tả thuật toán}
+
+\noindent Đầu vào:\par
+\begin{itemize}
+	\item Ngân hàng câu hỏi đã được chuẩn hóa theo mô hình IRT 2 tham số.
+	\item Năng lực hiện tại của thí sinh.
+\end{itemize}\par
+\noindent Đầu ra: Năng lực của thí sinh sau khi được đánh giá.\par
+\noindent Hoạt động thuật toán:\par
+\begin{enumerate}[label=\textbf{Bước \arabic*.},align=left,left=0cm..0cm,itemindent=*]
+	\item Khởi tạo mức năng lực ban đầu cho TS: $\theta_0=0$.
+	\item CH phù hợp với mức năng lực của TS được đưa ra và TS trả lời.
+	\item Ước lượng mức độ năng lực mới dựa trên kết quả trả lời CH của TS:
+	$$\theta_{k+1}=\theta_k+\gamma\sum_{i=1}^{k}\left(u_i-\frac{\mathbf{e}^{a_i(\theta-b_i)}}{1+\mathbf{e}^{a_i(\theta-b_i)}}\right),$$
+	với $\gamma=1.0$ là tốc độ học của máy, $u_i=0|1$ là kết quả trả lời CH thứ $i$ của TS, $a_i$, $b_i$ là các tham số của CH.
+	\item Quay lại \textbf{Bước 2} nếu các điều kiện dừng chưa được thỏa mãn.
+	\item Kết thúc quá trình đánh giá và đưa ra kết quả.
+\end{enumerate}\par
+Trong đó, \textit{điều kiện dừng} của thuật toán là tất cả CH trong ngân hàng CH đã được trả lời, hoặc hệ số năng lực $\theta$ đã được xác định. Cụ thể, hệ số năng lực được xác định khi độ lệch chuẩn $SE$ đạt giá trị đủ nhỏ, thường là $0.4$ hoặc $0.8$, theo lý thuyết IRT, ta có:
+$$SE(\theta_k)=\frac{1}{\sqrt{\sum_{i=1}^{k}I_i(\theta_k)}}.$$
+Hàm thông tin CH trả về giá trị kỳ vọng thay đổi của năng lực. Hay nói cách khác, CH thứ $i$ đã đóng góp thế nào cho sự thay đổi của tham số năng lực. Do đó ta có thể sử dụng như một điều kiện dừng của trắc nghiệm thích ứng.\par
+
+\subsection{Thuật toán lựa chọn câu hỏi}
+Thuật toán lựa chọn CH tiếp theo là phần quan trọng nhất trong mô hình trắc nghiệm thích ứng. Đây là một thuật toán con hoạt động bên trong thuật toán trắc nghiệm thích ứng. Thuật toán này giúp máy tính lựa chọn ra CH phù hợp với năng lực thí sinh từ ngân hàng CH đã chuẩn hóa. Cho đến hiện nay, tồn tại các thuật toán lựa chọn CH như sau \cite{tran2017ung}:
+\begin{itemize}
+	\item Thuật toán lựa chọn CH theo tiêu chuẩn thông tin tối đa (MI) là thuật toán phổ biến được sử dụng trong các mô hình trắc nghiệm thích nghi. CH thứ $k+1$ được lựa chọn cho TS là câu hỏi cung cấp thông tin tối đa cho việc ước lượng khả năng ($\theta_k$) của TS dựa trên $k$ câu hỏi trước đó mà TS đã trả lời.
+	\item Thuật toán lựa chọn câu hỏi theo thông tin toàn cục (KL) là thuật toán lựa chọn câu hỏi dựa trên phương pháp thông tin tổng thể. Thuật toán này sử dụng độ đo Kullback – Leibler để tính toán ước lượng trong việc lựa chọn câu hỏi.
+	\item Thuật toán lựa chọn câu hỏi dựa trên sự phân tích tiên đoán theo tiêu chí tối đa thông tin (MEI) là thuật toán lựa chọn câu hỏi dựa trên việc phân tích tiên đoán các tiêu chí tối đa thông tin dự kiến.
+\end{itemize}\par
+
+\subsubsection{Tiêu chí chọn CH}
+Sau khi TS trả lời CH $k$ thì năng lực tạm thời của TS được ước lượng và ký hiệu là $\theta_{k}$. Tiếp theo ta tìm CH thứ $k$ phù hợp với mức năng lực này bằng phương pháp lựa chọn CH theo \textit{tiêu chuẩn thông tin tối đa} (maximum information criterion):
+$$i_{k+1}=\mathrm{argmax}_j\left\{I_j\left(\theta_k\right),~j\in R_k\right\}$$
+Với $R_k=\left\{1...n\right\}\setminus S_k$, và $S_k={i_1, i_2, ..., i_k}$ là tập hợp CH đã được chọn, $I_j(\theta)$ là hàm thông tin của CH thứ $j$, đối với mô hình IRT 2 tham số, ta có:
+$$I_j(\theta)=a_j^2P_j(\theta)Q_j(\theta).$$
+Khi $\theta$ cố định, hàm thông tin đạt giá trị cực đại tại điểm $b=0$. Vì vậy câu $i_{k+1}$ được chọn là CH có độ khó gần với $\theta_k$. Nói cách khác, khi giá trị độ khó $b$ càng tiến về giá trị năng lực $\theta$ và độ phân biệt $a$ càng lớn thì hàm thông tin càng tiến gần giá trị cực đại. Do đó, CH thứ $k+1$ được chọn là CH có độ khó gần bằng năng lực ước lượng $\theta_k$ và có độ phân biệt lớn nhất trong ngân hàng.\par
+
+\subsubsection{Thuật toán tìm kiếm nhị phân}
+Với bài toán tìm kiếm một giá trị gần nhất với $a$ từ tập hợp $\left\{b_1,b_2,...,b_n\right\}$. \textit{Thuật toán tìm kiếm nhị phân} (binary search algorithm) cho phép ta tìm kiếm một cách tối ưu với độ phức tạp $\mathrm{O}\left(\log_n\right)$: Nếu $a$ nhỏ hơn giá trị trung tâm thì ta tìm kiếm trong nửa trái của dãy, ngược lại thì tìm kiếm trogn nửa phải của dãy, quá trình tiếp tục cho tới khi tìm được giá trị xấp xỉ với $a$.\par
+\noindent Đầu vào: $a$ và dãy $\left\{b_1,b_2,...,b_n\right\}$.\par
+\noindent Đầu ra: $b$ gần nhất với $a$.\par
+\noindent Hoạt động của thuật toán:\par
+\begin{enumerate}[label=\textbf{Bước \arabic*.},align=left,left=0cm..0cm,itemindent=*]
+	\item Gán $l=1$ và $r=n$.
+	\item Nếu $l\geqslant r$, chuyển tới \textbf{Bước 6}.
+	\item Gán $m=\left\lfloor\frac{l+r}{2}\right\rfloor$.
+	\item Nếu $a=b_m$, tìm kiếm kết thúc và trả về $m$.
+	\item Nếu $a<b_m$, gán $r=m-1$, ngược lại, gán $l=m+1$, quay lại \textbf{Bước 2}.
+	\item Nếu $|a-b_l|<|a-b_r|$, trả về $l$, ngược lại, trả về $r$. Tìm kiếm kết thúc.
+\end{enumerate}
+\noindent Code minh họa thuật toán trên ngôn ngữ PHP:
+\begin{lstlisting}[language=php,caption=Phương thức tìm kiếm nhị phân]
+function binary_search (Int $a, Array $b): Int {
+	if (count($b) == 0) return -1;
+	$left = 0; $right = count($b) - 1;
+	while ($left <= $right) {
+		$mid = floor(($left + $right) / 2);
+		if ($a == $b[$mid$]) return $mid;
+		if ($a < $b[$mid]) $right = $mid - 1; else $left = $mid + 1;
+	}
+	if (abs($a - $b[$left]) < abs($a - $b[$right]))
+		return $left;
+	return $right;
+}
+\end{lstlisting}
+\subsection{Xây dựng API xử lý bằng ngôn ngữ PHP}
+Bằng ngôn ngữ web PHP, luận văn tiến hành xây dựng một \textit{không gian tên} (namespace) xử lý dữ liệu CH và bài kiểm tra dựa trên lý thuyết IRT. Trong đó có 02 \textit{lớp} (class) là \texttt{item} và \texttt{test}.
+\subsubsection{Class câu hỏi}
+Trong class câu hỏi, có hai tham số chính, là $a$ (độ phân biệt) và $b$ (độ khó) cần được khởi tạo ngay từ đầu. Bên cạnh đó, lớp cần cung cấp các phương thức tính xác suất trả lời đúng ($P$), xác suất trả lời sai ($Q=1-P$) và tính hàm lượng thông tin cho việc đánh giá năng lực ($I$).\par
+\noindent Code minh họa:
+\begin{lstlisting}[language=php,caption=Class câu hỏi]
+namespace IRT;
+class Item {
+	public $a = 0;
+	public $b = 0;
+
+	function __construct (Float $a, Float $b) {
+		$this -> set_parameter($a, $b);
+	}
+	function set_parameter (Float $a, Float $b) {
+		$this -> a = $a;
+		$this -> b = $b;
+	}
+	function P (Float $theta): Float {
+		$exp = exp(($this -> a) * ($theta - ($this -> b)));
+		return $exp / (1 + $exp);
+	}
+	function Q (Float $theta): Float {
+		return $this -> P($theta);
+	}
+	function I (Float $theta): Float {
+		$P = $this -> P($theta);
+		return $this -> a ** 2 * $P * (1 - $P);
+	}
+}
+\end{lstlisting}
+
+\subsubsection{Class bài kiểm tra}
+Class bài kiểm tra bao gồm hai thuộc tính chính là \textit{các câu hỏi} (items) và tốc độ học $\gamma$ của kiểm tra thích ứng. Các phương thức xử lý cần thiết là: Thêm câu hỏi (\texttt{add\_item(item:)} và \texttt{add\_items(items:)}), lấy câu hỏi (\texttt{get\_item(index:)}), xóa câu hỏi (\texttt{remove\_item(index:)}), đếm số câu hỏi (\texttt{num\_of\_items(:)}).\par
+Bên cạnh đó, clas cần cung cấp đầy đủ các phương thức tính toán dựa trên lý thuyết IRT, như là: hàm thông tin của đề trắc nghiệm ($I(\theta)$), độ lệch chuẩn $SE(\theta)$ và điểm IRT. Hơn nữa, để phục vụ cho trắc nghiệm thích ứng, một phương thức không thể thiếu là tìm kiếm câu hỏi bằng thuật toán nhị phân (\texttt{binary\_search\_item(theta:)}).\par
+\noindent Code minh họa:
+
+\begin{lstlisting}[language=php,caption=Class bài kiểm tra]
+namespace IRT;
+class Test {
+	public $items;
+	public $gamma = 1.0;
+
+	function __construct (Array $items = []) {
+		$this -> items = $items;
+	}
+	function add_item (Item $item) {
+		array_push($this -> items, $item);
+	}
+	function add_items (Array $items) {
+		$this -> items = array_merge($this -> items, $items);
+	}
+	function get_item (Int $index): Item {
+		return $this -> items[$index];
+	}
+	function remove_item (Int $index) {
+		array_splice($this -> items, $index, 1);
+	}
+	function num_of_items (): Int {
+		return count($this -> items);
+	}
+
+	function d_theta (Float $theta, Array $answers): Float {
+		$numerator = 0;
+		$denominator = 0.000001;
+		for ($i = 0, $count = count($answers); $i < $count; $i++) {
+			$numerator   += ($this -> items[$i] -> a) * ($answers[$i] - ($this -> items[$i] -> P($theta)));
+			$denominator += $this -> items[$i] -> I($theta);
+		}
+		return $numerator / $denominator;
+	}
+	function I (Float $theta): Float {
+		$sumI = 0.000001;
+		for ($i = 0, $count = count($this -> items); $i < $count; $i++)
+			$sumI += $this -> items[$i] -> I($theta);
+		return $sumI;
+	}
+	function standard_deviation_expected ($theta): Float {
+		return 1 / sqrt($this -> I($theta));
+	}
+	function IRT (Array $answers, Float $start_theta = 1.0): Array {
+		$theta = $start_theta;
+		$d_theta = 1.0;
+		$d_theta_max = 0.00001;
+		$step = 0;
+		while ((abs($d_theta) > $d_theta_max) && ($step < 100)) {
+			$step++;
+			$d_theta = $this -> d_theta($theta, $answers, $this -> items);
+			$theta += $d_theta;
+		}
+		$SumP = 0;
+		for ($i = 0, $count = count($answers); $i < $count; $i++)
+			$SumP += P($theta, $this -> items[$i]);
+		return [
+			'step' => $step,
+			'theta' => $theta,
+			'IRT_score' => $SumP / count($answers)
+		];
+	}
+
+	function binary_search_item (Float $theta): Int {
+		$count = count($this -> items);
+		if ($count == 0) return false;
+		$low = 0; $high = $count - 1;
+
+		while ($low <= $high) {
+			$mid = floor(($low + $high) / 2);
+			if ($theta == ($this -> items[$mid] -> b)) return $mid;
+			if ($theta < ($this -> items[$mid] -> b)) $high = $mid - 1;
+			else $low = $mid + 1;
+		}
+
+		if (abs($theta - ($this -> items[$low] -> b)) < abs($theta - ($this -> items[$high] -> b)))
+			return $low;
+		return $high;
+	}
+}
+\end{lstlisting}
