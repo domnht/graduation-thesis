@@ -27,14 +27,14 @@ Bên phải màn hình là thanh điều hướng:
 \begin{enumerate}[label=\textbf{(\arabic*)},align=left,left=0cm..0cm,itemindent=*]
 	\item \textbf{Grow}: Trang bắt đầu, chứa các thông tin cơ bản và công cụ giúp phát triển chatbot.
 	\item \textbf{Automation}: Các thiết đặt trả lời tự động.
-	\item \textbf{Live Chat}: Hiển thị các tin nhắn yêu cầu trò chuyện với quản trị viên (các vai trò trên bot được thiết đặt ở mục \textbf{(6)}).
+	\item \textbf{Live Chat}: Hiển thị các tin nhắn yêu cầu trò chuyện với quản trị viên (các vai trò trên chatbot được thiết đặt ở mục \textbf{(6)}).
 	\item \textbf{People}: Hiển thị danh sách và các thuộc tính, thông tin người dùng đã tương tác với chatbot.
 	\item \textbf{Re-engage}: Cho phép tương tác lại với các người dùng đã sử dụng chatbot, đã lâu không tương tác, chưa hoàn thành việc nào đó (theo điều kiện tự thiết đặt)...
 	\item \textbf{Configure}: Cài đặt cho chatbot.
 	\item \textbf{Analyze}: Các phân tích định lượng và gợi ý cho việc phát triển bot.
 \end{enumerate}
 
-\subsubsection{Phần trả lời tự động}
+\subsubsection{Mục Automation}
 Phần này cung cấp các công cụ để tạo ra những cuộc hội thoại hoàn toàn tự động và linh hoạt (hình \ref{fig:fig-s3-2-chatfuel-automation-flows}):
 \begin{enumerate}[label=\textbf{(\arabic*)},align=left,left=0cm..0cm,itemindent=*]
 	\item \textbf{Flows}: Thiết đặt trả lời tự động thông qua các khối trực quan, việc này tương tự với biểu diễn thuật toán bằng biểu đồ.
@@ -63,6 +63,36 @@ Phần \textbf{\textit{Set up AI}} cho phép kết hợp các flows và blocks l
 	\label{fig:fig-s3-2-chatfuel-automation-ai}
 \end{figure}\par
 
+Nếu sử dụng linh hoạt, ta hoàn toàn có thể tạo ra một chatbot tương tự người thật, với những khả năng được Chatfuel hỗ trợ:
+\begin{itemize}
+	\item Gửi hiệu ứng đang nhập tin nhắn.
+	\item Gửi đi tin nhắn văn bản, hình ảnh, phim, âm thanh...
+	\item Tạo một thư viện các sản phẩm, hình ảnh...
+	\item Tạo ra các \textit{lựa chọn nhanh} (quick replies) cho phép người dùng trả lời nhanh.
+	\item Lưu lại tin nhắn vừa nhận được.
+	\item Thiết đặt các \textit{thuộc tính} (attribute) của người dùng.
+\end{itemize}
 
+\subsubsection{Mục People}
+Mục people (hình \ref{fig:fig-s3-4-chatfuel-people}) cung cấp danh sách chi tiết người dùng đã tương tác với bot, các thuộc tính có sẵn và các thuộc tính tự thiết lập:
+\begin{enumerate}[label=\textbf{(\arabic*)},align=left,left=0cm..0cm,itemindent=*]
+	\item Hiển thị danh sách người dùng và các thuộc tính, thời gian truy cập... Phần này có thể tùy chỉnh danh sách các cột tùy theo nhu cầu sử dụng.
+	\item Cung cấp chức năng lọc danh sách người dùng theo nhóm: người dùng chủ động nhắn tin với chatbot, người dùng nhấn vào quảng cáo, người dùng bình luận các bài đăng của fanpage...
+	\item Quản lý chung danh sách người dùng của chatbot, cụ thể: lưu vào nhóm nào đó, xóa người dùng, xuất dưới dạng tệp CSV (Comma-separated values).
+\end{enumerate}\par
 
+\begin{figure}[htb!]\centering
+	\includegraphics[width=15cm]{chatfuel/4-people}
+	\caption{Giao diện danh sách người dùng đã tương tác với bot}
+	\label{fig:fig-s3-4-chatfuel-people}
+\end{figure}\par
+
+\subsubsection{Mục Re-engage}
+Chức năng này cung cấp nhiều cách để tương tác tự động với người dùng của bot. Chatfuel cho phép \textbf{(1)} gửi thủ công ngay lập tức, \textbf{(2)} lên lịch cho tin nhắn, \textbf{(3)} gửi tin nhắn theo một sự kiện được thiết lập sẵn (sau 24 giờ không tương tác, khi thay đổi một thuộc tính...), \textbf{(4)} tự động gửi tin nhắn từ các nguồn bên ngoài chatfuel (qua JSON API). Tin nhắn được thiết kế và gửi từ \textit{re-engage} hoàn toàn tương tự với giao diện thiết kế \textit{blocks} \textbf{(5)}.\par
+
+\begin{figure}[htb!]\centering
+	\includegraphics[width=15cm]{chatfuel/5-re-engage}
+	\caption{Giao diện danh sách người dùng đã tương tác với bot}
+	\label{fig:fig-s3-5-chatfuel-re-engage}
+\end{figure}\par
 
