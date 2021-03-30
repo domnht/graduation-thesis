@@ -10,7 +10,7 @@
 \end{enumerate}\par
 
 \begin{figure}[htb!]\centering
-	\includegraphics[width=15cm]{chatfuel/0-dashboard}
+	\includegraphics[width=15cm]{chatfuel/dashboard}
 	\caption{Giao diện bắt đầu của Chatfuel}
 	\label{fig:fig-s3-1-chatfuel-dashboard}
 \end{figure}\par
@@ -18,7 +18,7 @@
 \subsection{Giao diện làm việc}
 Sau khi chọn chatbot, người dùng được chuyển tới giao diện làm việc của Chatfuel (hình \ref{fig:fig-s3-1-chatfuel-grow}), trước hết là mục \textit{Grow} – chứa các thông tin cơ bản để phát triển chatbot như \textit{trang Facebook đã kết nối} (connected page, mục \textbf{(8)}), cách bot trả lời lại một số tin nhắn người dùng thường gửi, các \textit{tiện ích mở rộng} (plugin).\par
 \begin{figure}[htb!]\centering
-	\includegraphics[width=15cm]{chatfuel/1-grow}
+	\includegraphics[width=15cm]{chatfuel/grow}
 	\caption{Giao diện làm việc chính của Chatfuel}
 	\label{fig:fig-s3-1-chatfuel-grow}
 \end{figure}\par
@@ -30,7 +30,7 @@ Bên phải màn hình là thanh điều hướng:
 	\item \textbf{Live Chat}: Hiển thị các tin nhắn yêu cầu trò chuyện với quản trị viên (các vai trò trên chatbot được thiết đặt ở mục \textbf{(6)}).
 	\item \textbf{People}: Hiển thị danh sách và các thuộc tính, thông tin người dùng đã tương tác với chatbot.
 	\item \textbf{Re-engage}: Cho phép tương tác lại với các người dùng đã sử dụng chatbot, đã lâu không tương tác, chưa hoàn thành việc nào đó (theo điều kiện tự thiết đặt)...
-	\item \textbf{Configure}: Cài đặt cho chatbot.
+	\item \textbf{Configure}: Cài đặt cho chatbot, bao gồm múi giờ của chatbot, menu hoạt động, các thành viên có thể quản lý bot...
 	\item \textbf{Analyze}: Các phân tích định lượng và gợi ý cho việc phát triển bot.
 \end{enumerate}
 
@@ -38,40 +38,30 @@ Bên phải màn hình là thanh điều hướng:
 Phần này cung cấp các công cụ để tạo ra những cuộc hội thoại hoàn toàn tự động và linh hoạt (hình \ref{fig:fig-s3-2-chatfuel-automation-flows}):
 \begin{enumerate}[label=\textbf{(\arabic*)},align=left,left=0cm..0cm,itemindent=*]
 	\item \textbf{Flows}: Thiết đặt trả lời tự động thông qua các khối trực quan, việc này tương tự với biểu diễn thuật toán bằng biểu đồ.
-	\item \textbf{Blocks}: Tạo ra các "khối" tin nhắn xác định, có thể dễ dàng di chuyển qua lại với Flows.
-	\item \textbf{Set up AI}: Đặt các quy tắc trả lời tự động (hoặc chuyển hướng sang Block, Flow) thông qua việc nhận dạng các cụm từ, tin nhắn...
+	\item \textbf{Blocks}: Tạo ra các "khối" tin nhắn xác định, có thể dễ dàng \textit{điều hướng} (navigate) qua lại với Flows.
+	\item \textbf{Set up AI}: Đặt các quy tắc trả lời tự động (hoặc điều hướng sang Block, Flow) thông qua việc nhận dạng các cụm từ, tin nhắn...
 \end{enumerate}\par
 \textbf{\textit{Flows}} cho phép sử dụng cấu trúc rẽ nhánh (nếu... thì...) và có thể điều hướng rất linh hoạt thông qua giao diện chỉnh sửa trực quan, do đó, nó thường được lựa chọn cho các cuộc hội thoại dài và phức tạp. Một flow có thể đảm nhiệm một mảng lớn của chatbot. Điển hình là các phần hướng dẫn, hỏi đáp (Q-A), khảo sát... Tuy nhiên, do vẫn còn ở giai đoạn thử nghiệm, nên flow vẫn chưa được hoàn thiện về mặt hiệu năng, đặc biệt là giao diện chỉnh sửa không ổn định khi làm việc với những flow mang tính phức tạp. Giao diện Flows gồm có hai phần: \textbf{(4)} danh sách các flow và \textbf{(5)} khu vực thiết kế flow với các nút lệnh \textbf{(6)} (hình \ref{fig:fig-s3-2-chatfuel-automation-flows}).\par
 
 \begin{figure}[htb!]\centering
-	\includegraphics[width=15cm]{chatfuel/2-1-flows}
+	\includegraphics[width=15cm]{chatfuel/flows}
 	\caption{Thiết đặt trả lời tự động với chức năng \textit{Flows}}
 	\label{fig:fig-s3-2-chatfuel-automation-flows}
 \end{figure}\par
 
 \textbf{\textit{Blocks}} cho phép trả lời tự động thông qua các khối được thiết đặt từ trước. Blocks sử dụng giao diện chỉnh sửa tuyến tính và không hỗ trợ cấu trúc rẽ nhánh như Flows, nên một block không thể đảm nhận nhiều công việc. Khi chưa có flow, block thường được dùng riêng lẻ để gọi JSON API – thành phần quyết định các cấu trúc rẽ nhánh và điều hướng. Hiện nay, block thường được sử dụng cho các giao tiếp đơn giản, gửi các hình ảnh có sẵn, gọi JSON API cho các thuật toán phức tạp... Giao diện thiết lập block tương tự hình \ref{fig:fig-s3-2-chatfuel-automation-blocks}, trong đó: \textbf{(1)} chứ các nhóm và các block, \textbf{(2)} không gian biên tập block.\par
 \begin{figure}[htb!]\centering
-	\includegraphics[width=15cm]{chatfuel/2-2-blocks}
+	\includegraphics[width=15cm]{chatfuel/blocks}
 	\caption{Thiết đặt trả lời tự động với chức năng \textit{Blocks}}
 	\label{fig:fig-s3-2-chatfuel-automation-blocks}
 \end{figure}\par
 
-Phần \textbf{\textit{Set up AI}} cho phép kết hợp các flows và blocks lại với nhau, thông qua việc nhận dạng từ ngữ nhận được, bot sẽ trả lời bằng \textit{tin nhắn văn bản} (text messages) hoặc \textit{chuyển hướng} (re-direct) sang các phần khác. Ở phần này (hình \ref{fig:fig-s3-2-chatfuel-automation-ai}), người dùng có thể thêm mới một \textit{quy tắc} (rule – \textbf{(1)}), sau đó nhập các cụm từ vào mục \textbf{(2)} và thiết lập cách phản hồi của bot ở mục \textbf{(3)}.\par
+Phần \textbf{\textit{Set up AI}} cho phép kết hợp các flows và blocks lại với nhau, thông qua việc nhận dạng từ ngữ nhận được, bot sẽ trả lời bằng \textit{tin nhắn văn bản} (text messages) hoặc \textit{chuyển hướng} (re-direct) sang các phần khác. Tính năng này đặc biệt hiệu quả do ta có thể dạy bot cách phản hồi thật chính xác theo mong muốn của mình. Ngoài ra, ở mục \textit{Grow}, Chatfuel sẽ gợi ý một số cụm từ, tin nhắn mà người dùng thường xuyên gửi đến, giúp bao quát hóa việc học tập của AI. Ở giao diện này (hình \ref{fig:fig-s3-2-chatfuel-automation-ai}), người dùng có thể thêm mới một \textit{quy tắc} (rule – \textbf{(1)}), sau đó nhập các cụm từ vào mục \textbf{(2)} và thiết lập cách phản hồi của bot ở mục \textbf{(3)}.\par
 \begin{figure}[htb!]\centering
-	\includegraphics[width=15cm]{chatfuel/2-3-set-up-ai}
+	\includegraphics[width=15cm]{chatfuel/set-up-ai}
 	\caption{Thiết đặt trả lời tự động với chức năng \textit{Set up AI}}
 	\label{fig:fig-s3-2-chatfuel-automation-ai}
 \end{figure}\par
-
-Nếu sử dụng linh hoạt, ta hoàn toàn có thể tạo ra một chatbot tương tự người thật, với những khả năng được Chatfuel hỗ trợ:
-\begin{itemize}
-	\item Gửi hiệu ứng đang nhập tin nhắn.
-	\item Gửi đi tin nhắn văn bản, hình ảnh, phim, âm thanh...
-	\item Tạo một thư viện các sản phẩm, hình ảnh...
-	\item Tạo ra các \textit{lựa chọn nhanh} (quick replies) cho phép người dùng trả lời nhanh.
-	\item Lưu lại tin nhắn vừa nhận được.
-	\item Thiết đặt các \textit{thuộc tính} (attribute) của người dùng.
-\end{itemize}
 
 \subsubsection{Mục People}
 Mục people (hình \ref{fig:fig-s3-4-chatfuel-people}) cung cấp danh sách chi tiết người dùng đã tương tác với bot, các thuộc tính có sẵn và các thuộc tính tự thiết lập:
@@ -82,7 +72,7 @@ Mục people (hình \ref{fig:fig-s3-4-chatfuel-people}) cung cấp danh sách ch
 \end{enumerate}\par
 
 \begin{figure}[htb!]\centering
-	\includegraphics[width=15cm]{chatfuel/4-people}
+	\includegraphics[width=15cm]{chatfuel/people}
 	\caption{Giao diện danh sách người dùng đã tương tác với bot}
 	\label{fig:fig-s3-4-chatfuel-people}
 \end{figure}\par
@@ -91,8 +81,83 @@ Mục people (hình \ref{fig:fig-s3-4-chatfuel-people}) cung cấp danh sách ch
 Chức năng này cung cấp nhiều cách để tương tác tự động với người dùng của bot. Chatfuel cho phép \textbf{(1)} gửi thủ công ngay lập tức, \textbf{(2)} lên lịch cho tin nhắn, \textbf{(3)} gửi tin nhắn theo một sự kiện được thiết lập sẵn (sau 24 giờ không tương tác, khi thay đổi một thuộc tính...), \textbf{(4)} tự động gửi tin nhắn từ các nguồn bên ngoài chatfuel (qua JSON API). Tin nhắn được thiết kế và gửi từ \textit{re-engage} hoàn toàn tương tự với giao diện thiết kế \textit{blocks} \textbf{(5)}.\par
 
 \begin{figure}[htb!]\centering
-	\includegraphics[width=15cm]{chatfuel/5-re-engage}
+	\includegraphics[width=15cm]{chatfuel/re-engage}
 	\caption{Giao diện danh sách người dùng đã tương tác với bot}
 	\label{fig:fig-s3-5-chatfuel-re-engage}
 \end{figure}\par
 
+\subsection{Thiết kế một cuộc hội thoại với Chatfuel}
+\subsubsection{Thiết kế chatbot bằng blocks}
+Một block được sử dụng là một giai đoạn của cuộc hội thoại. Lần đầu truy cập, chatbot sẽ có 02 block mặc định là \textit{tin nhắn chào mừng} (welcome message) và \textit{câu trả lời mặc định} (default answer) (xem hình \ref{fig:fig-s3-2-chatfuel-automation-blocks}). Đúng như tên gọi, \textit{tin nhắn chào mừng} được gửi lần đầu tiên khi người dùng bắt đầu trò chuyện với bot và \textit{câu trả lời mặc định} dùng để gửi đi khi bot không hiểu tin nhắn của người dùng.\par
+Ở giao diện làm việc với blocks, để tạo một block mới, ta chọn dấu cộng (+) ở khung \textbf{(1)}, hoặc tạo một nhóm các block bằng việc chọn \textit{+ ADD SEQUENCE OR GROUP} sau đó đặt tên cho nhóm. Ngoài ra, các block có thể được phân nhóm và sắp xếp dễ dàng bằng thao tác kéo thả chuột.\par
+Chọn một block ở khung danh sách \textbf{(1)} để hiện nội dung của block (hình \ref{fig:fig-s3-6-chatfuel-block-menu}). Tại đây, tên block được hiển thị ở \textbf{(1)}, người dùng có thể nhấn chuột vào để đổi tên block theo ý mình. Tiếp sau tên block là nút \textit{LINK} dùng để tạo \textit{đường dẫn} (URL) để truy cập trực tiếp tới block đó. Phần \textbf{(2)} là thông tin các đường vào/ra của block, trên hình \ref{fig:fig-s3-6-chatfuel-block-menu}, người dùng có thể truy cập tới block từ menu chính của fanpage, từ \textit{câu trả lời mặc định} và từ một block/flow có tên \textit{f\_survey}; cũng vậy, từ block \textit{menu} có thể chuyển sang các block/flow có tên \textit{about-bot}, \textit{start}, \textit{update-information} và \textit{open-form}. Tiếp theo là nội dung chính hay kịch bản của block \textbf{(3)} và cuối cùng là các thành \textit{thành phần} (elements) để thiết kế block, còn được gọi là các phug-in \textbf{(4)}.\par
+\begin{figure}[htb!]\centering
+	\includegraphics[width=10cm]{chatfuel/block-demo}
+	\caption{Nội dung của một block}
+	\label{fig:fig-s3-6-chatfuel-block-menu}
+\end{figure}\par
+
+Khi chọn \textit{More} để hiển thị danh sách đầy đủ (hình \ref{fig:fig-s3-7-chatfuel-block-elements}), các plug-in này sẽ được hiển thị theo các nhóm chức năng chính, cụ thể:
+\begin{itemize}
+	\item \textbf{Add \& Send Content:} nhóm phug-in này đơn giản và dễ sử dụng nhất, giúp quản trị viên thêm và gửi nội dung từ block: \begin{itemize}
+		\item \textbf{Text}: Cho phép tạo ra một tin nhắn văn bản, tối đa 640 ký tự. Plug-in này hỗ trợ mã hóa văn bản UTF-8 do đó có thể được sử dụng cho nhiều ngôn ngữ khác nhau, trong đó có tiếng Việt.
+		\item \textbf{Typing}: Plugin này tạo ra một hoạt ảnh đang nhập tin nhắn cho người dùng trong khoảng thời gian đặt trước: từ $0.1$ đến $20$ giây. Hoạt ảnh này cho người dùng thời gian để đọc tin nhắn từ bot trước khi tin nhắn tiếp theo được gửi. Để bot mô phỏng hành động giống với người thật, Chatfuel khuyến nghị chọn số giây khớp với số dòng của tin nhắn trước đó. Ví dụ, tin nhắn trước đó có 04 dòng, thì hoạt ảnh này nên được đặt là 4 giây.
+		\item \textbf{Image}: Cho phép thêm hình ảnh (cả ảnh tĩnh và ảnh động) vào block với các định dạng được chấp nhận là PNG, JPG và GIF. Để thời gian gửi ảnh được tối ưu, hình ảnh được lựa chọn nên có kích thướt và dung lượng vừa phải, cụ thể: $500\times 500$ pixel cho hình ảnh tỉ lệ $1:1$ hoặc $854\times 460$ pixel cho hình ảnh tỉ lệ $16:9$ và kích thước tệp không lớn hơn 1 MB; đối với ảnh động (GIF), tốc độ khung hình (frames per second) tối đa là 60 FPS và kích thước tệp không lớn hơn 2 MB.
+		\item \textbf{Gallery}: Plug-in này cung cấp một thư viện cho bot (hình \ref{fig:fig-s3-8-chatfuel-gallery}). \textit{Thư viện} là một màn hình hiển thị theo chiều ngang chứa nhiều hình ảnh mà người dùng có thể cuộn qua (tối đa 10 hình ảnh), mỗi hình ảnh đều có \textit{tiêu đề} (title), \textit{tiêu đề phụ} (subtitle), URL và (các) nút nhấn. Plug-in này có thể sử dụng cho việc giới thiệu sản phẩm, hiển thị các tùy chọn, hiển thị các \textit{câu hỏi thường gặp}... Các nút nhấn cho mỗi mục trong thư viện có thể chuyển hướng người dùng đến một block/flow khác, mở URL, thực hiện cuộc gọi đến một số cụ thể...\par
+		\begin{figure}[htb!]\centering
+			\includegraphics[width=12cm]{chatfuel/gallery}
+			\caption{Một thư viện được tạo ra từ Chatfuel}
+			\label{fig:fig-s3-8-chatfuel-gallery}
+		\end{figure}
+		\item \textbf{Video}: Cho phép thêm video vào một khối. Tuy nhiên, trước tiên cần tải video lên Facebook hoặc Dropbox và bật chia sẻ công khai trên nền tảng tương ứng đó, nghĩa là video được hiển thị cho bất kỳ ai có liên kết. Với video, định dạng tệp phải là MP4 với kích thước tệp tối đa là 25 MB.
+		\item \textbf{Audio}: Cho phép thêm một tệp âm thanh vào block. Cũng như video, tệp âm thanh cần được tải lên một dịch vụ lưu trữ nào đó và đặt ở chế độ công khai. Các định dạng được hỗ trợ là MP3, WAV và OGG với kích thước tệp tối đa là 25 MB.
+		\item \textbf{Comment}: Dùng để thêm một ghi chú vào các phần tử của chatbot. Comment sẽ không hiển thị cho người dùng. Thêm chúng để tạo ghi chú để chỉnh sửa về sau hoặc để lại ghi chú cho những người quản trị khác.
+	\end{itemize}
+	\item \textbf{Collect User Data}: Thu thập dữ liệu từ người dùng để phân loại hoặc tiếp cận trong tương lai. \begin{itemize}
+		\item \textbf{Quick Reply}: Plug-in này cho phép thêm các tùy chọn phản hồi vào bên dưới của plug-in \textit{Text} (hình \ref{fig:fig-s3-9-chatfuel-quick-reply}). Mỗi tùy chọn trả lời nhanh có thể bao gồm tối đa 20 ký tự văn bản và biểu tượng cảm xúc, và có thể có tối đa 11 câu trả lời nhanh. Khi được nhấn vào, các câu trả lời này có thể kích hoạt phản hồi của AI, dẫn người dùng đến một khối khác và thậm chí lưu phản hồi của họ vào một thuộc tính.\par
+		\begin{figure}[htb!]\centering
+			\includegraphics[width=10cm]{chatfuel/quick-reply}
+			\caption{Minh họa các câu trả lời nhanh}
+			\label{fig:fig-s3-9-chatfuel-quick-reply}
+		\end{figure}
+		\item \textbf{Save User Input}: Cho phép lấy văn bản hoặc tệp từ người dùng của chatbot. Bot có thể tự động lưu tin nhắn vắn bản vào một thuộc tính hoặc tự động gửi tới email của quản trị viên bằng plug-in \textbf{Notify Admin Via Email} hoặc tới bảng tính bằng plug-in \textbf{Save to Google Sheets}. Plug-in này có thể chấp nhận bất kỳ loại tệp nào (DOCX, XLSX, PDF, JPG, v.v.) được phép gửi ở Facebook hay Facebook Messenger.
+		\item \textbf{Set User Attribute}: Plug-in này sẽ tự động đặt giá trị thuộc tính (tùy chỉnh) cho người dùng dựa trên việc họ đã xem một phần nhất định của chatbot hay chưa, hoặc thêm các trường dữ liệu vào thông tin người dùng. Chatfuel hỗ trợ đặt bất kỳ giá trị nào, nhưng tập hợp điển hình có thể bao gồm \textit{có} (yes), \textit{không} (no) hoặc \textit{không được đặt} (unset). Từ đó, ta có thể thiết lập một chuỗi để chỉ gửi cho những người dùng đã nhìn thấy một khối nhất định.
+		\begin{minipage}{\linewidth}
+		\begin{wrapfigure}{r}{5cm}\centering
+			\includegraphics[width=5cm]{chatfuel/save-phone-number.png}
+			\caption{Minh họa plug-in \textit{Save User Phone~Number/Email}}
+			\label{fig:fig-s3-10-chatbot-ask-for-phone-number}
+		\end{wrapfigure}
+		\item \textbf{Save User Phone Number} và \textbf{Save User Email}: Cho phép lưu lại số điện thoại/email của người dùng và lưu nó vào một thuộc tính để sử dụng sau này. Plug-in tạo ra kèm với một tin nhắn mặc định yêu cầu thông tin, quản trị viên có thể giữ nguyên hoặc tùy chỉnh.\begin{itemize}
+			\item[+] Nếu thông tin của người dùng được hiển thị công khai trên hồ sơ Facebook, họ sẽ thấy thông tin đó tự động điền dưới dạng \textit{câu trả lời nhanh} khi bot yêu cầu. Họ có thể chọn hoặc nhập thông tin khác.
+			\item[+] Nếu số điện thoại của người dùng không hiển thị công khai trên hồ sơ Facebook, họ có thể nhập thông tin đó theo cách thủ công khi bot yêu cầu.
+		\end{itemize}
+		\end{minipage}
+	\end{itemize}
+	\item \textbf{Export \& Import}: Các plug-in trong phần này cho phép bot xử lý dữ liệu bằng cách gửi đi hoặc gọi về từ một nguồn bên ngoài. \begin{itemize}
+		\item \textbf{JSON API}: Cho phép thực hiện các yêu cầu đến máy chủ của bên thứ ba để nhận về dữ liệu dạng JSON. Từ đó bot có thể hiển thị tệp hình ảnh, âm thanh hoặc video cho người dùng hoặc gửi thuộc tính đến máy chủ để lưu trữ.
+		\item \textbf{Save to Google Sheets}: Cho phép xuất dữ liệu của người dùng sang bảng tính (Google Sheets). Chọn một hoặc nhiều thuộc tính hiện có trong bot và các giá trị người dùng cho từng thuộc tính (thậm chí các giá trị được thu thập từ các plug-in như \textbf{Save User Input}) sẽ được gửi đến bảng tính ngay lập tức khi chúng được thu thập.
+		\item \textbf{Notify Admin via Email}: Plug-in này sẽ gửi một email theo mẫu đến (các) địa chỉ email được chỉ định và sẽ điền vào bất kỳ thuộc tính nào được liệt kê với các giá trị cho một người dùng cụ thể. Plug-in này chỉ để gửi thông tin người dùng đến quản trị viên bot, không dùng để gửi email cho người dùng. Ví dụ khi bot nhận được một đơn xin việc (application), với email mẫu như hình \ref{fig:fig-s3-11-chatfuel-notify-admin-via-email}, quản trị viên sẽ nhận được email với dữ liệu được điền, như \textit{"You've got a new applicant for Marketing Associate position. Their name is Lawrence Smith and their phone number is 555-123-4567."}\par
+		\begin{figure}[htb!]\centering
+			\includegraphics[width=11cm]{chatfuel/notify-admin-via-email}
+			\caption{Thiết lập gửi email cho quản trị viên}
+			\label{fig:fig-s3-11-chatfuel-notify-admin-via-email}
+		\end{figure}\par
+		\item \textbf{Export/Import Content via Zapier}: Cho phép nhận, xuất dữ liệu từ một bên thứ ba (Google Sheets, MailChimp, Shopify, Zoom...).
+	\end{itemize}
+	\item \textbf{Redirect Users}: Chuyển hướng người dùng sang block/flow khác dựa trên hành động của họ hoặc các thuộc tính đã thiết đặt. \begin{itemize}
+		\item \textbf{Redirect to Block}:
+		\item \textbf{Subscribe to Sequence}:
+		\item \textbf{Unsubscribe from Sequence}:
+		\item \textbf{A/B Testing}:
+	\end{itemize}
+	\item \textbf{Connect Users to a Human}: Kết nối người dùng với quản trị viên để trao đổi trực tiếp. \begin{itemize}
+		\item \textbf{Live Chat}:
+		\item \textbf{Conversation Handover}:
+	\end{itemize}
+\end{itemize}
+\begin{figure}[htb!]\centering
+	\includegraphics[width=10cm]{chatfuel/block-elements-list}
+	\caption{Danh sách các plug-in của block}
+	\label{fig:fig-s3-7-chatfuel-block-elements}
+\end{figure}
