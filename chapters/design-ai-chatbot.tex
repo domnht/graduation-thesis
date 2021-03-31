@@ -650,3 +650,51 @@ Chatfuel cũng hỗ trợ chuyển hướng cho JSON API – không cần bất 
 	"redirect_to_blocks": ["Welcome Message", "Default Answer"]
 }
 \end{lstlisting}
+
+\section{Thiết kế Kant bot}
+\subsection{Xây dựng phần JSON API cho Kant bot}
+JSON API dành cho Kant bot chủ yếu để xử lý phần thuật toán của IRT – không thể xây dựng trực tiếp trên block/flow do tính phức tạp của nó. Ngoài ra, JSON API còn dùng để lấy câu hỏi, chủ đề từ \textit{cơ sở dữ liệu} (database), lưu trữ lại những phương án học sinh đã chọn cho từng câu hỏi và các tham số năng lực.
+
+\subsubsection{Cấu trúc cơ sở dữ liệu}
+Cơ sở dữ liệu của Kant API được thiết kế trên nền tảng mySQL, bao gồm các bảng dữ liệu: \begin{itemize}
+	\item Bảng \texttt{topic} dùng để lưu trữ các chủ đề.
+	\item Bảng \texttt{question} dùng để lưu trữ thông tin câu hỏi liên kết với các block của Chatfuel, và các tham số theo mô hình 2 tham số IRT.
+	\item Bảng \texttt{student\_variable} dùng để lưu trữ các biến thông tin của học sinh.
+\end{itemize}
+
+Bảng \ref{tab:tab-s3-db-structure} mô tả cụ thể các bảng dữ liệu được sử dụng trong Kant API.\par
+\begin{longtable}{SlSlSl}
+	\caption{Cấu trúc cơ sở dữ liệu của Kant API} \label{tab:tab-s3-db-structure}\\
+	\multicolumn{1}{Sc}{\bfseries Tên trường} & \multicolumn{1}{Sc}{\bfseries Kiểu dữ liệu} & \multicolumn{1}{Sc}{\bfseries Ghi chú}\\\hline\endfirsthead
+
+	\multicolumn{1}{Sc}{\bfseries Tên trường} & \multicolumn{1}{Sc}{\bfseries Kiểu dữ liệu} & \multicolumn{1}{Sc}{\bfseries Ghi chú}\\\hline\endhead\hline\endfoot
+	
+	\multicolumn{3}{Sc}{\ttfamily topic}\\\hline
+	\texttt{id} & \texttt{int(11)} & Khóa chính, tăng tự động\\
+	\texttt{parent\_id} & \texttt{int(11)} & ID của chủ đề chứa nó\\
+	\texttt{name} & \texttt{varchar(50)} & Tên chủ đề (viết không dấu)\\
+	\texttt{title} & \texttt{varchar(50)} & Tên hiển thị của chủ đề\\
+	\texttt{question\_limit} & \texttt{tinyint(4)} & Giới hạn số câu hỏi cho chủ đề đó\\\hline
+
+	\multicolumn{3}{Sc}{\ttfamily question}\\\hline
+	\texttt{id} & \texttt{int(11)} & Khóa chính, tăng tự động\\
+	\texttt{block\_name} & \texttt{varchar(255)} & Tên block chứa câu hỏi tương ứng trong Chatfuel\\
+	\texttt{right\_answer} & \texttt{tinyint(4)} & Câu trả lời đúng (1, 2, 3, 4)\\
+	\texttt{level} & \texttt{tinyint(4)} & Cấp độ của câu hỏi\\
+	\texttt{a} & \texttt{decimal(5,2)} & Độ phân biệt của câu hỏi theo IRT\\
+	\texttt{b} & \texttt{decimal(5,2)} & Độ khó của câu hỏi theo IRT\\\hline
+
+	\multicolumn{3}{Sc}{\ttfamily student\_variable}\\\hline
+	\texttt{id} & \texttt{int(11)} & Khóa chính, tăng tự động\\
+	\texttt{user\_id} & \texttt{varchar(20)} & ID của học sinh, được liên kết với Messenger ID\\
+	\texttt{variable\_name} & \texttt{varchar(100)} & Tên biến, tên thuộc tính\\
+	\texttt{variable\_value} & \texttt{varchar(255)} & Giá trị của biến/thuộc tính tương ứng\\\hline
+\end{longtable}
+
+\subsubsection{Mở rộng class câu hỏi}
+
+\subsubsection{Kết quả xây dựng JSON API}
+
+\subsection{Nhập liệu câu hỏi vào Kant bot}
+
+\subsection{Thêm các chức năng giao tiếp cho Kant bot}
