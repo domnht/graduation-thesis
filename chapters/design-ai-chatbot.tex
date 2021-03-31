@@ -459,4 +459,194 @@ Sử dụng cú pháp này để gửi một tin nhắn xác nhận đơn đặt
 		}
 	]
 }
+\end{lstlisting}\par
+
+\subsubsection{Nút nhấn}
+Sử dụng JSON này để thêm các nút vào câu trả lời. Chatfuel cho phép đặt các nút để liên kết đến một block/flow, mở một trang web hoặc gửi một request JSON API khác tới máy chủ. Mỗi tin nhắn được thêm tối đa 03 nút nhấn.
+\begin{lstlisting}
+{
+	"messages":[
+		{
+			"attachment": {
+				"type": "template",
+				"payload": {
+					"template_type": "button",
+					"text": "Hello!",
+					"buttons": [
+						{
+							"type": "show_block",
+							"block_names": ["name of block"],
+							"title": "Show Block"
+						},
+						{
+							"type": "web_url",
+							"url": "https://rockets.chatfuel.com",
+							"webview_height_ratio": "compact",
+							"title": "Visit Website"
+						},
+						{
+							"url": "https://rockets.chatfuel.com/api/welcome",
+							"type": "json_plugin_url",
+							"title": "Postback"
+						}
+					]
+				}
+			}
+		}
+	]
+}
+\end{lstlisting}\par
+
+Với các nút nhấn loại \texttt{web\_url}, thuộc tính chiều cao trang web \texttt{webview\_height\_ratio} có thể là \texttt{compact} (40\%), \texttt{tall} (70\%) hoặc \texttt{full} (100\%), giá trị mặc định là \texttt{full}.\par
+Ngoài ra, Chatfuel cũng cho phép tạo ra lệnh gọi, dùng để quay số khi được nhấn:
+\begin{lstlisting}
+{
+	"messages": [
+		{
+			"attachment": {
+				"type": "template",
+				"payload": {
+					"template_type": "generic",
+					"elements": [
+						{
+							"title": "Get in touch",
+							"image_url": "https://rockets.chatfuel.com/assets/contact.jpg",
+							"subtitle": "Feel free to hit us up!",
+							"buttons": [
+								{
+									"type": "phone_number",
+									"phone_number": "+19268881413",
+									"title": "Call"
+								}
+							]
+						}
+					]
+				}
+			}
+		}
+	]
+}
+\end{lstlisting}\par
+
+Nếu chatbot đang sử dụng gói \textit{Pro}, Chatfuel còn cho phép thực hiện môt hành động phụ cho nút nhấn. Ví dụ: người dùng nhấn nút thể mở một URL, sau đó, chatbot chuyển hướng người dùng tới một block/flow khác hoặc thiết lập một thuộc tính. Sử dụng cú pháp sau đây:
+\begin{lstlisting}
+{
+	"messages": [
+		{
+			"attachment": {
+				"type": "template",
+				"payload": {
+					"template_type": "button",
+					"text": "Hello!",
+					"buttons": [
+						{
+							"type": "web_url",
+							"url": "https://facebook.com/chatfuel",
+							"webview_height_ratio": "compact",
+							"block_names": ["name of block"],
+							"title": "Visit and Redirect"
+						},
+						{
+							"type": "web_url",
+							"url": "https://facebook.com/chatfuel",
+							"webview_height_ratio": "compact",
+							"set_attributes": {"some attribute": "some value"},
+							"title": "Visit and Set"
+						}
+					]
+				}
+			}
+		}
+	]
+}
+\end{lstlisting}
+
+\subsubsection{Câu trả lời nhanh}
+JSON dưới đây tạo ra các câu trả lời nhanh cho phép người dùng chọn lựa. Giới hạn tối đa 11 câu trả lời nhanh cho chatbot.
+\begin{lstlisting}
+{
+	"messages": [
+		{
+			"text": "Did you enjoy the last game of the CF Rockets?",
+			"quick_replies": [
+				{
+					"title":"Loved it!",
+					"block_names": ["Block 1", "Block 2"]
+				},
+				{
+					"title":"Not really...",
+					"url": "https://rockets.chatfuel.com/api/sad-match",
+					"type":"json_plugin_url"
+				}
+			]
+		}
+	]
+}
+\end{lstlisting}\par
+
+Ngoài ra, câu trả lời nhanh còn có các tùy chọn bổ sung \texttt{quick\_reply\_options}, ví dụ: \begin{itemize}
+\item \texttt{process\_text\_by\_ai} (giá trị \texttt{true} hoặc \texttt{false}): Chỉ định cách xử lý câu trả lời của người dùng. Nếu \texttt{false}, người dùng sẽ được chuyển đến nội dung tiếp theo thay vì quá trình nhận dạng của AI.
+\item \texttt{text\_attribute\_name}: Nếu được thiết lập, câu trả lời của người dùng sẽ được lưu vào một thuộc tính.
+\end{itemize}\par
+\begin{lstlisting}
+{
+	"messages": [
+		{
+			"text": "text",
+			"quick_replies": [
+				{
+					"title": "Number 1",
+					"set_attributes": {
+						"number": "1"
+					}
+				},
+				{
+					"title": "Number 2",
+					"set_attributes": {
+						"number": "2"
+					}
+				}
+			],
+			"quick_reply_options": {
+				"process_text_by_ai": false,
+				"text_attribute_name": "user_message"
+			}
+		}
+	]
+}
+\end{lstlisting}
+
+\subsubsection{Đặt giá trị cho thuộc tính}
+Có hai trường hợp có thể đặt thuộc tính cho người dùng:\par
+(1) Đặt thuộc tính khi nhấn vào một nút lệnh (chỉ dùng cho trường hợp gọi block/flow \texttt{show\_block} và gọi JSON API \texttt{json\_plugin\_url}): \begin{lstlisting}
+{
+	"set_attributes": 
+		{
+			"some attribute": "some value",
+			"another attribute": "another value"
+		},
+	"block_names": ["Block 1"],
+	"type": "show_block",
+	"title": "Go!"
+}
+\end{lstlisting}
+và (2) Tự đặt thuộc tính, không cần thao tác kích hoạt từ người dùng:\begin{lstlisting}
+{
+	"set_attributes":
+		{
+			"some attribute": "some value",
+			"another attribute": "another value"
+		},
+	"messages": [
+		. . .
+	]
+}
+\end{lstlisting}\par
+
+\subsubsection{Chuyển hướng tới một block/flow}
+Chatfuel cũng hỗ trợ chuyển hướng cho JSON API – không cần bất cứ thao tác nào từ người dùng.
+\begin{lstlisting}
+{
+	"redirect_to_blocks": ["Welcome Message", "Default Answer"]
+}
 \end{lstlisting}
