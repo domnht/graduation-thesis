@@ -22,6 +22,7 @@
 - **`pages`**: Các phần ít trang.
   - `cover.tex`: Trang bìa.
   - `preface.tex`: Lời cảm ơn.
+  - `list-of-standing.tex`: Danh mục từ viết tắt.
   - `table-of-contents.tex`: Mục lục, danh mục bảng/hình.
 - `config.tex`: Các thiết đặt tài liệu.
 - `main.tex`: Tệp tài liệu chính.
