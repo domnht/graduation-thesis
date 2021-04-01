@@ -4,8 +4,12 @@
 \begin{document}
 
 % Opening
+\thispagestyle{empty}
+\pagenumbering{Alph}
 \input{pages/cover}
-\thispagestyle{empty}\cleardoublepage
+
+\thispagestyle{empty}
+\cleardoublepage
 \pagenumbering{roman}
 \input{pages/preface}
 
@@ -14,7 +18,8 @@
 \input{pages/list-of-standing}
 
 % Main contents
-\cleardoublepage\pagenumbering{arabic}
+\cleardoublepage
+\pagenumbering{arabic}
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 \input{chapters/opening}
