@@ -733,6 +733,7 @@ JSON API dành cho Kant bot, được gọi là \textit{Kant API}, hỗ trợ ha
 		                              &                                             & \texttt{variable\_value}                                                           & \\
 		                              &                                             & \texttt{next\_block}: Tên block sẽ chuyển hướng sau khi gán dữ liệu                & \\\hline
 \end{longtable}
+Ngoài ra, ở mỗi request cần thêm tham số \texttt{user\_id} để xác định được đối tượng đang thực hiện, giá trị \texttt{user\_id} có thể là Chatfuel ID hoặc Messenger ID.\par
 
 \noindent\textbf{Ví dụ:} Để gọi danh sách chủ đề cao nhất, cần thực hiện một request với tham số như sau:
 \begin{lstlisting}
@@ -752,7 +753,16 @@ Ngân hàng câu hỏi sau khi được chuẩn hóa theo các tham số IRT s�
 	\label{fig:fig-c3-demo-item-block}
 \end{figure}\par
 
-\subsection{Thêm các chức năng giao tiếp cho Kant bot}
-\subsubsection{Các tin nhắn chào hỏi}
+\subsection{Thêm các chức năng phụ cho Kant bot}
+Ngoài thư viện câu hỏi, bot cần được thiết kế để có những cuộc hội thoại mô phỏng người thật, ví dụ như chào hỏi, tự giới thiệu, hướng dẫn người dùng cập nhật thông tin, thông báo kết quả đánh giá, khảo sát ý kiến người dùng... Trong đó, block được thiết kế cho những giai đoạn hội thoại ngắn và đơn giản (hình \ref{fig:fig-c3-block-how-i-work}), và flow được sử dụng khi cần các cấu trúc rẽ nhánh, ví dụ như phân chia đối tượng (giáo viên, học sinh), kiểm tra thông tin người dùng đã được nhập đầy đủ chưa... (hình \ref{fig:fig-c3-flow-greeting})\par
+\begin{figure}[htb!]\centering
+	\includegraphics[width=8cm]{chatfuel/block-how-i-work}
+	\caption{Sử dụng block cho những giai đoạn hội thoại đơn giản}
+	\label{fig:fig-c3-block-how-i-work}
+\end{figure}\par
 
-\subsubsection{Phần khảo sát ý kiến người dùng}
+\begin{figure}[htb!]\centering
+	\includegraphics[width=\linewidth]{chatfuel/flow-greeting}
+	\caption{Sử dụng flow cho các cấu trúc rẽ nhánh}
+	\label{fig:fig-c3-flow-greeting}
+\end{figure}\par
