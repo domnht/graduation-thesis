@@ -693,7 +693,7 @@ Bảng \ref{tab:tab-s3-db-structure} mô tả cụ thể các bảng dữ liệu
 
 \subsubsection{Mở rộng class câu hỏi}
 Như cơ sở dữ liệu câu hỏi đã xây dựng, một câu hỏi còn được quản lý bởi \texttt{id}, được liên kết với Chatfuel thông qua \texttt{block\_name}, và được đánh giá dựa trên \texttt{right\_answer}. Ngoài ra, cần có thêm hàm chuyển phương án trả lời của học sinh sang giá véc-tơ $u$, do đó cần xây dựng hàm \texttt{U(choice:)}. Mặc khác, khi đọc dữ liệu từ mySQL, kết quả trả về là một \textit{mảng} (array) hoặc một \textit{đối tượng} (object), do đó cần điều chỉnh phương thức \textit{khởi tạo} \texttt{\_\_construct} cho phù hợp.
-\begin{lstlisting}[language=php,caption=Mở rộng class câu hỏi]
+\begin{lstlisting}[language=php,caption=Class câu hỏi được mở rộng]
 class ItemData extends IRT\Item {
 	public $id, $right_answer;
 	public $block_name;

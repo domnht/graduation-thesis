@@ -15,7 +15,11 @@
 
 % Main contents
 \cleardoublepage\pagenumbering{arabic}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 \input{chapters/opening}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 \input{chapters/literature-review}
 \input{chapters/build-the-api}
 \input{chapters/design-ai-chatbot}
