@@ -688,13 +688,71 @@ Bảng \ref{tab:tab-s3-db-structure} mô tả cụ thể các bảng dữ liệu
 	\texttt{id} & \texttt{int(11)} & Khóa chính, tăng tự động\\
 	\texttt{user\_id} & \texttt{varchar(20)} & ID của học sinh, được liên kết với Messenger ID\\
 	\texttt{variable\_name} & \texttt{varchar(100)} & Tên biến, tên thuộc tính\\
-	\texttt{variable\_value} & \texttt{varchar(255)} & Giá trị của biến/thuộc tính tương ứng\\\hline
+	\texttt{variable\_value} & \texttt{varchar(255)} & Giá trị của biến/thuộc tính tương ứng\\
 \end{longtable}
 
 \subsubsection{Mở rộng class câu hỏi}
+Như cơ sở dữ liệu câu hỏi đã xây dựng, một câu hỏi còn được quản lý bởi \texttt{id}, được liên kết với Chatfuel thông qua \texttt{block\_name}, và được đánh giá dựa trên \texttt{right\_answer}. Ngoài ra, cần có thêm hàm chuyển phương án trả lời của học sinh sang giá véc-tơ $u$, do đó cần xây dựng hàm \texttt{U(choice:)}. Mặc khác, khi đọc dữ liệu từ mySQL, kết quả trả về là một \textit{mảng} (array) hoặc một \textit{đối tượng} (object), do đó cần điều chỉnh phương thức \textit{khởi tạo} \texttt{\_\_construct} cho phù hợp.
+\begin{lstlisting}[language=php,caption=Mở rộng class câu hỏi]
+class ItemData extends IRT\Item {
+	public $id, $right_answer;
+	public $block_name;
+	function __construct (Array $item) {
+		$this -> id = intval($item['id']);
+		$this -> block_name = $item['block_name'];
+		$this -> right_answer = intval($item['right_answer']);
+		$this -> set_parameter(floatval($item['a']), floatval($item['b']));
+	}
+	function U ($choice): Int {
+		if (is_string($choice)) $choice = [
+			'1' => '1', '2' => 2, '3' => 3, '4' => 4,
+			'A' => 1, 'B' => 2, 'C' => 3, 'D' => 4
+		][$choice];
+		if ($this -> right_answer == 0) return 1;
+		return intval($choice == $this -> right_answer);
+	}
+}
+\end{lstlisting}
 
 \subsubsection{Kết quả xây dựng JSON API}
+JSON API dành cho Kant bot, được gọi là \textit{Kant API}, hỗ trợ hai thao tác chính: \texttt{get} để gọi dữ liệu và \texttt{set} để ghi dữ liệu. Cú pháp cụ thể được tổng hợp trong bảng \ref{tab:tab-s3-kant-api-syntax}.
+\begin{longtable}{SlSlp{5cm}p{5cm}}
+		\caption{Cú pháp sử dụng Kant API}\label{tab:tab-s3-kant-api-syntax}\\
+		\multicolumn{1}{Sc}{\texttt{action}} & \multicolumn{1}{Sc}{\textbf{\texttt{type}}} & \multicolumn{1}{Sc}{\textbf{Các đối số khác}} & \multicolumn{1}{Sc}{\textbf{Ghi chú}} \\\hline\endfirsthead
+
+		\multicolumn{1}{Sc}{\texttt{action}} & \multicolumn{1}{Sc}{\textbf{\texttt{type}}} & \multicolumn{1}{Sc}{\textbf{Các đối số khác}} & \multicolumn{1}{Sc}{\textbf{Ghi chú}} \\\hline\endhead
+		\multirow{8}{*}{\texttt{get}} & \multirow{3}{*}{\texttt{topic}}             & \texttt{topic\_id}: Giá trị mặc định là \texttt{0} (Gọi danh sách chủ đề cao nhất) & \multirow{3}{5cm}{Gọi danh sách các chủ đề} \\
+		                              &                                             & \texttt{topic\_name}                                                               & \\
+		                              &                                             & \texttt{topic\_title}                                                              & \\\cline{2-4}
+		                              & \multirow{2}{*}{\texttt{question}}          & \texttt{topic\_name}                                                               & \multirow{2}{5cm}{Gọi câu hỏi phù hợp nhất với mức năng lực của học sinh} \\
+		                              &                                             & \texttt{question\_limit}: Giới hạn số câu hỏi tối đa cho chủ đề                    & \\\cline{2-4}
+		                              & \multirow{3}{*}{\texttt{topic\_result}}     & \texttt{topic\_id}                                                                 & \multirow{3}{5cm}{Nhận kết quả đánh giá cho chủ đề} \\
+		                              &                                             & \texttt{topic\_name}                                                               & \\
+		                              &                                             & \texttt{topic\_title}                                                              & \\\hline
+		\multirow{3}{*}{\texttt{set}} & \multirow{3}{*}{\texttt{student\_variable}} & \texttt{variable\_name}                                                            & \multirow{3}{5cm}{Gán biến thông tin của học sinh} \\
+		                              &                                             & \texttt{variable\_value}                                                           & \\
+		                              &                                             & \texttt{next\_block}: Tên block sẽ chuyển hướng sau khi gán dữ liệu                & \\\hline
+\end{longtable}
+
+\noindent\textbf{Ví dụ:} Để gọi danh sách chủ đề cao nhất, cần thực hiện một request với tham số như sau:
+\begin{lstlisting}
+GET: {
+	"user_id": {{messenger user id}},
+	"action": "get",
+	"type": "topic",
+	"topic_id": 0
+}
+\end{lstlisting}\par
 
 \subsection{Nhập liệu câu hỏi vào Kant bot}
+Ngân hàng câu hỏi sau khi được chuẩn hóa theo các tham số IRT sẽ được định dạng đồng nhất, sau đó chuyển thành hình ảnh – vì Facebook Messenger chưa hỗ trợ nhập công thức Toán học nên cần chuyển thành hình ảnh để đảm bảo tính thẩm mỹ của câu hỏi – và nhập vào Chatfuel, mỗi câu hỏi tương ứng với một block có tên được mã hóa theo chủ đề và số thứ tự, mỗi chủ đề tương ứng một nhóm các block. Một câu hỏi minh họa ở hình \ref{fig:fig-c3-demo-item-block}.
+\begin{figure}[htb!]\centering
+	\includegraphics[width=12cm]{chatfuel/demo-item-block}
+	\caption{Một câu hỏi được nhập vào Chatfuel}
+	\label{fig:fig-c3-demo-item-block}
+\end{figure}\par
 
 \subsection{Thêm các chức năng giao tiếp cho Kant bot}
+\subsubsection{Các tin nhắn chào hỏi}
+
+\subsubsection{Phần khảo sát ý kiến người dùng}
