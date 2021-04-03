@@ -838,8 +838,7 @@ function binary_search (Int $a, Array $b): Int {
 		if ($a == $b[$mid$]) return $mid;
 		if ($a < $b[$mid]) $right = $mid - 1; else $left = $mid + 1;
 	}
-	if (abs($a - $b[$left]) < abs($a - $b[$right]))
-		return $left;
+	if (abs($a - $b[$left]) < abs($a - $b[$right])) return $left;
 	return $right;
 }
 \end{lstlisting}
@@ -942,19 +941,16 @@ class Test {
 			'IRT_score' => $SumP / count($answers)
 		];
 	}
-
 	function binary_search_item (Float $theta): Int {
 		$count = count($this -> items);
 		if ($count == 0) return false;
 		$low = 0; $high = $count - 1;
-
 		while ($low <= $high) {
 			$mid = floor(($low + $high) / 2);
 			if ($theta == ($this -> items[$mid] -> b)) return $mid;
 			if ($theta < ($this -> items[$mid] -> b)) $high = $mid - 1;
 			else $low = $mid + 1;
 		}
-
 		if (abs($theta - ($this -> items[$low] -> b)) < abs($theta - ($this -> items[$high] -> b)))
 			return $low;
 		return $high;
