@@ -746,7 +746,42 @@ GET: {
 	"topic_id": 0
 }
 \end{lstlisting}\par
-
+Kết quả JSON nhận được:
+\begin{lstlisting}
+{
+    "messages": [
+        {
+            "text": "Hay chon mon hoc",
+            "quick_replies": [
+                {
+                    "title": "To hop, xac suat",
+                    "set_attributes": {
+                        "selectedTopicId": "1",
+                        "selectedTopic": "To hop, xac suat",
+                        "selectedTopicName": "to-hop-xac-suat",
+                        "selectedTopicQuestionLimit": "10"
+                    },
+                    "block_names": [
+                        "get-topic-list"
+                    ]
+                },
+                {
+                    "title": "Luong giac",
+                    "set_attributes": {
+                        "selectedTopicId": "2",
+                        "selectedTopic": "Luong giac",
+                        "selectedTopicName": "luong-giac",
+                        "selectedTopicQuestionLimit": "10"
+                    },
+                    "block_names": [
+                        "get-topic-list"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+\end{lstlisting}
 \subsection{Nhập liệu câu hỏi vào Kant bot}
 Ngân hàng câu hỏi sau khi được chuẩn hóa theo các tham số IRT sẽ được định dạng đồng nhất, sau đó chuyển thành hình ảnh – vì Facebook Messenger chưa hỗ trợ nhập công thức Toán học nên cần chuyển thành hình ảnh để đảm bảo tính thẩm mỹ của câu hỏi – và nhập vào Chatfuel, mỗi câu hỏi tương ứng với một block có tên được mã hóa theo chủ đề và số thứ tự, mỗi chủ đề tương ứng một nhóm các block. Một câu hỏi minh họa ở hình \ref{fig:fig-c3-demo-item-block}.
 \begin{figure}[htb!]\centering
