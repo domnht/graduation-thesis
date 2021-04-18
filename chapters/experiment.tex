@@ -3,27 +3,23 @@
 \section{Mục tiêu thực nghiệm}\begin{itemize}
 	\item Tìm hiểu khả năng ứng dụng AI vào đánh giá năng lực của học sinh.
 	\item Phân tích sự chính xác của kết quả kiểm tra thích ứng so với điểm trung bình môn Toán của học sinh, từ đó nhận xét về tính khả quan của Kant bot trong đánh giá năng lực học sinh.
-	\item Cải tiến, hoàn thiện Kant và công bố API dưới dạng \textit{mã nguồn mở} (open-source).
+	\item Cải tiến và hoàn thiện Kant bot.
 \end{itemize}
 
 \section{Đối tượng và tiến trình thực nghiệm}
-\subsection{Đối tượng thực nghiệm}\begin{itemize}
-	% \item Giáo viên bộ môn Toán trường THPT thực hành Sư phạm.
-	\item 38 học sinh lớp 11, 12 thuộc các trường THPT Châu Văn Liêm, Lý Tự Trọng và Thực hành Sư phạm.
-\end{itemize}
+\subsection{Đối tượng thực nghiệm}
+	38 học sinh lớp 11, 12 thuộc các trường THPT Châu Văn Liêm, Lý Tự Trọng và Thực hành Sư phạm.
 
 \subsection{Tiến trình thực nghiệm}
 \begin{enumerate}[label=\textbf{Giai đoạn \arabic*.},align=left,left=0cm..0cm,itemindent=*]
 	\item Gửi đường link truy cập cho học sinh làm thực nghiệm phần Tổ hợp – Xác suất với sự đánh giá tự động của Kant bot.\par
-	\item Tổng hợp kết quả đánh giá của học sinh.
-	\item Phân tích quá trình đánh giá của một số học sinh.
+	\item Phân tích quá trình đánh giá của Kant đối với một số học sinh.
+	\item Tổng hợp và phân tích kết quả đánh giá của học sinh.
 \end{enumerate}
 
 \section{Nội dung thực nghiệm}
 Quá trình thực nghiệm chính được thực hiện hoàn toàn trực tuyến với Kant bot, thông qua nền tảng Facebook Messenger.\par
-
-\subsection{Thực nghiệm đánh giá học sinh}
-Trong phần này, người dùng cần phải thực hiện tối đa 10 câu hỏi trắc nghiệm cho một chủ đề – với câu hỏi được đưa ra dựa trên dữ liệu trả lời những câu hỏi trước – để đạt tới mức kỳ vọng ổn định nhất. Sau đó Kant sẽ đưa ra kết quả đánh giá năng lực. Hình \ref{fig:fig-c4-chatbot-demo} minh họa quá trình thực nghiệm đánh giá với Kant.
+Trong phần này, người dùng cần phải thực hiện tối đa 10 câu hỏi trắc nghiệm cho một chủ đề – với câu hỏi được đưa ra dựa trên dữ liệu trả lời những câu hỏi trước – để đạt tới mức kỳ vọng ổn định nhất (kỳ vọng dưới $1$). Sau đó Kant sẽ đưa ra kết quả đánh giá năng lực. Hình \ref{fig:fig-c4-chatbot-demo} minh họa quá trình thực nghiệm đánh giá với Kant.
 \begin{figure}[htb!]\centering
 	\includegraphics[width=7cm]{kant-ux/chat-1}
 	\includegraphics[width=7cm]{kant-ux/chat-2}
@@ -33,171 +29,7 @@ Trong phần này, người dùng cần phải thực hiện tối đa 10 câu h
 	\label{fig:fig-c4-chatbot-demo}
 \end{figure}\par
 
-% \subsection{Bảng khảo sát giáo viên}
-% \begin{enumerate}[label=\textbf{M\arabic*.},align=left,left=0cm..0cm,itemindent=*]
-% 	\item Thầy/cô cho rằng chatbot hỗ trợ cho học sinh tự học môn Toán hiệu quả?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không đồng ý.
-% 			\item Không đồng ý.
-% 			\item Phân vân.
-% 			\item Đồng ý.
-% 			\item Hoàn toàn đồng ý.
-% 		\end{enumerate}
-% 	\item Thầy/cô cho rằng chatbot có thể giúp học sinh tự đánh giá năng lực Toán của bản thân?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không đồng ý.
-% 			\item Không đồng ý.
-% 			\item Phân vân.
-% 			\item Đồng ý.
-% 			\item Hoàn toàn đồng ý.
-% 		\end{enumerate}
-% 	\item Thầy/cô cho rằng chatbot có thể góp phần nâng cao năng lực Toán học của học sinh?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không đồng ý.
-% 			\item Không đồng ý.
-% 			\item Phân vân.
-% 			\item Đồng ý.
-% 			\item Hoàn toàn đồng ý.
-% 		\end{enumerate}
-% 	\item Thầy/cô cho rằng chatbot trên nền tảng FB Messenger:
-% 		\begin{enumerate}[label=\textbf{\alph*)},align=left,left=1cm..0cm,itemindent=*]
-% 			\item Rất dễ tiếp cận?
-% 				\begin{enumerate}[label=$\square$,align=left,left=2cm..0cm,itemindent=*]
-% 					\item Hoàn toàn không đồng ý.
-% 					\item Không đồng ý.
-% 					\item Phân vân.
-% 					\item Đồng ý.
-% 					\item Hoàn toàn đồng ý.
-% 				\end{enumerate}
-% 			\item Có thể học bất cứ thời gian nào?
-% 				\begin{enumerate}[label=$\square$,align=left,left=2cm..0cm,itemindent=*]
-% 					\item Hoàn toàn không đồng ý.
-% 					\item Không đồng ý.
-% 					\item Phân vân.
-% 					\item Đồng ý.
-% 					\item Hoàn toàn đồng ý.
-% 				\end{enumerate}
-% 			\item Có thể học bất cứ nơi đâu có kết nối Internet?
-% 				\begin{enumerate}[label=$\square$,align=left,left=2cm..0cm,itemindent=*]
-% 					\item Hoàn toàn không đồng ý.
-% 					\item Không đồng ý.
-% 					\item Phân vân.
-% 					\item Đồng ý.
-% 					\item Hoàn toàn đồng ý.
-% 				\end{enumerate}
-% 			\item Cho kết quả phản hồi tức thì, không cần chờ đợi?
-% 				\begin{enumerate}[label=$\square$,align=left,left=2cm..0cm,itemindent=*]
-% 					\item Hoàn toàn không đồng ý.
-% 					\item Không đồng ý.
-% 					\item Phân vân.
-% 					\item Đồng ý.
-% 					\item Hoàn toàn đồng ý.
-% 				\end{enumerate}
-% 		\end{enumerate}
-% 	\item Thầy/cô cho rằng chatbot là một công cụ hữu hiệu để góp phần nâng cao năng lực Toán học?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không đồng ý.
-% 			\item Không đồng ý.
-% 			\item Phân vân.
-% 			\item Đồng ý.
-% 			\item Hoàn toàn đồng ý.
-% 		\end{enumerate}
-% 	\item Thầy/cô sẽ giới thiệu ứng dụng chatbot để học Toán cho bạn bè và học sinh của mình?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không đồng ý.
-% 			\item Không đồng ý.
-% 			\item Phân vân.
-% 			\item Đồng ý.
-% 			\item Hoàn toàn đồng ý.
-% 		\end{enumerate}
-% 	\item Phí duy trì Chatbot hoạt động là 15 USD/tháng cho 500 người dùng là hợp lý (so với mức lương nhân sự, tốc độ và chất lượng phản hồi tin nhắn)?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không đồng ý.
-% 			\item Không đồng ý.
-% 			\item Phân vân.
-% 			\item Đồng ý.
-% 			\item Hoàn toàn đồng ý.
-% 		\end{enumerate}
-% 	\item Thầy/cô nghĩ rằng để góp phần nâng cao năng lực Toán học, học sinh nên luyện tập với chatbot với tần suất nào?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không đồng ý.
-% 			\item Không đồng ý.
-% 			\item Phân vân.
-% 			\item Đồng ý.
-% 			\item Hoàn toàn đồng ý.
-% 		\end{enumerate}
-% 	\item Theo thầy/cô, sử dụng chatbot trong dạy học Toán có ưu điểm gì?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không đồng ý.
-% 			\item Không đồng ý.
-% 			\item Phân vân.
-% 			\item Đồng ý.
-% 			\item Hoàn toàn đồng ý.
-% 		\end{enumerate}
-% 	\item Theo thầy/cô, sử dụng chatbot trong dạy học Toán có nhược điểm gì?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không đồng ý.
-% 			\item Không đồng ý.
-% 			\item Phân vân.
-% 			\item Đồng ý.
-% 			\item Hoàn toàn đồng ý.
-% 		\end{enumerate}
-% 	\item Thầy/cô có để xuất gì để cải thiện ứng dụng Chatbot được tốt hơn?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không đồng ý.
-% 			\item Không đồng ý.
-% 			\item Phân vân.
-% 			\item Đồng ý.
-% 			\item Hoàn toàn đồng ý.
-% 		\end{enumerate}
-% 	\item Thầy/cô có thích Kant bot không?
-% 		\begin{enumerate}[label=$\square$,align=left,left=1cm..0cm,itemindent=*]
-% 			\item Hoàn toàn không thích.
-% 			\item Không thích.
-% 			\item Phân vân.
-% 			\item Thích.
-% 			\item Hoàn toàn thích.
-% 		\end{enumerate}
-% 	\item Trong thang điểm từ 1 đến 10, thầy/cô hãy cho điểm về cách thức hoạt động của Kant bot.
-% 		\begin{multicols}{10}\begin{enumerate}[label=$\square$,align=left,left=0cm..0cm,itemindent=*]
-% 			\item 1. \item 2. \item 3. \item 4. \item 5. \item 6. \item 7. \item 8. \item 9. \item 10.
-% 		\end{enumerate}\end{multicols}
-% \end{enumerate}
-
-% \subsection{Phân tích tiên nghiệm bảng khảo sát giáo viên}
-% Mẫu phiếu khảo sát được thiết kế với một số câu hỏi theo thang Linkert 5 bậc, cùng một số câu hỏi mở, và câu hỏi đánh giá, để nhằm thu thập thông tin nhiều và nhanh nhất
-% \begin{enumerate}[label=\textbf{M\arabic*.},align=left,left=0cm..0cm,itemindent=*]
-% 	\item Thầy/cô cho rằng chatbot hỗ trợ cho học sinh tự học môn Toán hiệu quả?\par
-% 	Câu hỏi được thiết kế theo thang Likert 5 bậc để khảo sát ý kiến của giáo viên về tính khả quan của việc vận dụng chatbot vào tự học môn Toán ở học sinh.
-% 	\item Thầy/cô cho rằng chatbot có thể giúp học sinh tự đánh giá năng lực Toán của bản thân?\par
-% 	Câu hỏi được thiết kế theo thang Likert 5 bậc để khảo sát ý kiến của giáo viên về tính khả quan của việc học sinh tự đánh năng lực bản thân giá bằng công cụ chatbot.
-% 	% \item Thầy/cô cho rằng chatbot có thể góp phần nâng cao năng lực Toán học của học sinh?
-% 	\item Thầy/cô cho rằng chatbot trên nền tảng FB Messenger:
-% 		\begin{enumerate}[label=\textbf{\alph*)},align=left,left=1cm..0cm,itemindent=*]
-% 			\item Rất dễ tiếp cận?
-% 			\item Có thể học bất cứ thời gian nào?
-% 			\item Có thể học bất cứ nơi đâu có kết nối Internet?
-% 			\item Cho kết quả phản hồi tức thì, không cần chờ đợi?
-% 		\end{enumerate}
-% 	% \item Thầy/cô cho rằng chatbot là một công cụ hữu hiệu để góp phần nâng cao năng lực Toán học?
-% 	\item Thầy/cô sẽ giới thiệu ứng dụng chatbot để học Toán cho bạn bè và học sinh của mình?\par
-% 	Câu hỏi được thiết kế theo thang Likert 5 bậc để khảo sát mong muốn giới thiệu chatbot hỗ trợ học tập Toán của giáo viên với bạn bè và học sinh. Qua đó phân tích được tiềm năng phát triển và phổ biến của chatbot trong giáo dục.
-% 	% \item Phí duy trì Chatbot hoạt động là 15 USD/tháng cho 500 người dùng là hợp lý (so với mức lương nhân sự, tốc độ và chất lượng phản hồi tin nhắn)?
-% 	\item Thầy/cô nghĩ rằng để góp phần nâng cao năng lực Toán học, học sinh nên luyện tập với chatbot với tần suất nào?\par
-% 	Câu hỏi được thiết kế theo thang Likert 5 bậc để khảo sát ý kiến của giáo viên về mức độ thường xuyên trong việc học tập với chatbot của học sinh.
-% 	\item Theo thầy/cô, sử dụng chatbot trong dạy học Toán có ưu điểm gì?\par
-% 	Câu hỏi được thiết kế để phỏng vấn ý kiến của giáo viên về ưu điểm của chatbot trong học tập môn Toán phổ thông.
-% 	\item Theo thầy/cô, sử dụng chatbot trong dạy học Toán có nhược điểm gì?\par
-% 	Câu hỏi được thiết kế phỏng vấn ý kiến của giáo viên về ưu điểm của chatbot trong học tập môn Toán phổ thông.
-% 	\item Thầy/cô có để xuất gì để cải thiện chatbot tốt hơn?\par
-% 	Câu hỏi được thiết kế để khảo sát ý kiến góp ý của giáo viên khi vận dụng vào dạy học Toán, từ đó có thể cải thiện khả năng và tính khả quan của chatbot.
-% 	\item Thầy/cô có thích Kant bot không?\par
-% 	Câu hỏi được thiết kế để khảo sát thái độ của giáo viên đối với việc học tập với chatbot, cụ thể là Kant bot. Từ đó phân tích được tính khả thi khi áp dụng vào dạy học Toán học.
-% 	\item Trong thang điểm từ 1 đến 10, thầy/cô hãy cho điểm về cách thức hoạt động của Kant bot.\par
-% 	Câu hỏi được thiết kế để đánh giá mức độ hoàn thiện của Kant bot trong hỗ trợ dạy và học Toán ở bậc phổ thông.
-% \end{enumerate}
-
-\subsection{Kết quả thực nghiệm}
+\section{Kết quả thực nghiệm}
 
 Có 38 học sinh hoàn thành phần kiểm tra năng lực chương Tổ hợp, xác suất. Kết quả đánh giá năng lực bằng Kant bot được tổng hợp ở bảng \ref{tab:tab-s4-result}, danh sách được sắp xếp và đặt mã số theo \textit{Sai số} giảm dần.
 
@@ -246,6 +78,8 @@ Có 38 học sinh hoàn thành phần kiểm tra năng lực chương Tổ hợp
 	S37 & Thực hành Sư phạm & 11 & $6.2$ & $9.0$ & $2.8$ \\
 	S38 & Châu Văn Liêm     & 12 & $6.6$ & $9.5$ & $2.9$ \\
 \end{longtable}\par
+
+\subsection{Phân tích phân phối kết quả}
 
 Các kết quả đánh giá được thống kê lại theo các mốc: \begin{itemize}
 	\item \textit{Giỏi}: Từ $8.0$ trở lên.
@@ -324,3 +158,8 @@ Tiếp đến, đề tài tiến hành ước lượng sai số trong đánh gi�
 \end{longtable}\par
 
 Với độ tin cậy $90\%$, \textit{Sai số} đánh giá so với \textit{ĐTB Toán} của học sinh được ước lượng nằm trong đoạn $[0.987;1.476]$ nhìn chung khá lớn, tuy nhiên đây chỉ là bài kiểm tra năng lực của một chủ đề (phần Tổ hợp, xác suất), do đó hoàn toàn có thể chấp nhận được. Bên cạnh đó, \textit{độ lệch chuẩn} (standard deviation) của \textit{Sai số} là $0.8929<1$ – hoàn toàn tương ứng với điều kiện dừng của thuật toán (dừng kiểm tra khi kỳ vọng nhỏ hơn $1$).\par
+
+\subsection{Phân tích quá trình đánh giá một số học sinh}
+
+Đề tài chọn phân tích 03 kết quả ngẫu nhiên của các học sinh có \textit{Sai số} lần lượt là $0$ (giá trị nhỏ nhất – minimum), $2.9$ (giá trị lớn nhất – maximum) và $0.5$ (yếu vị – mode), cụ thể là S01, S38 và S12.\par
+
