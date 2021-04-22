@@ -19,7 +19,7 @@
 
 \section{Nội dung thực nghiệm}
 Quá trình thực nghiệm chính được thực hiện hoàn toàn trực tuyến với Kant bot, thông qua nền tảng Facebook Messenger.\par
-Trong phần này, người dùng cần phải thực hiện tối đa 10 câu hỏi trắc nghiệm cho một chủ đề – với câu hỏi được đưa ra dựa trên dữ liệu trả lời những câu hỏi trước – để đạt tới mức kỳ vọng ổn định nhất (kỳ vọng dưới $1$). Sau đó Kant sẽ đưa ra kết quả đánh giá năng lực. Hình \ref{fig:fig-c4-chatbot-demo} minh họa quá trình thực nghiệm đánh giá với Kant.
+Trong phần này, người dùng cần phải thực hiện tối đa 10 câu hỏi trắc nghiệm cho một chủ đề – với câu hỏi được đưa ra dựa trên dữ liệu trả lời những câu hỏi trước – để đạt tới mức kỳ vọng ổn định nhất (được quy định tùy theo chủ đề). Sau đó Kant sẽ đưa ra kết quả đánh giá năng lực. Hình \ref{fig:fig-c4-chatbot-demo} minh họa quá trình thực nghiệm đánh giá với Kant.
 \begin{figure}[htb!]\centering
 	\includegraphics[width=7cm]{kant-ux/chat-1}
 	\includegraphics[width=7cm]{kant-ux/chat-2}
@@ -39,8 +39,8 @@ Có 38 học sinh hoàn thành phần kiểm tra năng lực chương Tổ hợp
 
 	\textbf{TT} & \multicolumn{1}{Sc}{\textbf{Trường THPT}} & \textbf{Lớp} & \textbf{KQ đánh giá} & \textbf{ĐTB Toán} & \textbf{Sai số} \\ \hline\endhead\hline\endfoot
 
-	S01 & Thực hành Sư phạm & 11 & $8.5$ & $8.5$ & $0.0$ \\
-	S02 & Thực hành Sư phạm & 11 & $9.6$ & $9.5$ & $0.1$ \\
+	S01 & Thực hành Sư phạm & 11 & $9.6$ & $9.6$ & $0.0$ \\
+	S02 & Thực hành Sư phạm & 11 & $8.4$ & $8.5$ & $0.1$ \\
 	S03 & Châu Văn Liêm     & 12 & $8.0$ & $8.1$ & $0.1$ \\
 	S04 & Thực hành Sư phạm & 11 & $8.8$ & $8.7$ & $0.1$ \\
 	S05 & Thực hành Sư phạm & 12 & $9.4$ & $9.6$ & $0.2$ \\
@@ -75,11 +75,11 @@ Có 38 học sinh hoàn thành phần kiểm tra năng lực chương Tổ hợp
 	S34 & Lý Tự Trọng       & 12 & $6.2$ & $8.5$ & $2.3$ \\
 	S35 & Thực hành Sư phạm & 11 & $7.0$ & $9.4$ & $2.4$ \\
 	S36 & Thực hành Sư phạm & 11 & $6.0$ & $8.6$ & $2.6$ \\
-	S37 & Thực hành Sư phạm & 11 & $6.2$ & $9.0$ & $2.8$ \\
-	S38 & Châu Văn Liêm     & 12 & $6.6$ & $9.5$ & $2.9$ \\
+	S37 & Châu Văn Liêm     & 12 & $6.6$ & $9.3$ & $2.7$ \\
+	S38 & Thực hành Sư phạm & 11 & $6.2$ & $9.0$ & $2.8$ \\
 \end{longtable}\par
 
-\subsection{Phân tích phân phối kết quả}
+\subsection{Phân tích tổng thể kết quả}
 
 Các kết quả đánh giá được thống kê lại theo các mốc: \begin{itemize}
 	\item \textit{Giỏi}: Từ $8.0$ trở lên.
@@ -141,25 +141,30 @@ Tiếp đến, đề tài tiến hành ước lượng sai số trong đánh gi�
 
 	& & \textbf{Statistic} & \textbf{Std. Error} \\\hline\endhead\hline\endfoot
 
-	\multicolumn{2}{Sl}{Mean} & $1.232$ & $0.1449$\\
+	\multicolumn{2}{Sl}{Mean} & $1.226$ & $0.1433$\\
 	\multirow{2}{*}{\begin{minipage}{3.5cm}Confidence Interval for Mean\end{minipage}}
-	& Lower Bound & $0.987$&\\
-	& Upper Bound & $1.476$  &\\
+	& Lower Bound & $0.985$&\\
+	& Upper Bound & $1.468$  &\\
 	\multicolumn{2}{Sl}{5\% Trimmed Mean}    & $1.207$  &\\
 	\multicolumn{2}{Sl}{Median}              & $1.2$    &\\
-	\multicolumn{2}{Sl}{Variance}            & $0.797$  &\\
-	\multicolumn{2}{Sl}{Std. Deviation}      & $0.8929$ &\\
+	\multicolumn{2}{Sl}{Variance}            & $0.780$  &\\
+	\multicolumn{2}{Sl}{Std. Deviation}      & $0.8834$ &\\
 	\multicolumn{2}{Sl}{Minimun}             & $0.0$    &\\
-	\multicolumn{2}{Sl}{Maximum}             & $2.9$    &\\
-	\multicolumn{2}{Sl}{Range}               & $2.9$    &\\
+	\multicolumn{2}{Sl}{Maximum}             & $2.8$    &\\
+	\multicolumn{2}{Sl}{Range}               & $2.8$    &\\
 	\multicolumn{2}{Sl}{Interquartile Range} & $1.7$    &\\
-	\multicolumn{2}{Sl}{Skewness}            & $0.249$  & $0.383$\\
-	\multicolumn{2}{Sl}{Kurtosis}            & $-1.313$ & $0.750$\\
+	\multicolumn{2}{Sl}{Skewness}            & $0.215$  & $0.383$\\
+	\multicolumn{2}{Sl}{Kurtosis}            & $-1.384$ & $0.750$\\
 \end{longtable}\par
 
-Với độ tin cậy $90\%$, \textit{Sai số} đánh giá so với \textit{ĐTB Toán} của học sinh được ước lượng nằm trong đoạn $[0.987;1.476]$ nhìn chung khá lớn, tuy nhiên đây chỉ là bài kiểm tra năng lực của một chủ đề (phần Tổ hợp, xác suất), do đó hoàn toàn có thể chấp nhận được. Bên cạnh đó, \textit{độ lệch chuẩn} (standard deviation) của \textit{Sai số} là $0.8929<1$ – hoàn toàn tương ứng với điều kiện dừng của thuật toán (dừng kiểm tra khi kỳ vọng nhỏ hơn $1$).\par
+Với độ tin cậy $90\%$, \textit{Sai số} đánh giá so với \textit{ĐTB Toán} của học sinh được ước lượng nằm trong đoạn $[0.985;1.468]$ nhìn chung khá lớn, tuy nhiên đây chỉ là bài kiểm tra năng lực của một chủ đề (phần Tổ hợp, xác suất), do đó hoàn toàn có thể chấp nhận được. Bên cạnh đó, \textit{độ lệch chuẩn} (standard deviation) của \textit{Sai số} là $0.8834<1$ hoàn toàn tương ứng với điều kiện dừng của thuật toán (dừng đánh giá khi kỳ vọng nhỏ hơn $1$).\par
 
 \subsection{Phân tích quá trình đánh giá một số học sinh}
 
-Đề tài chọn phân tích 03 kết quả ngẫu nhiên của các học sinh có \textit{Sai số} lần lượt là $0$ (giá trị nhỏ nhất – minimum), $2.9$ (giá trị lớn nhất – maximum) và $0.5$ (yếu vị – mode), cụ thể là S01, S38 và S12.\par
+Đề tài chọn phân tích 03 kết quả ngẫu nhiên của các học sinh có \textit{Sai số} lần lượt là $0$ (giá trị nhỏ nhất – minimum), $2.9$ (giá trị lớn nhất – maximum) và $0.5$ (yếu vị – mode), cụ thể là S01, S38 và S13.\par
 
+\subsubsection{Học sinh S01}
+
+\subsubsection{Học sinh S38}
+
+\subsubsection{Học sinh S13}
