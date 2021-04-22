@@ -788,16 +788,20 @@ Trong đó, các câu hỏi được chia thành 02 đề độc lập nhau, m�
 \noindent Đầu ra: Năng lực của thí sinh sau khi được đánh giá.\par
 \noindent Hoạt động thuật toán:\par
 \begin{enumerate}[label=\textbf{Bước \arabic*.},align=left,left=0cm..0cm,itemindent=*]
-	\item Khởi tạo mức năng lực ban đầu cho TS: $\theta_0=0$.
+	\item Khởi tạo mức năng lực ban đầu cho TS: $\theta_1=0$.
 	\item CH phù hợp với mức năng lực của TS được đưa ra và TS trả lời.
 	\item Ước lượng mức độ năng lực mới dựa trên kết quả trả lời CH của TS:
-	$$\theta_{k+1}=\theta_k+\gamma\sum_{i=1}^{k}\left(u_i-\frac{\mathbf{e}^{a_i(\theta-b_i)}}{1+\mathbf{e}^{a_i(\theta-b_i)}}\right),$$
+	\begin{equation}\label{eqn:eqn-s2-new-theta}
+		\theta_{k+1}=\theta_k+\gamma\sum_{i=1}^{k}\left(u_i-\frac{\mathbf{e}^{a_i(\theta-b_i)}}{1+\mathbf{e}^{a_i(\theta-b_i)}}\right),
+	\end{equation}
 	với $\gamma=1.0$ là tốc độ học của máy, $u_i=0|1$ là kết quả trả lời CH thứ $i$ của TS, $a_i$, $b_i$ là các tham số của CH.
 	\item Quay lại \textbf{Bước 2} nếu các điều kiện dừng chưa được thỏa mãn.
 	\item Kết thúc quá trình đánh giá và đưa ra kết quả.
 \end{enumerate}\par
 Trong đó, \textit{điều kiện dừng} của thuật toán là tất cả CH trong ngân hàng CH đã được trả lời, hoặc hệ số năng lực $\theta$ đã được xác định. Cụ thể, hệ số năng lực được xác định khi độ lệch chuẩn $SE$ đạt giá trị đủ nhỏ, thường là $0.4$ hoặc $0.8$, theo lý thuyết IRT, ta có:
-$$SE(\theta_k)=\frac{1}{\sqrt{\sum_{i=1}^{k}I_i(\theta_k)}}.$$
+\begin{equation}\label{eqn:eqn-s2-se-theta}
+	SE(\theta_k)=\frac{1}{\sqrt{\sum_{i=1}^{k}I_i(\theta_k)}}.
+\end{equation}
 Hàm thông tin CH trả về giá trị kỳ vọng thay đổi của năng lực. Hay nói cách khác, CH thứ $i$ đã đóng góp thế nào cho sự thay đổi của tham số năng lực. Do đó ta có thể sử dụng như một điều kiện dừng của trắc nghiệm thích ứng.\par
 
 \subsection{Thuật toán lựa chọn câu hỏi}
