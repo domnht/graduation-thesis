@@ -68,10 +68,10 @@
 
 % Code highlight
 \lstdefinelanguage{php} {
-	emph=[1]{require_once, require, include_once, include, namespace, use, class, function, new},
-	emph=[2]{echo, empty, isset, array, instanceof, count, floor, abs},
-	emph=[3]{var, const, abstract, protected, private, public, static, final, extends, implements, global, if, else, foreach ,for, endforeach, endif, endfor, elseif, as},
-	emph=[4]{return, throw, exit, __halt_compiler, continue, break},
+	emph=[1]{require_once, require, include_once, include, namespace, use, class, function},
+	emph=[2]{echo, empty, isset, array, instanceof, count, floor, abs, floatval, intval},
+	emph=[3]{var, const, abstract, protected, private, public, static, final, extends, implements, global, if, else, foreach, for, while, endforeach, endif, endfor, elseif, as},
+	emph=[4]{new, return, throw, exit, __halt_compiler, continue, break},
 	emph=[5]{Int, Float, Array, String},
 	emph=[6]{Item, Test, IRT},
 	emphstyle=[1]\color{mBlue},
@@ -80,36 +80,32 @@
 	emphstyle=[4]\color{mRed},
 	emphstyle=[5]\color{mDeepOrange},
 	emphstyle=[6]\color{mPink},
-	breaklines=true,
-	captionpos=b,
-	rulecolor=\color{black},
-	numbers=left,
-	stepnumber=1,  
-	numberfirstline=true,
-	numberstyle=\footnotesize,
-	xleftmargin=4.0ex,
-	upquote=true,
-	showlines=true
+	string=[s]{'}{'},
 }
-\lstdefinestyle{mystyle}{
+\lstdefinelanguage{json} {
+	stringstyle=\color{mTeal},
+	commentstyle=\color{black},
+	comment=[l]{:},
+	string=[s]{"}{"},
+	tabsize=2
+}
+
+\lstdefinestyle{domthanh}{
 	backgroundcolor=\color{mBlueGreyLighten5},
-    commentstyle=\itshape\color{mBlueGrey},
-    keywordstyle=\bfseries\color{mBlue},
-    numberstyle=\tiny\color{mBlueGrey},
-    stringstyle=\color{mBrown},
+	commentstyle=\itshape\color{mBlueGrey},
+	keywordstyle=\bfseries\color{mBlue},
+	stringstyle=\color{mBrown},
     basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,
     breaklines=true,
     captionpos=b,
-    keepspaces=true,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
     numbers=left,
-    numbersep=5pt,
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false,
     tabsize=4,
 }
-\lstset{style=mystyle}
+\lstset{style=domthanh}
 \renewcommand{\lstlistingname}{Code}
 \renewcommand{\lstlistlistingname}{Danh sách Code minh họa}
 
