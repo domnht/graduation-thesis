@@ -200,7 +200,7 @@ Phản hồi của máy chủ có thể kết hợp nhiều dạng tin nhắn v�
 Dưới đây là cú pháp JSON hợp lệ dùng để ra lệnh cho chatbot.
 \subsubsection{Gửi văn bản}
 Sử dụng cú pháp sau để gửi tin nhắn văn bản.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{ "text": "Welcome to the Chatfuel Rockets!" },
@@ -211,7 +211,7 @@ Sử dụng cú pháp sau để gửi tin nhắn văn bản.
 
 \subsubsection{Gửi hình ảnh}
 Sử dụng cú pháp dưới đây để gửi hình ảnh. Facebook Messenger hỗ trợ định dạng JPG, PNG và GIF.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -226,7 +226,7 @@ Sử dụng cú pháp dưới đây để gửi hình ảnh. Facebook Messenger 
 }
 \end{lstlisting}\par
 Ngoài ra, Chatfuel còn hỗ trợ chia sẻ hình ảnh từ một bài viết Facebook thay vì tải lên thủ công:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -264,7 +264,7 @@ Ngoài ra, Chatfuel còn hỗ trợ chia sẻ hình ảnh từ một bài viết
 
 \subsubsection{Gửi video}
 Cú pháp JSON dưới đây dùng để gửi một video. Facebook Messenger hỗ trợ video định dạng MP4, với kích thướt tối đa là 25 MB.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -280,7 +280,7 @@ Cú pháp JSON dưới đây dùng để gửi một video. Facebook Messenger h
 \end{lstlisting}\par
 
 Cũng như với hình ảnh, JSON sau đây có thể chia sẻ một video từ bài đăng Facebook thay vì tải lên thủ công:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -318,7 +318,7 @@ Cũng như với hình ảnh, JSON sau đây có thể chia sẻ một video t�
 
 \subsubsection{Gửi âm thanh}
 Sử dụng cú pháp này để gửi các tệp âm thanh. Facebook Messenger hỗ trợ âm thanh MP3, OGG, WAV, có dung lượng tối đa 25 MB.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -335,7 +335,7 @@ Sử dụng cú pháp này để gửi các tệp âm thanh. Facebook Messenger 
 
 \subsubsection{Gửi tệp}
 Sử dụng cú pháp này để gửi bất kỳ tệp nào khác, với kích thướt tối đa 25 MB.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -352,7 +352,7 @@ Sử dụng cú pháp này để gửi bất kỳ tệp nào khác, với kích 
 
 \subsubsection{Gửi thư viện}
 Sử dụng cú pháp này để gửi một thư viện (có thể cuộn ngang). Mỗi mục bao gồm một hình ảnh, mô tả ngắn và các nút nhấn.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -402,7 +402,7 @@ Thuộc tính \texttt{image\_aspect\_ratio} có thể mang giá trị \texttt{sq
 
 \subsubsection{Gửi hóa đơn}
 Sử dụng cú pháp này để gửi một tin nhắn xác nhận đơn đặt hàng. Bao gồm phần tóm tắt đơn đặt hàng, chi tiết thanh toán và thông tin vận chuyển.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -463,7 +463,7 @@ Sử dụng cú pháp này để gửi một tin nhắn xác nhận đơn đặt
 
 \subsubsection{Nút nhấn}
 Sử dụng JSON này để thêm các nút vào câu trả lời. Chatfuel cho phép đặt các nút để liên kết đến một block/flow, mở một trang web hoặc gửi một request JSON API khác tới máy chủ. Mỗi tin nhắn được thêm tối đa 03 nút nhấn.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages":[
 		{
@@ -499,7 +499,7 @@ Sử dụng JSON này để thêm các nút vào câu trả lời. Chatfuel cho 
 
 Với các nút nhấn loại \texttt{web\_url}, thuộc tính chiều cao trang web \texttt{webview\_height\_ratio} có thể là \texttt{compact} (40\%), \texttt{tall} (70\%) hoặc \texttt{full} (100\%), giá trị mặc định là \texttt{full}.\par
 Ngoài ra, Chatfuel cũng cho phép tạo ra lệnh gọi, dùng để quay số khi được nhấn:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -529,7 +529,7 @@ Ngoài ra, Chatfuel cũng cho phép tạo ra lệnh gọi, dùng để quay số
 \end{lstlisting}\par
 
 Nếu chatbot đang sử dụng gói \textit{Pro}, Chatfuel còn cho phép thực hiện môt hành động phụ cho nút nhấn. Ví dụ: người dùng nhấn nút thể mở một URL, sau đó, chatbot chuyển hướng người dùng tới một block/flow khác hoặc thiết lập một thuộc tính. Sử dụng cú pháp sau đây:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -563,7 +563,7 @@ Nếu chatbot đang sử dụng gói \textit{Pro}, Chatfuel còn cho phép thự
 
 \subsubsection{Câu trả lời nhanh}
 JSON dưới đây tạo ra các câu trả lời nhanh cho phép người dùng chọn lựa. Giới hạn tối đa 11 câu trả lời nhanh cho chatbot.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -588,7 +588,7 @@ Ngoài ra, câu trả lời nhanh còn có các tùy chọn bổ sung \texttt{qu
 \item \texttt{process\_text\_by\_ai} (giá trị \texttt{true} hoặc \texttt{false}): Chỉ định cách xử lý câu trả lời của người dùng. Nếu \texttt{false}, người dùng sẽ được chuyển đến nội dung tiếp theo thay vì quá trình nhận dạng của AI.
 \item \texttt{text\_attribute\_name}: Nếu được thiết lập, câu trả lời của người dùng sẽ được lưu vào một thuộc tính.
 \end{itemize}\par
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"messages": [
 		{
@@ -618,7 +618,7 @@ Ngoài ra, câu trả lời nhanh còn có các tùy chọn bổ sung \texttt{qu
 
 \subsubsection{Đặt giá trị cho thuộc tính}
 Có hai trường hợp có thể đặt thuộc tính cho người dùng:\par
-(1) Đặt thuộc tính khi nhấn vào một nút lệnh (chỉ dùng cho trường hợp gọi block/flow \texttt{show\_block} và gọi JSON API \texttt{json\_plugin\_url}): \begin{lstlisting}
+(1) Đặt thuộc tính khi nhấn vào một nút lệnh (chỉ dùng cho trường hợp gọi block hoặc flow \texttt{show\_block} và gọi JSON API \texttt{json\_plugin\_url}): \begin{lstlisting}[language=json]
 {
 	"set_attributes": 
 		{
@@ -630,7 +630,7 @@ Có hai trường hợp có thể đặt thuộc tính cho người dùng:\par
 	"title": "Go!"
 }
 \end{lstlisting}
-và (2) Tự đặt thuộc tính, không cần thao tác kích hoạt từ người dùng:\begin{lstlisting}
+và (2) Tự đặt thuộc tính, không cần thao tác kích hoạt từ người dùng:\begin{lstlisting}[language=json]
 {
 	"set_attributes":
 		{
@@ -645,7 +645,7 @@ và (2) Tự đặt thuộc tính, không cần thao tác kích hoạt từ ngư
 
 \subsubsection{Chuyển hướng tới một block/flow}
 Chatfuel cũng hỗ trợ chuyển hướng cho JSON API – không cần bất cứ thao tác nào từ người dùng.
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
 	"redirect_to_blocks": ["Welcome Message", "Default Answer"]
 }
@@ -694,7 +694,7 @@ Bảng \ref{tab:tab-s3-db-structure} mô tả cụ thể các bảng dữ liệu
 \end{longtable}
 
 \subsubsection{Mở rộng class câu hỏi}
-Như cơ sở dữ liệu câu hỏi đã xây dựng, một câu hỏi còn được quản lý bởi \texttt{id}, được liên kết với Chatfuel thông qua \texttt{block\_name}, và được đánh giá dựa trên \texttt{right\_answer}. Ngoài ra, cần có thêm hàm chuyển phương án trả lời của học sinh sang giá véc-tơ $u$, do đó cần xây dựng hàm \texttt{U(choice:)}. Mặc khác, khi đọc dữ liệu từ mySQL, kết quả trả về là một \textit{mảng} (array) hoặc một \textit{đối tượng} (object), do đó cần điều chỉnh phương thức \textit{khởi tạo} \texttt{\_\_construct} cho phù hợp.
+Như cơ sở dữ liệu CH đã xây dựng, một CH còn được quản lý bởi \texttt{id}, được liên kết với Chatfuel thông qua \texttt{block\_name}, và được đánh giá dựa trên \texttt{right\_answer}. Ngoài ra, cần có thêm hàm chuyển phương án trả lời của học sinh sang giá véc-tơ $u$, do đó cần xây dựng hàm \texttt{U(choice:)}. Mặc khác, khi đọc dữ liệu từ mySQL, kết quả trả về là một \textit{mảng} (array) hoặc một \textit{đối tượng} (object), do đó cần điều chỉnh phương thức \textit{khởi tạo} \texttt{\_\_construct} cho phù hợp.
 \begin{lstlisting}[language=php,caption=Class câu hỏi được mở rộng]
 class ItemData extends IRT\Item {
 	public $id, $right_answer;
@@ -738,8 +738,8 @@ JSON API dành cho Kant bot, được gọi là \textit{Kant API}, hỗ trợ ha
 Ngoài ra, ở mỗi request cần thêm tham số \texttt{user\_id} để xác định được đối tượng đang thực hiện, giá trị \texttt{user\_id} có thể là Chatfuel ID hoặc Messenger ID.\par
 
 \noindent\textbf{Ví dụ:} Để gọi danh sách chủ đề cao nhất, cần thực hiện một request với tham số như sau:
-\begin{lstlisting}
-GET: {
+\begin{lstlisting}[language=json]
+/GET {
 	"user_id": {{messenger user id}},
 	"action": "get",
 	"type": "topic",
@@ -747,7 +747,7 @@ GET: {
 }
 \end{lstlisting}\par
 Kết quả JSON nhận được:
-\begin{lstlisting}
+\begin{lstlisting}[language=json]
 {
     "messages": [
         {
@@ -783,7 +783,7 @@ Kết quả JSON nhận được:
 }
 \end{lstlisting}
 \subsection{Nhập liệu câu hỏi vào Kant bot}
-Ngân hàng câu hỏi sau khi được chuẩn hóa theo các tham số IRT sẽ được định dạng đồng nhất, sau đó chuyển thành hình ảnh – vì Facebook Messenger chưa hỗ trợ nhập công thức Toán học nên cần chuyển thành hình ảnh để đảm bảo tính thẩm mỹ của câu hỏi – và nhập vào Chatfuel, mỗi câu hỏi tương ứng với một block có tên được mã hóa theo chủ đề và số thứ tự, mỗi chủ đề tương ứng một nhóm các block. Một câu hỏi minh họa ở hình \ref{fig:fig-c3-demo-item-block}.
+Ngân hàng CH sau khi được chuẩn hóa theo các tham số IRT sẽ được định dạng đồng nhất, sau đó chuyển thành hình ảnh – vì Facebook Messenger chưa hỗ trợ nhập công thức Toán học nên cần chuyển thành hình ảnh để đảm bảo tính thẩm mỹ của CH – và nhập vào Chatfuel, mỗi CH tương ứng với một block có tên được mã hóa theo chủ đề và số thứ tự, mỗi chủ đề tương ứng một nhóm các block. Một CH được minh họa ở hình \ref{fig:fig-c3-demo-item-block}.
 \begin{figure}[htb!]\centering
 	\includegraphics[width=12cm]{chatfuel/demo-item-block}
 	\caption{Một câu hỏi được nhập vào Chatfuel}
@@ -791,7 +791,7 @@ Ngân hàng câu hỏi sau khi được chuẩn hóa theo các tham số IRT s�
 \end{figure}\par
 
 \subsection{Thêm các chức năng phụ cho Kant bot}
-Ngoài thư viện câu hỏi, bot cần được thiết kế để có những cuộc hội thoại mô phỏng người thật, ví dụ như chào hỏi, tự giới thiệu, hướng dẫn người dùng cập nhật thông tin, thông báo kết quả đánh giá, khảo sát ý kiến người dùng... Trong đó, block được thiết kế cho những giai đoạn hội thoại ngắn và đơn giản (hình \ref{fig:fig-c3-block-how-i-work}), và flow được sử dụng khi cần các cấu trúc rẽ nhánh, ví dụ như phân chia đối tượng (giáo viên, học sinh), kiểm tra thông tin người dùng đã được nhập đầy đủ chưa... (hình \ref{fig:fig-c3-flow-greeting})\par
+Ngoài thư viện CH, bot cần được thiết kế để có những cuộc hội thoại mô phỏng người thật, ví dụ như chào hỏi, tự giới thiệu, hướng dẫn người dùng cập nhật thông tin, thông báo kết quả đánh giá, khảo sát ý kiến người dùng... Trong đó, block được thiết kế cho những giai đoạn hội thoại ngắn và đơn giản (hình \ref{fig:fig-c3-block-how-i-work}), và flow được sử dụng khi cần các cấu trúc rẽ nhánh, ví dụ như phân chia đối tượng (giáo viên, học sinh), kiểm tra thông tin người dùng đã được nhập đầy đủ chưa... (hình \ref{fig:fig-c3-flow-greeting})\par
 \begin{figure}[htb!]\centering
 	\includegraphics[width=8cm]{chatfuel/block-how-i-work}
 	\caption{Sử dụng block cho những giai đoạn hội thoại đơn giản}
