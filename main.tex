@@ -1,21 +1,20 @@
-\documentclass[a4paper,oneside,12pt]{report}
+\documentclass[a4paper,twoside,12pt]{report}
 \input{config}
 
 \begin{document}
 
 % Opening
-\thispagestyle{empty}
-\pagenumbering{Alph}
-\input{pages/cover}
+\thispagestyle{empty}\pagenumbering{Alph}
+\input{pages/cover}\cleardoublepage
 
-\thispagestyle{empty}
-\cleardoublepage
-\pagenumbering{roman}
-\input{pages/preface}
+\thispagestyle{empty}\pagenumbering{roman}
+\input{pages/preface}\cleardoublepage
 
 % Table of Contents
-\input{pages/table-of-contents}
-\input{pages/list-of-standing}
+\input{pages/table-of-contents}\cleardoublepage
+
+% List of standing
+\input{pages/list-of-standing}\cleardoublepage
 
 % Main contents
 \cleardoublepage
@@ -25,14 +24,13 @@
 \input{chapters/opening}
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
-\input{chapters/literature-review}
-\input{chapters/build-the-api}
-\input{chapters/design-ai-chatbot}
-\input{chapters/experiment}
-\input{chapters/concluding}
+\input{chapters/literature-review}\cleardoublepage
+\input{chapters/build-the-api}\cleardoublepage
+\input{chapters/design-ai-chatbot}\cleardoublepage
+\input{chapters/experiment}\cleardoublepage
+\input{chapters/concluding}\cleardoublepage
 
 % References
-\cleardoublepage
 \nocite{*}
 \chapter*{Tài liệu tham khảo}
 \printbibliography[keyword=vi,heading=subbibliography,title={Tài liệu tiếng Việt}]
