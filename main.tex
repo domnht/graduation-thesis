@@ -4,10 +4,13 @@
 \begin{document}
 
 % Opening
-\thispagestyle{empty}\pagenumbering{Alph}
+\pagestyle{empty}
+\pagenumbering{Alph}
 \input{pages/cover}\cleardoublepage
 
-\thispagestyle{empty}\pagenumbering{roman}
+\pagestyle{fancy}\fancyhead{}\fancyfoot{}
+\fancyfoot[RO,LE]{\thepage}
+\pagenumbering{roman}
 \input{pages/preface}\cleardoublepage
 
 % Table of Contents
@@ -17,7 +20,6 @@
 \input{pages/list-of-standing}\cleardoublepage
 
 % Main contents
-\cleardoublepage
 \pagenumbering{arabic}
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
