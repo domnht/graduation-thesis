@@ -20,10 +20,15 @@
 \setlength\cellspacetoplimit{4pt}
 \setlength\cellspacebottomlimit{4pt}
 
+% Custom Header & footer
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}
+
 % Chapter custom (titlesec)
 \titleformat{\chapter}[display] % display|hang
 {\centering\normalfont\huge\bfseries}{\centering\chaptertitlename\ \thechapter}{0pt}{\Huge} % pattern
-\titlespacing{\chapter}{0pt}{0pt}{12pt} % spacing with other
+\titlespacing{\chapter}{0pt}{-24pt}{12pt} % spacing with other
 % Middle number (-24pt) is space-before chapter-title
 
 % Caption setup (caption)
@@ -51,6 +56,7 @@
 \definecolor{mDeepPurple}{HTML}{673ab7}
 \definecolor{mIndigo}{HTML}{3f51b5}
 \definecolor{mBlue}{HTML}{2196f3}
+\definecolor{mBlueDarken4}{HTML}{0d47a1}
 \definecolor{mCyan}{HTML}{00bcd4}
 \definecolor{mTeal}{HTML}{009688}
 \definecolor{mGreen}{HTML}{4caf50}
