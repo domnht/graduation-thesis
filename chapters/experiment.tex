@@ -26,7 +26,7 @@
 
 \section{Nội dung thực nghiệm}
 Quá trình thực nghiệm chính được thực hiện hoàn toàn trực tuyến với Kant bot, thông qua nền tảng Facebook Messenger.\par
-Trong phần này, người dùng cần phải thực hiện tối đa 10 CH trắc nghiệm (\cite{le2015xay}) cho một chủ đề – với CH được đưa ra dựa trên dữ liệu trả lời những câu hỏi trước – để đạt tới mức kỳ vọng ổn định nhất (dưới $0.8$). Sau đó Kant sẽ đưa ra kết quả đánh giá năng lực. Hình \ref{fig:fig-c4-chatbot-demo} minh họa quá trình thực nghiệm đánh giá với Kant.
+Trong phần này, người dùng cần phải thực hiện tối đa 10 CH trắc nghiệm \parencite{le2015xay} cho một chủ đề – với CH được đưa ra dựa trên dữ liệu trả lời những câu hỏi trước của TS – để đạt tới mức kỳ vọng ổn định nhất (dưới $0.8$). Sau đó Kant sẽ đưa ra kết quả đánh giá năng lực. Hình \ref{fig:fig-c4-chatbot-demo} minh họa quá trình thực nghiệm đánh giá với Kant.
 \begin{figure}[htb!]\centering
 	\includegraphics[width=7cm]{kant-ux/chat-1}
 	\includegraphics[width=7cm]{kant-ux/chat-2}
@@ -213,7 +213,7 @@ Học sinh S01 được khởi tạo mức năng lực mặc định $\theta_1=0
 Khi đó, kỳ vọng thay đổi năng lực được tính theo công thức (\ref{eqn:eqn-s2-se-theta}): $$SE(\theta_2)\approx 0.9324190455746.$$\par
 
 Số CH là $k=1\leqslant 10$, kỳ vọng thay đổi năng lực $SE(\theta_2)\approx 0.93>0.8$, do đó các điều kiện dừng của trắc nghiệm thích ứng chưa được thỏa mãn. Kant tiếp tục với việc chọn CH thứ hai, sao cho phù hợp với mức năng lực $\theta_1$ và không lặp lại CH trước.\par
-Quá trình đánh giá của học sinh S01 tiếp tục cho tới khi thực hiện đủ 10 CH, nhận được $\theta_{10}\approx 1.95$ và kỳ vọng $SE(\theta_{10})\approx 1.28$. Điểm đánh giá của học sinh được tính dựa trên \textit{mô hình câu hỏi dạng đường cong tích lũy vòm chuẩn}, nhưng với các tham số $a=1$ và $b=0$ (\cite{le2019phat}), nghĩa là: \begin{equation}\label{eqn:eqn-s4-P-theta-by-int}P(\theta_{10})=\int\limits_{-\infty}^{\theta_{10}}\mathbf{e}^{-\frac{x^2}{2}}\mathrm{d}x.\end{equation}
+Quá trình đánh giá của học sinh S01 tiếp tục cho tới khi thực hiện đủ 10 CH, nhận được $\theta_{10}\approx 1.95$ và kỳ vọng $SE(\theta_{10})\approx 1.28$. Điểm đánh giá của học sinh được tính dựa trên \textit{mô hình câu hỏi dạng đường cong tích lũy vòm chuẩn}, nhưng với các tham số $a=1$ và $b=0$ \parencite{le2019phat}, nghĩa là: \begin{equation}\label{eqn:eqn-s4-P-theta-by-int}P(\theta_{10})=\int\limits_{-\infty}^{\theta_{10}}\mathbf{e}^{-\frac{x^2}{2}}\mathrm{d}x.\end{equation}
 Ngoài ra, như đã nói tới ở mục \ref{sssec:duong-cong-tich-luy}, khi nhân tham số $a$ của hàm logistic với hệ số $D=1.702$ thì ta nhận được kết quả đánh giá rất gần với (\ref{eqn:eqn-s4-P-theta-by-int}), nhưng tốc độ tính được tối ưu rất tốt do không phải tính tích phân phức tạp. Do đó, kết quả đánh giá cuối cùng được tính như sau: $$P(\theta_{10})=\frac{\mathbf{e}^{D\theta_{10}}}{1+\mathbf{e}^{D\theta_{10}}}\approx 0.965=96.5\%.$$
 Nói cách khác, điểm năng lực của học sinh là $9.7$ theo thang điểm $10$.
 
