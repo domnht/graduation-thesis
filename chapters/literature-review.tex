@@ -317,7 +317,7 @@ Giả sử một ĐTN bao gồm 5 câu hỏi với các đường cong ĐTCH tư
 	\label{fig:fig7-sum5:P(theta,a,b,c)}
 \end{figure}\par
 Có thể mô tả các đặc điểm của đường cong đặc trưng ĐTN tương tự như mô tả các đường cong ĐTCH. Đường cong đặc trưng ĐTN không có biểu thức giải tích đơn giản nên không có các tham số đặc trưng. Độ nghiêng của đường cong đặc trưng ĐTN cho biết điểm thực phụ thuộc như thế nào vào năng lực, tức là liên quan đến \textit{độ phân biệt của ĐTN}. Trong một số trường hợp đường cong đặc trưng ĐTN có dạng gần đường thẳng trong một khoảng năng lực nào đó, nhưng nói chung nó có dạng một đường cong đồng biến. Mức năng lực ứng với trung điểm của thang điểm thực (ứng với $\frac n2$) xác định vị trí của ĐTN trên thang năng lực. Hoành độ của điểm đó xác định \textit{độ khó của ĐTN}. Hai yếu tố độ dốc và mức năng lực ở trung điểm thang điểm thực mô tả khá rõ đặc tính của một ĐTN.\par
-Để biểu diễn điểm thực dưới dạng thập phân, người ta chia $\tau$ cho tổng số CH của ĐTN: $$\pi=\frac{\tau}{n}=\frac 1n=\frac 1n\sum_{i=1}^{n}P_i(\theta).$$\par
+Để biểu diễn điểm thực dưới dạng thập phân, người ta chia $\tau$ cho tổng số CH của ĐTN: $$\pi=\frac{\tau}{n}=\frac 1n\sum_{i=1}^{n}P_i(\theta).$$\par
 Khi $\theta$ ở trong khoảng $-\infty<\theta<+\infty$ thì $\pi$ nằm giữa $0$ và $1$ (hoặc $0\%$ và $100\%$). Đối với mô hình ứng đáp CH 3 tham số, giới hạn dưới của $\pi$ là $\frac 1n\sum_{i=1}^{n}c_i$.
 
 \subsection{Ước lượng năng lực của thí sinh}
@@ -330,7 +330,7 @@ Vì $U_i$ bằng $0$ hoặc $1$ nên viết:
 	P(U|\theta)=\prod_{i=1}^{m}P(U_i|\theta)^{U_i}\big[1-P(U_i|\theta)\big]^{1-U_i}=\prod_{i=1}^{m}P_i^{U_i}Q_i^{1-U_i},
 \end{equation}
 trong đó, $P_i=P(U_i|\theta)$ và $Q_i=1-P(U_i|\theta)$.
-Đẳng thức \ref{eqn:eqn-s3-8-P(U|theta)} biểu diễn xác suất của kiểu ứng đáp nhóm CH nói trên. Khi kiểu ứng đáp nhóm CH đã quan sát được, tức đã có các giá trị $U_i=u_i$, thì sử dụng từ xác suất sẽ không thích hợp nữa, nên xác suất đó được gọi là \textit{biến cố hợp lý} (likelyhood) và được biểu diễn bởi hàm $L(u_1,u_2,...,u_i,...,u_m|\theta)$, trong đó $u_i$ là sự ứng đáp đối với CH thứ $i$, tức là:
+Đẳng thức (\ref{eqn:eqn-s3-8-P(U|theta)}) biểu diễn xác suất của kiểu ứng đáp nhóm CH nói trên. Khi kiểu ứng đáp nhóm CH đã quan sát được, tức đã có các giá trị $U_i=u_i$, thì sử dụng từ xác suất sẽ không thích hợp nữa, nên xác suất đó được gọi là \textit{biến cố hợp lý} (likelyhood) và được biểu diễn bởi hàm $L(u_1,u_2,...,u_i,...,u_m|\theta)$, trong đó $u_i$ là sự ứng đáp đối với CH thứ $i$, tức là:
 \begin{equation}\label{eqn:eqn-s3-9-L(u|theta)}
 	L(u_1,u_2,...,u_i,...u_m)=\prod_{i=1}^{m}P_i^{u_i}Q_i^{1-u_i}.
 \end{equation}\par
