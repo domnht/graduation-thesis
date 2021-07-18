@@ -139,8 +139,8 @@ Từ kết quả thực nghiệm đánh giá (bảng \ref{tab:tab-s4-result}), t
 	\multirow{4}{*}{\textbf{KQ đánh giá}}
 	& Giỏi       & 15 & – & – & 15\\
 	& Khá        & 14 & 1 & – & 15\\
-	& Trung bình & 3  & 4 & – & 7 \\
-	& Kém        & 0  & 0 & 1 & 1 \\\hline
+	& Trung bình &  3 & 4 & – & 7 \\
+	& Kém        &  – & – & 1 & 1 \\\hline
 	\multicolumn{2}{Sc}{\textbf{Tổng}} & 32 & 5 & 1 & 38
 \end{longtable}\par
 
@@ -186,9 +186,7 @@ Với độ tin cậy $90\%$, \textit{Sai số} đánh giá so với \textit{ĐT
 Đề tài chọn phân tích 03 kết quả ngẫu nhiên của các học sinh có \textit{Sai số} lần lượt là $0$ (giá trị nhỏ nhất – minimum), $2.9$ (giá trị lớn nhất – maximum) và $0.5$ (yếu vị – mode), cụ thể là S01, S38 và S13.\par
 
 \subsubsection{Học sinh S01}
-
 Học sinh S01 có điểm đánh giá qua Kant và điểm trung bình môn Toán cùng là $9.7$. Quá trình đánh giá được tổng hợp ở bảng \ref{tab:tab-s4-result-of-s01}. Ở đó, học sinh trả lời đúng 8/10 CH được đưa ra. Đánh giá dừng sau 10 CH, khi kỳ vọng chưa thật sự đạt đến ổn định ($SE(\theta_{11})\approx 1.28$), tuy nhiên hệ số năng lực không còn thay đổi đáng kể – xấp xỉ $1.95$ sau CH thứ 9 và 10.\par
-
 Bên cạnh đó, do độ phân bố của ngân hàng CH chưa rộng, nên khoảng cách giữa hệ số năng lực $\theta$ và độ khó $b$ rất chênh lệch. Việc này không làm mất đi tính cá nhân hóa và tính chính xác của quá trình đánh giá, song làm cho quá trình đánh giá trở nên dài hơn do nó làm cho tốc độ đạt kỳ vọng $0.8$ trở nên chậm hơn.\par
 
 \begin{longtable}{ScScScScSrSrSrSr}
@@ -211,14 +209,12 @@ Bên cạnh đó, do độ phân bố của ngân hàng CH chưa rộng, nên kh
 
 Học sinh S01 được khởi tạo mức năng lực mặc định $\theta_1=0$, CH thích hợp nhất được chọn có độ khó $b_1=-0.09$ gần với $\theta_1$ và độ phân biệt $a_1=2.93$ khá tốt. Học sinh chọn phương án B (đúng) nên $u_1=1$, sau đó một mức năng lực mới được ước lượng theo công thức (\ref{eqn:eqn-s2-new-theta}): $$\theta_2\approx 0.4775151752082.$$
 Khi đó, kỳ vọng thay đổi năng lực được tính theo công thức (\ref{eqn:eqn-s2-se-theta}): $$SE(\theta_2)\approx 0.9324190455746.$$\par
-
 Số CH là $k=1\leqslant 10$, kỳ vọng thay đổi năng lực $SE(\theta_2)\approx 0.93>0.8$, do đó các điều kiện dừng của trắc nghiệm thích ứng chưa được thỏa mãn. Kant tiếp tục với việc chọn CH thứ hai, sao cho phù hợp với mức năng lực $\theta_1$ và không lặp lại CH trước.\par
-Quá trình đánh giá của học sinh S01 tiếp tục cho tới khi thực hiện đủ 10 CH, nhận được $\theta_{10}\approx 1.95$ và kỳ vọng $SE(\theta_{10})\approx 1.28$. Điểm đánh giá của học sinh được tính dựa trên \textit{mô hình câu hỏi dạng đường cong tích lũy vòm chuẩn}, nhưng với các tham số $a=1$ và $b=0$ \parencite{le2019phat}, nghĩa là: \begin{equation}\label{eqn:eqn-s4-P-theta-by-int}P(\theta_{10})=\int\limits_{-\infty}^{\theta_{10}}\mathbf{e}^{-\frac{x^2}{2}}\mathrm{d}x.\end{equation}
-Ngoài ra, như đã nói tới ở mục \ref{sssec:duong-cong-tich-luy}, khi nhân tham số $a$ của hàm logistic với hệ số $D=1.702$ thì ta nhận được kết quả đánh giá rất gần với (\ref{eqn:eqn-s4-P-theta-by-int}), nhưng tốc độ tính được tối ưu rất tốt do không phải tính tích phân phức tạp. Do đó, kết quả đánh giá cuối cùng được tính như sau: $$P(\theta_{10})=\frac{\mathbf{e}^{D\theta_{10}}}{1+\mathbf{e}^{D\theta_{10}}}\approx 0.965=96.5\%.$$
+Quá trình đánh giá của học sinh S01 tiếp tục cho tới khi thực hiện đủ 10 CH, nhận được $\theta_{11}\approx 1.95$ và kỳ vọng $SE(\theta_{11})\approx 1.28$. Điểm đánh giá của học sinh được tính dựa trên \textit{mô hình câu hỏi dạng đường cong tích lũy vòm chuẩn}, nhưng với các tham số $a=1$ và $b=0$ \parencite{le2019phat}, nghĩa là: \begin{equation}\label{eqn:eqn-s4-P-theta-by-int}P(\theta_{11})=\int\limits_{-\infty}^{\theta_{11}}\mathbf{e}^{-\frac{x^2}{2}}\mathrm{d}x.\end{equation}
+Ngoài ra, như đã nói tới ở mục \ref{sssec:duong-cong-tich-luy}, khi nhân tham số $a$ của hàm logistic với hệ số $D=1.702$ thì ta nhận được kết quả đánh giá rất gần với (\ref{eqn:eqn-s4-P-theta-by-int}), nhưng tốc độ tính được tối ưu rất tốt do không phải tính tích phân phức tạp. Do đó, kết quả đánh giá cuối cùng được tính như sau: $$P(\theta_{11})=\frac{\mathbf{e}^{D\theta_{11}}}{1+\mathbf{e}^{D\theta_{11}}}\approx 0.965=96.5\%.$$
 Nói cách khác, điểm năng lực của học sinh là $9.7$ theo thang điểm $10$.
 
 \subsubsection{Học sinh S38}
-
 Học sinh S38 có điểm đánh giá qua Kant $6.2$ và điểm trung bình môn Toán là $9.0$. Quá trình đánh giá được ghi lại ở bảng \ref{tab:tab-s4-result-of-s38}. Trong đó, học sinh trả lời đúng 3/7 câu hỏi. Dễ dàng thấy quá trình đánh giá đạt điều kiện dừng sau câu hỏi thứ 7, cụ thể là $SE(\theta_8)\approx 0.78<0.8$. Ở đây, hệ số năng lực của học sinh cũng dần ổn định với $\theta_7\approx\theta_8\approx 0.28$.
 
 \begin{longtable}{ScScScScSrSrSrSr}
@@ -237,8 +233,7 @@ Học sinh S38 có điểm đánh giá qua Kant $6.2$ và điểm trung bình m�
 \end{longtable}
 
 \subsubsection{Học sinh S13}
-
-Học sinh S13 có điểm đánh giá qua Kant $9.5$ và điểm trung bình môn Toán là $9.0$, sai số tuyệt đối $0.5$ thuộc vào nhóm \textit{yếu vị} (mode) của thống kê. Trong quá trình đánh giá (bảng \ref{tab:tab-s4-result-of-s13}), học sinh trả lời đúng 8/10 câu hỏi. Đánh giá dừng sau khi thực hiện số lượng tối đa câu hỏi cho phép. Hệ số năng lực cũng đạt được giá trị ổn định ở 02 câu hỏi cuối, với $\theta_9\approx\theta_{10}\approx 1.78$.
+Học sinh S13 có điểm đánh giá qua Kant $9.5$ và điểm trung bình môn Toán là $9.0$, sai số tuyệt đối $0.5$ thuộc vào nhóm \textit{yếu vị} (mode) của thống kê. Trong quá trình đánh giá (bảng \ref{tab:tab-s4-result-of-s13}), học sinh trả lời đúng 8/10 câu hỏi. Đánh giá dừng sau khi thực hiện số lượng tối đa câu hỏi cho phép. Hệ số năng lực cũng đạt được giá trị ổn định ở 02 câu hỏi cuối, với $\theta_{10}\approx\theta_{11}\approx 1.78$.
 
 \begin{longtable}{ScScScScSrSrSrSr}
 	\caption{Quá trình đánh giá của học sinh S13}\label{tab:tab-s4-result-of-s13}\\

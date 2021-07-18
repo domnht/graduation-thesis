@@ -1,5 +1,5 @@
 \chapter{Thiết kế Facebook chatbot với Chatfuel}
-\textit{Chatfuel} là một công cụ tạo chatbot miễn phí (cho quy mô nhỏ) giúp xây dựng nhanh một chatbot trên mạng xã hội Facebook. Chatfuel mạnh mẽ không chỉ ở giao diện trực quan, mà còn ở việc hỗ trợ JSON dành cho việc mở rộng thuật toán bằng lập trình.\par
+\textit{Chatfuel} là một công cụ tạo chatbot mạnh mẽ giúp xây dựng nhanh một chatbot trên mạng xã hội Facebook (hay Facebook Messenger). Chatfuel mạnh mẽ không chỉ ở giao diện trực quan, mà còn ở việc hỗ trợ JSON dành cho việc mở rộng thuật toán bằng lập trình.\par
 
 \section{Nền tảng Chatfuel}
 Để tạo chatbot với Chatfuel, trước hết cần có quyền \textit{quản trị viên} (administrator) của một trang Facebook (Facebook fanpage). Sau khi đăng nhập vào {\color{mTeal}chatfuel.com}, giao diện của Chatfuel tương tự như hình \ref{fig:fig-c3-dashboard}. Trong đó:
@@ -83,7 +83,7 @@ Giao diện \textit{re-engage} cho phép thực hiện \textbf{(1)} gửi thủ 
 
 \begin{figure}[htb!]\centering
 	\includegraphics[width=15cm]{chatfuel/re-engage}
-	\caption{Giao diện danh sách người dùng đã tương tác với bot}
+	\caption{Giao diện chức năng Re-engage}
 	\label{fig:fig-c3-re-engage}
 \end{figure}\par
 
@@ -91,7 +91,7 @@ Giao diện \textit{re-engage} cho phép thực hiện \textbf{(1)} gửi thủ 
 \subsubsection{Thiết kế chatbot bằng blocks}
 Một block được sử dụng là một giai đoạn của cuộc hội thoại. Lần đầu truy cập, chatbot sẽ có 02 block mặc định là \textit{tin nhắn chào mừng} (welcome message) và \textit{câu trả lời mặc định} (default answer) (xem hình \ref{fig:fig-c3-blocks}). Đúng như tên gọi, \textit{tin nhắn chào mừng} được gửi lần đầu tiên khi người dùng bắt đầu trò chuyện với bot và \textit{câu trả lời mặc định} dùng để gửi đi khi bot không hiểu tin nhắn của người dùng.\par
 Ở giao diện làm việc với blocks, để tạo một block mới, chọn dấu cộng (+) ở khung \textbf{(1)}, hoặc tạo một nhóm các block bằng việc chọn \textit{+ ADD SEQUENCE OR GROUP} sau đó đặt tên cho nhóm. Ngoài ra, các block có thể được phân nhóm và sắp xếp dễ dàng bằng thao tác kéo thả chuột.\par
-Chọn một block ở khung danh sách \textbf{(1)} để hiện nội dung của block (hình \ref{fig:fig-c3-block-demo}). Tại đây, tên block được hiển thị ở \textbf{(1)}, người dùng có thể nhấn chuột vào để đổi tên block theo ý mình. Tiếp sau tên block là nút \textit{LINK} dùng để tạo \textit{đường dẫn} (URL) để truy cập trực tiếp tới block đó. Phần \textbf{(2)} là thông tin các đường vào/ra của block, trên hình \ref{fig:fig-c3-block-demo}, người dùng có thể truy cập tới block từ menu chính của fanpage, từ \textit{câu trả lời mặc định} và từ một block/flow có tên \textit{f\_survey}; cũng vậy, từ block \textit{menu} có thể chuyển sang các block/flow có tên \textit{about-bot}, \textit{start}, \textit{update-information} và \textit{open-form}. Tiếp theo là nội dung chính hay kịch bản của block \textbf{(3)} và cuối cùng là các thành \textit{thành phần} (elements) để thiết kế block, còn được gọi là các phug-in \textbf{(4)}.\par
+Chọn một block ở khung danh sách \textbf{(1)} để hiện nội dung của block (hình \ref{fig:fig-c3-block-demo}). Tại đây, tên block được hiển thị ở \textbf{(1)}, người dùng có thể nhấn chuột vào để đổi tên block theo ý mình. Tiếp sau tên block là nút \textit{LINK} dùng để tạo \textit{đường dẫn} (URL) để truy cập trực tiếp tới block đó. Phần \textbf{(2)} là thông tin các đường vào/ra của block, trên hình \ref{fig:fig-c3-block-demo}, người dùng có thể truy cập tới block từ menu chính của fanpage, từ \textit{câu trả lời mặc định} và từ một block/flow có tên \textit{f\_survey}; cũng vậy, từ block \textit{menu} có thể chuyển sang các block/flow có tên \textit{about-bot}, \textit{start}, \textit{update-information} và \textit{open-form}. Tiếp theo là nội dung chính hay kịch bản của block \textbf{(3)} và cuối cùng là các \textit{thành phần} (elements) để thiết kế block, còn được gọi là các plug-in \textbf{(4)}.\par
 \begin{figure}[htb!]\centering
 	\includegraphics[width=10cm]{chatfuel/block-demo}
 	\caption{Nội dung của một block}
@@ -171,7 +171,8 @@ Có 06 loại thẻ có thể tạo ra trong một flow: \begin{itemize}
 	\item \textbf{Condition}: Tạo ra một cấu trúc rẽ nhánh để chuyển hướng người dùng dựa trên (các) điều kiện của thuộc tính.
 	\item \textbf{Delay}: Trì hoãn cuộc hội thoại trong một khoảng thời gian xác định.
 	\item \textbf{Redirect to Flow/Block}: Chuyển hướng người dùng sang một block/flow khác.
-\end{itemize}
+\end{itemize}\par
+
 Ngoài thẻ, flow còn có các liên kết để điều hướng cuộc hội thoại và liên kết các thẻ. Các vòng tròn nhỏ ở góc dưới cùng bên phải của thẻ và ở phía bên phải của các nút nhấn là những điểm mà từ đó có thể vẽ ra các mũi tên để kết nối các khối. Các mũi tên liên kết các phần khác nhau của cuộc trò chuyện với nhau, hiển thị cho bot biết nơi đưa người dùng tiếp theo.\par
 Có hai cách để thiết kế một flow: \begin{enumerate}[label=\textbf{\arabic*.}]
 	\item Thiết kế bố cục cơ bản bằng các thẻ trước, sau đó thực hiện tạo các liên kết.
@@ -741,10 +742,10 @@ Ngoài ra, ở mỗi request cần thêm tham số \texttt{user\_id} để xác 
 \noindent\textbf{Ví dụ:} Để gọi danh sách chủ đề cao nhất, cần thực hiện một request với tham số như sau:
 \begin{lstlisting}[language=json]
 /GET {
-	"user_id": {{messenger user id}},
-	"action": "get",
-	"type": "topic",
-	"topic_id": 0
+    "user_id": {{messenger user id}},
+    "action": "get",
+    "type": "topic",
+    "topic_id": 0
 }
 \end{lstlisting}\par
 Kết quả JSON nhận được:
