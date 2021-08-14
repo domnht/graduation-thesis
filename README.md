@@ -1,12 +1,14 @@
 # Luận văn tốt nghiệp 2020 – 2021
 
-## Thông tin
+## Thông tin chung
 
-**GVHD:** ThS. Bùi Anh Tuấn
+**Tên Đề tài:** Bước đầu ứng dụng Trí tuệ nhân tạo vào đánh giá kết quả học tập Toán: Một nghiên cứu thực nghiệm về chatbot trong Chương Tổ hợp – Xác suất lớp 11.
 
-**SV:** Nguyễn Hiếu Thanh
+**Giảng viên hướng dẫn:** ThS. Bùi Anh Tuấn
 
-**Đề tài:** Bước đầu ứng dụng Trí tuệ nhân tạo vào đánh giá kết quả học tập Toán: Một nghiên cứu thực nghiệm về chatbot trong Chương Tổ hợp – Xác suất lớp 11.
+**Sinh viên thực hiện:** Nguyễn Hiếu Thanh
+
+**Ngày bảo vệ:** 10/06/2021
 
 ## Cấu trúc thư mục
 
