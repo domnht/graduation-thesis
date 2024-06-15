@@ -10,7 +10,7 @@
 
 **Ngày bảo vệ:** 10/06/2021
 
-Bạn đọc có thể click để tải về [tài liệu hoàn chỉnh](https://github.com/hieuthanh1908/graduation-thesis/releases/download/final/Nguyen.Hieu.Thanh.K43.pdf) hoặc [mã nguồn](https://github.com/hieuthanh1908/graduation-thesis/archive/refs/tags/final.zip).
+Bạn đọc có thể click để tải về [tài liệu hoàn chỉnh](https://github.com/domnht/graduation-thesis/releases/download/final/Nguyen.Hieu.Thanh.K43.pdf) hoặc [mã nguồn](https://github.com/domnht/graduation-thesis/archive/refs/tags/final.zip).
 
 ## Cấu trúc thư mục
 
